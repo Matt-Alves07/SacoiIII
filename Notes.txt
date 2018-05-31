@@ -1,0 +1,6 @@
+31/05/2018 -> O que foi feito:
+-> Criada a tela de login, com botões com novos icones;
+-> Criada a tela de cadastro, também usando botões com novos icones;
+-> Alterado o icone padrão do sistema;
+-> Criado os arquivos de constantes para acesso ao banco e a tabela e funções de usuários;
+*Obs.: ainda não está acessando o banco porque eu esqueci de incluir as bibliotecas do MySQL, então não foi feito hoje também.

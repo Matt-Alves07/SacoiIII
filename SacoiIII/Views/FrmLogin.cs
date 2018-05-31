@@ -58,7 +58,10 @@ namespace SacoiIII
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Essa funcionalidade ainda não está implementada.", "Efetuar Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (ValidarCampos())
+            {
+                MessageBox.Show("Parabéns por preencher todos os campos.\nMas essa funcionalidade ainda não está implementada.", "Em breve", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void ChkSenha_CheckedChanged(object sender, EventArgs e)
@@ -83,6 +86,26 @@ namespace SacoiIII
         {
             ChkSenha.ForeColor = Color.Black;
             ChkSenha.Image = Properties.Resources.pin_code_24b;
+        }
+
+        private Boolean ValidarCampos()
+        {
+            if (TxtUserName.Text == "")
+            {
+                MessageBox.Show("O campo nome de usuário deve estar preenchido para efetuar login", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TxtUserName.Focus();
+                return false;
+            }
+            else if (TxtSenha.Text == "")
+            {
+                MessageBox.Show("O campo senha deve estar preenchido para efetuar login", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TxtSenha.Focus();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

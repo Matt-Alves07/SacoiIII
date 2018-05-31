@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>chat.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,6 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\Constant.Connection.cs" />
+    <Compile Include="Constants\Constant.Pessoa.cs" />
+    <Compile Include="DAO\DAO.Pessoa.cs" />
+    <Compile Include="DTO\DTO.Pessoa.cs" />
     <Compile Include="Views\FrmCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +118,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pin-code_24w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_16b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_16w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backspace_32b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backspace_32w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\success_32b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\success_32w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chat.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
