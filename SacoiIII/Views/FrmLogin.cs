@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SacoiIII.Views;
+using SacoiIII.Controller;
 
 namespace SacoiIII
 {
     public partial class FrmLogin : Form
     {
+        UsuarioController UsuarioController = new UsuarioController();
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -58,9 +61,53 @@ namespace SacoiIII
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            #region Local Attributes
+            //Criação do array que recebe o resultado do metodo EfetuarLogin do ControllerUsuario e do inteiro que será necessário para o loop
+            string[] result = { "", "" };
+            short i = 0;
+            #endregion
+
             if (ValidarCampos())
             {
-                MessageBox.Show("Parabéns por preencher todos os campos.\nMas essa funcionalidade ainda não está implementada.", "Em breve", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                #region Array loop
+                //Preenche o arrya dentro do loop com os resultados vindos do metodo EfetuarLogin do ControllerUsuario
+                foreach (string linha in UsuarioController.EfetuarLogin(TxtUserName.Text, TxtSenha.Text))
+                {
+                    result[i] = linha;
+                    i++;
+                }
+                #endregion
+
+                #region Result
+                //Verifica a primeira posição é igual a "true"(existe o usuário e senha) ou se é igua a "false"(não existe), o que passar disso é exceção do MySQL
+                if (result[0] == "false")
+                {
+                    //Exibe a mensagem informando que não foi encontrado o registro dele
+                    MessageBox.Show("Usuário e/ou senha incorretos.\nRevise os campos e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (result[0] == "true")
+                {
+                    //Existindo registro, Exibe mensagem informando que foi encontrado; a segunda posição sendo igual a "true", redireciona para a tela de Administradores
+                    if (result[1] == "true")
+                    {
+                        MessageBox.Show("Login efetuado com sucesso!\nClique em OK para continuar para a tela inicial.", "Bem-vindo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    //Existindo registro, Exibe mensagem informando que foi encontrado; a segunda posição sendo igual a "false", redireciona para a tela de Usuários
+                    else if (result[1] == "false")
+                    {
+                        MessageBox.Show("Login efetuado com sucesso!\nClique em OK para continuar para a tela inicial.", "Bem-vindo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    //Não existindo registro na segunda posição do array, informa que houve um erro e não redireciona para nenhuma tela
+                    else
+                    {
+                        MessageBox.Show("Ocorreu um erro ao carregar as informações do servidor.\nTente novamente e, se persistir, contate o suporte.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ocorreu um erro ao carregar as informações do servidor.\nTente novamente e, se persistir, contate o suporte.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                #endregion
             }
         }
 

@@ -10,7 +10,7 @@ namespace SacoiIII.Constants
     {
         #region Connection
         //Criação da constante que fornece os dados para acessar o MySQL
-        private const string connection = "datasource=localhost;port=3306;user=root;password=M1nh@S3nh@";
+        private const string connection = "datasource=localhost;port=3306;user=root;password=M1nh@S3nh@;SslMode=none";
         //Criação do metodo que retorna a constante de conexão
         public string GetConnection() => connection;
         #endregion

@@ -2,5 +2,10 @@
 -> Criada a tela de login, com botões com novos icones;
 -> Criada a tela de cadastro, também usando botões com novos icones;
 -> Alterado o icone padrão do sistema;
--> Criado os arquivos de constantes para acesso ao banco e a tabela e funções de usuários;
-*Obs.: ainda não está acessando o banco porque eu esqueci de incluir as bibliotecas do MySQL, então não foi feito hoje também.
+-> Criado os arquivos de constantes para acesso ao banco e a tabela e funções de usuários.
+
+01/06/2018 -> O que foi feito:
+-> Adicionada a referêcia necessária para acessar o banco do MySQL;
+-> Criados os Controllers Pessoa e Usuario, o segundo herdando os metodos de Pessoa, e Pessoa NÃO podendo ser instanciado;
+-> Feitas pequenas correções na atribuição de valores nas variáveis do MySQL;
+-> Funcionalidades EfetuarCadastro, VerificarDisponibilidade e EfetuarLogin estão funcionando, mas ainda falta criar as telas home.

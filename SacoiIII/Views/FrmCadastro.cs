@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SacoiIII.Controller;
 
 namespace SacoiIII.Views
 {
     public partial class FrmCadastro : Form
     {
+        #region
+        //Instância do objeto Controller que será usado para intermediar a camada view para a camada model
+        UsuarioController UsuarioController = new UsuarioController();
+        #endregion
+
         public FrmCadastro()
         {
             InitializeComponent();
@@ -154,9 +160,35 @@ namespace SacoiIII.Views
 
         private void BtnCadastro_Click(object sender, EventArgs e)
         {
+            string status = "";
             if (ValidarCampos())
             {
-                MessageBox.Show("Parabéns por preencher todos os campos.\nMas essa funcionalidade ainda não está implementada.", "Em breve", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                status = UsuarioController.InsertPessoa(TxtUserName.Text, TxtPNome.Text, TxtSNome.Text, TxtEmail.Text, TxtSenha.Text, TxtCargo.Text);
+                if (status == "sucesso")
+                {
+                    MessageBox.Show("Cadastro efetuado com sucesso.\nClique em OK para voltar a tela de login.", "Bem vindo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else if (status == "falha")
+                {
+                    MessageBox.Show("Ocorreu um erro ao efetuar ser cadastro.\nCaso persista, contate o suporte.", "Falha", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    MessageBox.Show(status, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BtnDisp_Click(object sender, EventArgs e)
+        {
+            if (UsuarioController.VerificarNome(TxtUserName.Text))
+            {
+                MessageBox.Show("Este nome está disponível para uso.", "Disponível", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Este nome de usuário está sendo usado no momento.\nInsira outro e tente novamente.", "Não disponível", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }
