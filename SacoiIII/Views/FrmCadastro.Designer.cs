@@ -31,19 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastro));
             this.PnlMenu = new System.Windows.Forms.Panel();
+            this.BtnInfo = new System.Windows.Forms.Button();
             this.BtnSair = new System.Windows.Forms.Button();
             this.Hint = new System.Windows.Forms.ToolTip(this.components);
             this.TxtPNome = new System.Windows.Forms.TextBox();
             this.TxtSNome = new System.Windows.Forms.TextBox();
             this.TxtUserName = new System.Windows.Forms.TextBox();
-            this.BtnDisp = new System.Windows.Forms.Button();
-            this.BtnLimpar = new System.Windows.Forms.Button();
-            this.BtnCadastro = new System.Windows.Forms.Button();
             this.TxtRSenha = new System.Windows.Forms.TextBox();
             this.TxtSenha = new System.Windows.Forms.TextBox();
-            this.ChkSenha = new System.Windows.Forms.CheckBox();
             this.TxtCargo = new System.Windows.Forms.TextBox();
             this.TxtEmail = new System.Windows.Forms.TextBox();
+            this.BtnCadastro = new System.Windows.Forms.Button();
+            this.ChkSenha = new System.Windows.Forms.CheckBox();
+            this.BtnDisp = new System.Windows.Forms.Button();
+            this.BtnLimpar = new System.Windows.Forms.Button();
             this.PnlButtons = new System.Windows.Forms.Panel();
             this.PnlContent = new System.Windows.Forms.Panel();
             this.LblCargo = new System.Windows.Forms.Label();
@@ -63,12 +64,34 @@
             this.PnlMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.PnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlMenu.Controls.Add(this.BtnInfo);
             this.PnlMenu.Controls.Add(this.BtnSair);
             this.PnlMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlMenu.Location = new System.Drawing.Point(0, 0);
             this.PnlMenu.Name = "PnlMenu";
-            this.PnlMenu.Size = new System.Drawing.Size(373, 41);
+            this.PnlMenu.Size = new System.Drawing.Size(435, 40);
             this.PnlMenu.TabIndex = 1;
+            // 
+            // BtnInfo
+            // 
+            this.BtnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnInfo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnInfo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnInfo.FlatAppearance.BorderSize = 0;
+            this.BtnInfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.BtnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInfo.ForeColor = System.Drawing.Color.White;
+            this.BtnInfo.Image = global::SacoiIII.Properties.Resources.info;
+            this.BtnInfo.Location = new System.Drawing.Point(250, 0);
+            this.BtnInfo.Name = "BtnInfo";
+            this.BtnInfo.Size = new System.Drawing.Size(90, 38);
+            this.BtnInfo.TabIndex = 2;
+            this.BtnInfo.TabStop = false;
+            this.BtnInfo.Text = " So&bre";
+            this.BtnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Hint.SetToolTip(this.BtnInfo, "Clique aqui para maid informações sobre o programa");
+            this.BtnInfo.UseVisualStyleBackColor = true;
+            this.BtnInfo.Click += new System.EventHandler(this.BtnInfo_Click);
             // 
             // BtnSair
             // 
@@ -81,9 +104,9 @@
             this.BtnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSair.ForeColor = System.Drawing.Color.White;
             this.BtnSair.Image = global::SacoiIII.Properties.Resources.error_24w;
-            this.BtnSair.Location = new System.Drawing.Point(291, 0);
+            this.BtnSair.Location = new System.Drawing.Point(340, 0);
             this.BtnSair.Name = "BtnSair";
-            this.BtnSair.Size = new System.Drawing.Size(80, 39);
+            this.BtnSair.Size = new System.Drawing.Size(93, 38);
             this.BtnSair.TabIndex = 0;
             this.BtnSair.TabStop = false;
             this.BtnSair.Text = " &Fechar";
@@ -94,27 +117,104 @@
             // 
             // TxtPNome
             // 
-            this.TxtPNome.Location = new System.Drawing.Point(12, 26);
+            this.TxtPNome.Location = new System.Drawing.Point(14, 30);
             this.TxtPNome.Name = "TxtPNome";
-            this.TxtPNome.Size = new System.Drawing.Size(161, 21);
+            this.TxtPNome.Size = new System.Drawing.Size(187, 21);
             this.TxtPNome.TabIndex = 0;
             this.Hint.SetToolTip(this.TxtPNome, "Preencha com seu primeiro nome");
             // 
             // TxtSNome
             // 
-            this.TxtSNome.Location = new System.Drawing.Point(189, 26);
+            this.TxtSNome.Location = new System.Drawing.Point(220, 30);
             this.TxtSNome.Name = "TxtSNome";
-            this.TxtSNome.Size = new System.Drawing.Size(161, 21);
+            this.TxtSNome.Size = new System.Drawing.Size(187, 21);
             this.TxtSNome.TabIndex = 1;
             this.Hint.SetToolTip(this.TxtSNome, "Preencha com seu sobrenome");
             // 
             // TxtUserName
             // 
-            this.TxtUserName.Location = new System.Drawing.Point(11, 82);
+            this.TxtUserName.Location = new System.Drawing.Point(13, 85);
             this.TxtUserName.Name = "TxtUserName";
-            this.TxtUserName.Size = new System.Drawing.Size(161, 21);
+            this.TxtUserName.Size = new System.Drawing.Size(187, 21);
             this.TxtUserName.TabIndex = 2;
             this.Hint.SetToolTip(this.TxtUserName, "Preencha com seu nome de usuário");
+            // 
+            // TxtRSenha
+            // 
+            this.TxtRSenha.Location = new System.Drawing.Point(220, 203);
+            this.TxtRSenha.Name = "TxtRSenha";
+            this.TxtRSenha.Size = new System.Drawing.Size(187, 21);
+            this.TxtRSenha.TabIndex = 6;
+            this.Hint.SetToolTip(this.TxtRSenha, "Repita sua senha");
+            this.TxtRSenha.UseSystemPasswordChar = true;
+            // 
+            // TxtSenha
+            // 
+            this.TxtSenha.Location = new System.Drawing.Point(14, 203);
+            this.TxtSenha.Name = "TxtSenha";
+            this.TxtSenha.Size = new System.Drawing.Size(187, 21);
+            this.TxtSenha.TabIndex = 5;
+            this.Hint.SetToolTip(this.TxtSenha, "Preencha com sua senha");
+            this.TxtSenha.UseSystemPasswordChar = true;
+            // 
+            // TxtCargo
+            // 
+            this.TxtCargo.Location = new System.Drawing.Point(220, 143);
+            this.TxtCargo.Name = "TxtCargo";
+            this.TxtCargo.Size = new System.Drawing.Size(187, 21);
+            this.TxtCargo.TabIndex = 4;
+            this.Hint.SetToolTip(this.TxtCargo, "Digite seu cargo");
+            // 
+            // TxtEmail
+            // 
+            this.TxtEmail.Location = new System.Drawing.Point(14, 143);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(187, 21);
+            this.TxtEmail.TabIndex = 3;
+            this.Hint.SetToolTip(this.TxtEmail, "Preencha com seu email");
+            // 
+            // BtnCadastro
+            // 
+            this.BtnCadastro.FlatAppearance.BorderSize = 0;
+            this.BtnCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(51)))));
+            this.BtnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCadastro.Image = global::SacoiIII.Properties.Resources.success_32b;
+            this.BtnCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnCadastro.Location = new System.Drawing.Point(19, 7);
+            this.BtnCadastro.Name = "BtnCadastro";
+            this.BtnCadastro.Size = new System.Drawing.Size(183, 75);
+            this.BtnCadastro.TabIndex = 2;
+            this.BtnCadastro.TabStop = false;
+            this.BtnCadastro.Text = " Efetuar &cadastro";
+            this.BtnCadastro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Hint.SetToolTip(this.BtnCadastro, "Clique aqui para efetuar seu cadastro");
+            this.BtnCadastro.UseVisualStyleBackColor = true;
+            this.BtnCadastro.Click += new System.EventHandler(this.BtnCadastro_Click);
+            this.BtnCadastro.MouseEnter += new System.EventHandler(this.BtnCadastro_MouseEnter);
+            this.BtnCadastro.MouseLeave += new System.EventHandler(this.BtnCadastro_MouseLeave);
+            // 
+            // ChkSenha
+            // 
+            this.ChkSenha.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ChkSenha.AutoSize = true;
+            this.ChkSenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChkSenha.FlatAppearance.BorderSize = 0;
+            this.ChkSenha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.ChkSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChkSenha.Image = global::SacoiIII.Properties.Resources.pin_code_24b;
+            this.ChkSenha.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ChkSenha.Location = new System.Drawing.Point(274, 232);
+            this.ChkSenha.Name = "ChkSenha";
+            this.ChkSenha.Size = new System.Drawing.Size(115, 30);
+            this.ChkSenha.TabIndex = 11;
+            this.ChkSenha.TabStop = false;
+            this.ChkSenha.Text = " Exibir senha";
+            this.ChkSenha.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Hint.SetToolTip(this.ChkSenha, "Clique para exibir sua senha");
+            this.ChkSenha.UseVisualStyleBackColor = true;
+            this.ChkSenha.CheckedChanged += new System.EventHandler(this.ChkSenha_CheckedChanged);
+            this.ChkSenha.MouseEnter += new System.EventHandler(this.ChkSenha_MouseEnter);
+            this.ChkSenha.MouseLeave += new System.EventHandler(this.ChkSenha_MouseLeave);
             // 
             // BtnDisp
             // 
@@ -124,10 +224,10 @@
             this.BtnDisp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDisp.Image = global::SacoiIII.Properties.Resources.search_16b;
             this.BtnDisp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnDisp.Location = new System.Drawing.Point(196, 63);
+            this.BtnDisp.Location = new System.Drawing.Point(229, 63);
             this.BtnDisp.Name = "BtnDisp";
             this.BtnDisp.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.BtnDisp.Size = new System.Drawing.Size(154, 40);
+            this.BtnDisp.Size = new System.Drawing.Size(180, 46);
             this.BtnDisp.TabIndex = 6;
             this.BtnDisp.TabStop = false;
             this.BtnDisp.Text = "Verificar disponibilidade";
@@ -146,9 +246,9 @@
             this.BtnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpar.Image = global::SacoiIII.Properties.Resources.backspace_32b;
             this.BtnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnLimpar.Location = new System.Drawing.Point(196, 6);
+            this.BtnLimpar.Location = new System.Drawing.Point(229, 7);
             this.BtnLimpar.Name = "BtnLimpar";
-            this.BtnLimpar.Size = new System.Drawing.Size(157, 67);
+            this.BtnLimpar.Size = new System.Drawing.Size(183, 75);
             this.BtnLimpar.TabIndex = 3;
             this.BtnLimpar.TabStop = false;
             this.BtnLimpar.Text = " &Limpar campos";
@@ -159,92 +259,15 @@
             this.BtnLimpar.MouseEnter += new System.EventHandler(this.BtnLimpar_MouseEnter);
             this.BtnLimpar.MouseLeave += new System.EventHandler(this.BtnLimpar_MouseLeave);
             // 
-            // BtnCadastro
-            // 
-            this.BtnCadastro.FlatAppearance.BorderSize = 0;
-            this.BtnCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(51)))));
-            this.BtnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCadastro.Image = global::SacoiIII.Properties.Resources.success_32b;
-            this.BtnCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnCadastro.Location = new System.Drawing.Point(16, 6);
-            this.BtnCadastro.Name = "BtnCadastro";
-            this.BtnCadastro.Size = new System.Drawing.Size(157, 67);
-            this.BtnCadastro.TabIndex = 2;
-            this.BtnCadastro.TabStop = false;
-            this.BtnCadastro.Text = " Efetuar &cadastro";
-            this.BtnCadastro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Hint.SetToolTip(this.BtnCadastro, "Clique aqui para efetuar seu cadastro");
-            this.BtnCadastro.UseVisualStyleBackColor = true;
-            this.BtnCadastro.Click += new System.EventHandler(this.BtnCadastro_Click);
-            this.BtnCadastro.MouseEnter += new System.EventHandler(this.BtnCadastro_MouseEnter);
-            this.BtnCadastro.MouseLeave += new System.EventHandler(this.BtnCadastro_MouseLeave);
-            // 
-            // TxtRSenha
-            // 
-            this.TxtRSenha.Location = new System.Drawing.Point(189, 200);
-            this.TxtRSenha.Name = "TxtRSenha";
-            this.TxtRSenha.Size = new System.Drawing.Size(161, 21);
-            this.TxtRSenha.TabIndex = 6;
-            this.Hint.SetToolTip(this.TxtRSenha, "Repita sua senha");
-            this.TxtRSenha.UseSystemPasswordChar = true;
-            // 
-            // TxtSenha
-            // 
-            this.TxtSenha.Location = new System.Drawing.Point(12, 200);
-            this.TxtSenha.Name = "TxtSenha";
-            this.TxtSenha.Size = new System.Drawing.Size(161, 21);
-            this.TxtSenha.TabIndex = 5;
-            this.Hint.SetToolTip(this.TxtSenha, "Preencha com sua senha");
-            this.TxtSenha.UseSystemPasswordChar = true;
-            // 
-            // ChkSenha
-            // 
-            this.ChkSenha.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ChkSenha.AutoSize = true;
-            this.ChkSenha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ChkSenha.FlatAppearance.BorderSize = 0;
-            this.ChkSenha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
-            this.ChkSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ChkSenha.Image = global::SacoiIII.Properties.Resources.pin_code_24b;
-            this.ChkSenha.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ChkSenha.Location = new System.Drawing.Point(235, 225);
-            this.ChkSenha.Name = "ChkSenha";
-            this.ChkSenha.Size = new System.Drawing.Size(115, 30);
-            this.ChkSenha.TabIndex = 11;
-            this.ChkSenha.TabStop = false;
-            this.ChkSenha.Text = " Exibir senha";
-            this.ChkSenha.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Hint.SetToolTip(this.ChkSenha, "Clique para exibir sua senha");
-            this.ChkSenha.UseVisualStyleBackColor = true;
-            this.ChkSenha.CheckedChanged += new System.EventHandler(this.ChkSenha_CheckedChanged);
-            this.ChkSenha.MouseEnter += new System.EventHandler(this.ChkSenha_MouseEnter);
-            this.ChkSenha.MouseLeave += new System.EventHandler(this.ChkSenha_MouseLeave);
-            // 
-            // TxtCargo
-            // 
-            this.TxtCargo.Location = new System.Drawing.Point(189, 139);
-            this.TxtCargo.Name = "TxtCargo";
-            this.TxtCargo.Size = new System.Drawing.Size(161, 21);
-            this.TxtCargo.TabIndex = 4;
-            this.Hint.SetToolTip(this.TxtCargo, "Digite seu cargo");
-            // 
-            // TxtEmail
-            // 
-            this.TxtEmail.Location = new System.Drawing.Point(12, 139);
-            this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(161, 21);
-            this.TxtEmail.TabIndex = 3;
-            this.Hint.SetToolTip(this.TxtEmail, "Preencha com seu email");
-            // 
             // PnlButtons
             // 
             this.PnlButtons.BackColor = System.Drawing.Color.Transparent;
             this.PnlButtons.Controls.Add(this.BtnLimpar);
             this.PnlButtons.Controls.Add(this.BtnCadastro);
             this.PnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlButtons.Location = new System.Drawing.Point(0, 309);
+            this.PnlButtons.Location = new System.Drawing.Point(0, 320);
             this.PnlButtons.Name = "PnlButtons";
-            this.PnlButtons.Size = new System.Drawing.Size(373, 82);
+            this.PnlButtons.Size = new System.Drawing.Size(435, 89);
             this.PnlButtons.TabIndex = 2;
             // 
             // PnlContent
@@ -268,16 +291,16 @@
             this.PnlContent.Controls.Add(this.LblPNome);
             this.PnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlContent.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PnlContent.Location = new System.Drawing.Point(0, 41);
+            this.PnlContent.Location = new System.Drawing.Point(0, 40);
             this.PnlContent.Name = "PnlContent";
-            this.PnlContent.Size = new System.Drawing.Size(373, 268);
+            this.PnlContent.Size = new System.Drawing.Size(435, 280);
             this.PnlContent.TabIndex = 3;
             // 
             // LblCargo
             // 
             this.LblCargo.AutoSize = true;
             this.LblCargo.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCargo.Location = new System.Drawing.Point(179, 120);
+            this.LblCargo.Location = new System.Drawing.Point(209, 121);
             this.LblCargo.Name = "LblCargo";
             this.LblCargo.Size = new System.Drawing.Size(115, 16);
             this.LblCargo.TabIndex = 19;
@@ -287,7 +310,7 @@
             // 
             this.LblEmail.AutoSize = true;
             this.LblEmail.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEmail.Location = new System.Drawing.Point(3, 120);
+            this.LblEmail.Location = new System.Drawing.Point(3, 121);
             this.LblEmail.Name = "LblEmail";
             this.LblEmail.Size = new System.Drawing.Size(113, 16);
             this.LblEmail.TabIndex = 18;
@@ -297,7 +320,7 @@
             // 
             this.LblRSenha.AutoSize = true;
             this.LblRSenha.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRSenha.Location = new System.Drawing.Point(179, 181);
+            this.LblRSenha.Location = new System.Drawing.Point(209, 181);
             this.LblRSenha.Name = "LblRSenha";
             this.LblRSenha.Size = new System.Drawing.Size(123, 16);
             this.LblRSenha.TabIndex = 10;
@@ -327,7 +350,7 @@
             // 
             this.LblSNome.AutoSize = true;
             this.LblSNome.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSNome.Location = new System.Drawing.Point(179, 7);
+            this.LblSNome.Location = new System.Drawing.Point(209, 8);
             this.LblSNome.Name = "LblSNome";
             this.LblSNome.Size = new System.Drawing.Size(151, 16);
             this.LblSNome.TabIndex = 1;
@@ -337,7 +360,7 @@
             // 
             this.LblPNome.AutoSize = true;
             this.LblPNome.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPNome.Location = new System.Drawing.Point(3, 7);
+            this.LblPNome.Location = new System.Drawing.Point(3, 8);
             this.LblPNome.Name = "LblPNome";
             this.LblPNome.Size = new System.Drawing.Size(170, 16);
             this.LblPNome.TabIndex = 0;
@@ -346,19 +369,20 @@
             // FrmCadastro
             // 
             this.AcceptButton = this.BtnCadastro;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnSair;
-            this.ClientSize = new System.Drawing.Size(373, 391);
+            this.ClientSize = new System.Drawing.Size(435, 409);
             this.Controls.Add(this.PnlContent);
             this.Controls.Add(this.PnlButtons);
             this.Controls.Add(this.PnlMenu);
+            this.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCadastro";
+            this.Text = "SACOI - Cadastro";
             this.PnlMenu.ResumeLayout(false);
             this.PnlButtons.ResumeLayout(false);
             this.PnlContent.ResumeLayout(false);
@@ -392,5 +416,6 @@
         private System.Windows.Forms.TextBox TxtEmail;
         private System.Windows.Forms.Label LblCargo;
         private System.Windows.Forms.Label LblEmail;
+        private System.Windows.Forms.Button BtnInfo;
     }
 }

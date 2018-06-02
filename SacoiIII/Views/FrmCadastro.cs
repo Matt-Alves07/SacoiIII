@@ -182,14 +182,28 @@ namespace SacoiIII.Views
 
         private void BtnDisp_Click(object sender, EventArgs e)
         {
-            if (UsuarioController.VerificarNome(TxtUserName.Text))
+            if (TxtUserName.Text != "")
             {
-                MessageBox.Show("Este nome está disponível para uso.", "Disponível", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (UsuarioController.VerificarNome(TxtUserName.Text))
+                {
+                    MessageBox.Show("Este nome está disponível para uso.", "Disponível", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Este nome de usuário está sendo usado no momento.\nInsira outro e tente novamente.", "Não disponível", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             else
             {
-                MessageBox.Show("Este nome de usuário está sendo usado no momento.\nInsira outro e tente novamente.", "Não disponível", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("O campo nome de usuário deve estar preenchido para executar essa funcionalidade.", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TxtUserName.Focus();
             }
+        }
+
+        private void BtnInfo_Click(object sender, EventArgs e)
+        {
+            FrmSobre sobre = new FrmSobre();
+            sobre.ShowDialog();
         }
     }
 }

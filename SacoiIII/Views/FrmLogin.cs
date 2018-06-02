@@ -44,7 +44,7 @@ namespace SacoiIII
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
             FrmCadastro frmCadastro = new FrmCadastro();
-            frmCadastro.ShowDialog();
+            frmCadastro.Show();
         }
 
         private void BtnLogin_MouseEnter(object sender, EventArgs e)
@@ -91,11 +91,17 @@ namespace SacoiIII
                     if (result[1] == "true")
                     {
                         MessageBox.Show("Login efetuado com sucesso!\nClique em OK para continuar para a tela inicial.", "Bem-vindo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        FrmHomeA homeA = new FrmHomeA();
+                        homeA.Show();
+                        Hide();
                     }
                     //Existindo registro, Exibe mensagem informando que foi encontrado; a segunda posição sendo igual a "false", redireciona para a tela de Usuários
                     else if (result[1] == "false")
                     {
                         MessageBox.Show("Login efetuado com sucesso!\nClique em OK para continuar para a tela inicial.", "Bem-vindo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        FrmHomeU homeU = new FrmHomeU();
+                        homeU.Show();
+                        Hide();
                     }
                     //Não existindo registro na segunda posição do array, informa que houve um erro e não redireciona para nenhuma tela
                     else
@@ -153,6 +159,12 @@ namespace SacoiIII
             {
                 return true;
             }
+        }
+
+        private void BtnInfo_Click(object sender, EventArgs e)
+        {
+            FrmSobre sobre = new FrmSobre();
+            sobre.ShowDialog();
         }
     }
 }

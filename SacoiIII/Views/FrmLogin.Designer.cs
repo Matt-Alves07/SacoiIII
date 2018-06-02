@@ -41,6 +41,7 @@
             this.BtnSair = new System.Windows.Forms.Button();
             this.ChkSenha = new System.Windows.Forms.CheckBox();
             this.BtnCadastrar = new System.Windows.Forms.Button();
+            this.BtnInfo = new System.Windows.Forms.Button();
             this.PnlMenu.SuspendLayout();
             this.PnlButtons.SuspendLayout();
             this.SuspendLayout();
@@ -50,11 +51,12 @@
             this.PnlMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.PnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlMenu.Controls.Add(this.BtnInfo);
             this.PnlMenu.Controls.Add(this.BtnSair);
             this.PnlMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlMenu.Location = new System.Drawing.Point(0, 0);
             this.PnlMenu.Name = "PnlMenu";
-            this.PnlMenu.Size = new System.Drawing.Size(365, 42);
+            this.PnlMenu.Size = new System.Drawing.Size(365, 40);
             this.PnlMenu.TabIndex = 0;
             // 
             // PnlButtons
@@ -64,9 +66,9 @@
             this.PnlButtons.Controls.Add(this.BtnCadastrar);
             this.PnlButtons.Controls.Add(this.BtnLogin);
             this.PnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlButtons.Location = new System.Drawing.Point(0, 310);
+            this.PnlButtons.Location = new System.Drawing.Point(0, 284);
             this.PnlButtons.Name = "PnlButtons";
-            this.PnlButtons.Size = new System.Drawing.Size(365, 95);
+            this.PnlButtons.Size = new System.Drawing.Size(365, 85);
             this.PnlButtons.TabIndex = 1;
             // 
             // LblUserName
@@ -113,9 +115,9 @@
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogin.Image = global::SacoiIII.Properties.Resources.login_32b;
             this.BtnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnLogin.Location = new System.Drawing.Point(14, 3);
+            this.BtnLogin.Location = new System.Drawing.Point(14, 5);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(157, 88);
+            this.BtnLogin.Size = new System.Drawing.Size(157, 75);
             this.BtnLogin.TabIndex = 0;
             this.BtnLogin.TabStop = false;
             this.BtnLogin.Text = " Efetuar &Login";
@@ -138,7 +140,7 @@
             this.BtnSair.Image = global::SacoiIII.Properties.Resources.power;
             this.BtnSair.Location = new System.Drawing.Point(288, 0);
             this.BtnSair.Name = "BtnSair";
-            this.BtnSair.Size = new System.Drawing.Size(75, 40);
+            this.BtnSair.Size = new System.Drawing.Size(75, 38);
             this.BtnSair.TabIndex = 0;
             this.BtnSair.TabStop = false;
             this.BtnSair.Text = " &Sair";
@@ -177,9 +179,9 @@
             this.BtnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCadastrar.Image = global::SacoiIII.Properties.Resources.plus_32b;
             this.BtnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnCadastrar.Location = new System.Drawing.Point(194, 3);
+            this.BtnCadastrar.Location = new System.Drawing.Point(194, 5);
             this.BtnCadastrar.Name = "BtnCadastrar";
-            this.BtnCadastrar.Size = new System.Drawing.Size(157, 88);
+            this.BtnCadastrar.Size = new System.Drawing.Size(157, 75);
             this.BtnCadastrar.TabIndex = 1;
             this.BtnCadastrar.TabStop = false;
             this.BtnCadastrar.Text = " &Cadastrar";
@@ -190,13 +192,34 @@
             this.BtnCadastrar.MouseEnter += new System.EventHandler(this.BtnCadastrar_MouseEnter);
             this.BtnCadastrar.MouseLeave += new System.EventHandler(this.BtnCadastrar_MouseLeave);
             // 
+            // BtnInfo
+            // 
+            this.BtnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnInfo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnInfo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnInfo.FlatAppearance.BorderSize = 0;
+            this.BtnInfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.BtnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInfo.ForeColor = System.Drawing.Color.White;
+            this.BtnInfo.Image = global::SacoiIII.Properties.Resources.info;
+            this.BtnInfo.Location = new System.Drawing.Point(211, 0);
+            this.BtnInfo.Name = "BtnInfo";
+            this.BtnInfo.Size = new System.Drawing.Size(77, 38);
+            this.BtnInfo.TabIndex = 1;
+            this.BtnInfo.TabStop = false;
+            this.BtnInfo.Text = " So&bre";
+            this.BtnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Hint.SetToolTip(this.BtnInfo, "Clique aqui para maid informações sobre o programa");
+            this.BtnInfo.UseVisualStyleBackColor = true;
+            this.BtnInfo.Click += new System.EventHandler(this.BtnInfo_Click);
+            // 
             // FrmLogin
             // 
             this.AcceptButton = this.BtnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnSair;
-            this.ClientSize = new System.Drawing.Size(365, 405);
+            this.ClientSize = new System.Drawing.Size(365, 369);
             this.Controls.Add(this.ChkSenha);
             this.Controls.Add(this.TxtSenha);
             this.Controls.Add(this.LblSenha);
@@ -232,6 +255,7 @@
         private System.Windows.Forms.TextBox TxtSenha;
         private System.Windows.Forms.Label LblSenha;
         private System.Windows.Forms.CheckBox ChkSenha;
+        private System.Windows.Forms.Button BtnInfo;
     }
 }
 

@@ -9,3 +9,11 @@
 -> Criados os Controllers Pessoa e Usuario, o segundo herdando os metodos de Pessoa, e Pessoa NÃO podendo ser instanciado;
 -> Feitas pequenas correções na atribuição de valores nas variáveis do MySQL;
 -> Funcionalidades EfetuarCadastro, VerificarDisponibilidade e EfetuarLogin estão funcionando, mas ainda falta criar as telas home.
+
+02/06/2018 -> O que foi feito:
+-> Criada a tela home para usuários;
+-> Criada a tela home para administradores;
+-> Criada a tela sobre, exibindo as principais informações do projeto e o email para contato;
+-> Alteração na fonte da tela de cadastro para se adequar ao restante do sistema;
+-> Alteração do tamanho dos botões inferiores das telas de login e cadastro;
+-> Alteração da funcionalidade de efetuar login, qua agora aponto para as telas home usuário e home administrador, dependendo do nível de acesso do usuário que efetue o login.
