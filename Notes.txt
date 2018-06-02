@@ -17,3 +17,11 @@
 -> Alteração na fonte da tela de cadastro para se adequar ao restante do sistema;
 -> Alteração do tamanho dos botões inferiores das telas de login e cadastro;
 -> Alteração da funcionalidade de efetuar login, qua agora aponto para as telas home usuário e home administrador, dependendo do nível de acesso do usuário que efetue o login.
+
+02/06/2018 (Segundo Commit) -> O que foi feito:
+-> Edição da tela home de administradores para acrescentar o painel info, onde ficam: imagem de administrador, mensagem de boas vindas(Olá + nome de usuário) e os botões de uso de um administrador do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
+-> Edição da tela home de usuários para acrescentar o painel info, onde ficam: imagem de usuário, mensagem de boas vindas(Olá + nome de usuário) e os botões de uso de um usuário do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
+-> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irá listar as mensagens enviadas e recebidas por um administrador que tenha efetuado login);
+-> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irá listar as mensagens recebidas por um usuário que tenha efetuado login);
+-> Criada a tela que lista os usuários cadastrados no sistema, mas também está implementado apenas o botão fechar(Irá listar todos os usuários cadastrados no sistema, sejam usuários ou administradores);
+-> Adição dos icones necessários para os novos botões que foram criados nas telas home de usuário e administrador.

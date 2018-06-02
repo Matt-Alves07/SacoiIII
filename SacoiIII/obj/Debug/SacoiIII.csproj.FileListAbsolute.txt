@@ -16,3 +16,6 @@ C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.csproj
 C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmSobre.resources
 C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmHomeA.resources
 C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmHomeU.resources
+C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmUserList.resources
+C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmMessageA.resources
+C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmMessageU.resources

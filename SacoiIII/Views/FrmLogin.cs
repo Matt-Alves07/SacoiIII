@@ -91,7 +91,7 @@ namespace SacoiIII
                     if (result[1] == "true")
                     {
                         MessageBox.Show("Login efetuado com sucesso!\nClique em OK para continuar para a tela inicial.", "Bem-vindo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        FrmHomeA homeA = new FrmHomeA();
+                        FrmHomeA homeA = new FrmHomeA(TxtUserName.Text);
                         homeA.Show();
                         Hide();
                     }
@@ -99,7 +99,7 @@ namespace SacoiIII
                     else if (result[1] == "false")
                     {
                         MessageBox.Show("Login efetuado com sucesso!\nClique em OK para continuar para a tela inicial.", "Bem-vindo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        FrmHomeU homeU = new FrmHomeU();
+                        FrmHomeU homeU = new FrmHomeU(TxtUserName.Text);
                         homeU.Show();
                         Hide();
                     }
