@@ -127,11 +127,11 @@
   <data name="search_16w" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_16w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="manager-profile_64b" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\manager-profile_64b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pin-code_24w" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pin-code_24w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_64b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_64b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_Messages_206461" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_Messages_206461.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,8 +157,8 @@
   <data name="email_24w" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\email_24w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="manager-profile_64b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manager-profile_64b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user-list_24w" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-list_24w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,6 +172,9 @@
   <data name="power" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\power.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pin-code_24b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pin-code_24b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="success_32w" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\success_32w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -184,13 +187,16 @@
   <data name="search_16b" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_16b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pin-code_24b" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pin-code_24b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plus_32w" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus_32w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_64b" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_64b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="share-option_24b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\share-option_24b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="share-option_24w" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\share-option_24w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

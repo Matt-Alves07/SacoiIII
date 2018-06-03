@@ -25,3 +25,9 @@
 -> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irá listar as mensagens recebidas por um usuário que tenha efetuado login);
 -> Criada a tela que lista os usuários cadastrados no sistema, mas também está implementado apenas o botão fechar(Irá listar todos os usuários cadastrados no sistema, sejam usuários ou administradores);
 -> Adição dos icones necessários para os novos botões que foram criados nas telas home de usuário e administrador.
+
+02/06/2018 (Terceiro Commit) -> O que foi feito:
+-> Cópia dos arquivos de scripts para o repositório atual;
+-> Adição de scripts relativos a notificações(Importante: Existe uma correção referente a tabela de notificações no primeiro que vc deve executar);
+-> Criação da tela feed, para ser exibida como filha das telas home(Já está como filha);
+-> Criação dos arquivos Constants, DTO, DAO e Controller relativos a notificações(Já funcionando o inserir e, eu acho, o exibir notificações).

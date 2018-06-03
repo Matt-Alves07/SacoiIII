@@ -273,6 +273,26 @@ namespace SacoiIII.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap share_option_24b {
+            get {
+                object obj = ResourceManager.GetObject("share-option_24b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap share_option_24w {
+            get {
+                object obj = ResourceManager.GetObject("share-option_24w", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap success_32b {
             get {
                 object obj = ResourceManager.GetObject("success_32b", resourceCulture);

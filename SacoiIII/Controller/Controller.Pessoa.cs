@@ -21,7 +21,7 @@ namespace SacoiIII.Controller
             //Atribuição de valor nos atributos do DTO acessados pela camada DAO para realizar o insert no banco de dados posteriormente
             PessoaDAO.SetPessoa(_user_name, _p_nome, _s_nome, _email, _senha, _cargo);
 
-            //Chamada do metodo que faz executa a Procedure Adicionar Usuario no banco de dados
+            //Chamada do metodo que executa a Procedure Adicionar Usuario no banco de dados
             return PessoaDAO.InsertPessoa();
         }
         #endregion

@@ -19,3 +19,4 @@ C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.
 C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmUserList.resources
 C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmMessageA.resources
 C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmMessageU.resources
+C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmFeed.resources
