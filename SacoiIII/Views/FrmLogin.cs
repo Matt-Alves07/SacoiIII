@@ -23,7 +23,7 @@ namespace SacoiIII
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realemte sair?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente sair?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 Application.Exit();
             }

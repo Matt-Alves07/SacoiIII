@@ -34,8 +34,6 @@ namespace SacoiIII.Views
         {
             if (MessageBox.Show("Deseja realmente sair?\nVocê terá de efetuar login novamente para voltar.", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                FrmLogin login = new FrmLogin();
-                login.Show();
                 Close();
             }
         }
