@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.PnlMenu = new System.Windows.Forms.Panel();
+            this.BtnInfo = new System.Windows.Forms.Button();
+            this.BtnSair = new System.Windows.Forms.Button();
             this.PnlButtons = new System.Windows.Forms.Panel();
+            this.BtnCadastrar = new System.Windows.Forms.Button();
+            this.BtnLogin = new System.Windows.Forms.Button();
             this.Hint = new System.Windows.Forms.ToolTip(this.components);
             this.LblUserName = new System.Windows.Forms.Label();
             this.TxtUserName = new System.Windows.Forms.TextBox();
             this.TxtSenha = new System.Windows.Forms.TextBox();
             this.LblSenha = new System.Windows.Forms.Label();
-            this.BtnLogin = new System.Windows.Forms.Button();
-            this.BtnSair = new System.Windows.Forms.Button();
             this.ChkSenha = new System.Windows.Forms.CheckBox();
-            this.BtnCadastrar = new System.Windows.Forms.Button();
-            this.BtnInfo = new System.Windows.Forms.Button();
             this.PnlMenu.SuspendLayout();
             this.PnlButtons.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +59,48 @@
             this.PnlMenu.Size = new System.Drawing.Size(365, 40);
             this.PnlMenu.TabIndex = 0;
             // 
+            // BtnInfo
+            // 
+            this.BtnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnInfo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnInfo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnInfo.FlatAppearance.BorderSize = 0;
+            this.BtnInfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.BtnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInfo.ForeColor = System.Drawing.Color.White;
+            this.BtnInfo.Image = global::SacoiIII.Properties.Resources.info;
+            this.BtnInfo.Location = new System.Drawing.Point(211, 0);
+            this.BtnInfo.Name = "BtnInfo";
+            this.BtnInfo.Size = new System.Drawing.Size(77, 38);
+            this.BtnInfo.TabIndex = 1;
+            this.BtnInfo.TabStop = false;
+            this.BtnInfo.Text = " So&bre";
+            this.BtnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Hint.SetToolTip(this.BtnInfo, "Clique aqui para maid informações sobre o programa");
+            this.BtnInfo.UseVisualStyleBackColor = true;
+            this.BtnInfo.Click += new System.EventHandler(this.BtnInfo_Click);
+            // 
+            // BtnSair
+            // 
+            this.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSair.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnSair.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnSair.FlatAppearance.BorderSize = 0;
+            this.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSair.ForeColor = System.Drawing.Color.White;
+            this.BtnSair.Image = global::SacoiIII.Properties.Resources.power;
+            this.BtnSair.Location = new System.Drawing.Point(288, 0);
+            this.BtnSair.Name = "BtnSair";
+            this.BtnSair.Size = new System.Drawing.Size(75, 38);
+            this.BtnSair.TabIndex = 0;
+            this.BtnSair.TabStop = false;
+            this.BtnSair.Text = " &Sair";
+            this.BtnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Hint.SetToolTip(this.BtnSair, "Clique aqui para sair");
+            this.BtnSair.UseVisualStyleBackColor = true;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
+            // 
             // PnlButtons
             // 
             this.PnlButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -70,6 +112,47 @@
             this.PnlButtons.Name = "PnlButtons";
             this.PnlButtons.Size = new System.Drawing.Size(365, 85);
             this.PnlButtons.TabIndex = 1;
+            // 
+            // BtnCadastrar
+            // 
+            this.BtnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCadastrar.FlatAppearance.BorderSize = 0;
+            this.BtnCadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.BtnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCadastrar.Image = global::SacoiIII.Properties.Resources.plus_32b;
+            this.BtnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnCadastrar.Location = new System.Drawing.Point(194, 5);
+            this.BtnCadastrar.Name = "BtnCadastrar";
+            this.BtnCadastrar.Size = new System.Drawing.Size(157, 75);
+            this.BtnCadastrar.TabIndex = 1;
+            this.BtnCadastrar.TabStop = false;
+            this.BtnCadastrar.Text = " &Cadastrar";
+            this.BtnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Hint.SetToolTip(this.BtnCadastrar, "Clique aqui para se cadastrar");
+            this.BtnCadastrar.UseVisualStyleBackColor = true;
+            this.BtnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
+            this.BtnCadastrar.MouseEnter += new System.EventHandler(this.BtnCadastrar_MouseEnter);
+            this.BtnCadastrar.MouseLeave += new System.EventHandler(this.BtnCadastrar_MouseLeave);
+            // 
+            // BtnLogin
+            // 
+            this.BtnLogin.FlatAppearance.BorderSize = 0;
+            this.BtnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(51)))));
+            this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogin.Image = global::SacoiIII.Properties.Resources.login_32b;
+            this.BtnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnLogin.Location = new System.Drawing.Point(14, 5);
+            this.BtnLogin.Name = "BtnLogin";
+            this.BtnLogin.Size = new System.Drawing.Size(157, 75);
+            this.BtnLogin.TabIndex = 0;
+            this.BtnLogin.TabStop = false;
+            this.BtnLogin.Text = " Efetuar &Login";
+            this.BtnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Hint.SetToolTip(this.BtnLogin, "Clique aqui para efetuar login");
+            this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            this.BtnLogin.MouseEnter += new System.EventHandler(this.BtnLogin_MouseEnter);
+            this.BtnLogin.MouseLeave += new System.EventHandler(this.BtnLogin_MouseLeave);
             // 
             // LblUserName
             // 
@@ -108,47 +191,6 @@
             this.LblSenha.TabIndex = 4;
             this.LblSenha.Text = "Digite sua senha:";
             // 
-            // BtnLogin
-            // 
-            this.BtnLogin.FlatAppearance.BorderSize = 0;
-            this.BtnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(51)))));
-            this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLogin.Image = global::SacoiIII.Properties.Resources.login_32b;
-            this.BtnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnLogin.Location = new System.Drawing.Point(14, 5);
-            this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(157, 75);
-            this.BtnLogin.TabIndex = 0;
-            this.BtnLogin.TabStop = false;
-            this.BtnLogin.Text = " Efetuar &Login";
-            this.BtnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Hint.SetToolTip(this.BtnLogin, "Clique aqui para efetuar login");
-            this.BtnLogin.UseVisualStyleBackColor = true;
-            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
-            this.BtnLogin.MouseEnter += new System.EventHandler(this.BtnLogin_MouseEnter);
-            this.BtnLogin.MouseLeave += new System.EventHandler(this.BtnLogin_MouseLeave);
-            // 
-            // BtnSair
-            // 
-            this.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSair.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnSair.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnSair.FlatAppearance.BorderSize = 0;
-            this.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSair.ForeColor = System.Drawing.Color.White;
-            this.BtnSair.Image = global::SacoiIII.Properties.Resources.power;
-            this.BtnSair.Location = new System.Drawing.Point(288, 0);
-            this.BtnSair.Name = "BtnSair";
-            this.BtnSair.Size = new System.Drawing.Size(75, 38);
-            this.BtnSair.TabIndex = 0;
-            this.BtnSair.TabStop = false;
-            this.BtnSair.Text = " &Sair";
-            this.BtnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Hint.SetToolTip(this.BtnSair, "Clique aqui para sair");
-            this.BtnSair.UseVisualStyleBackColor = true;
-            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
-            // 
             // ChkSenha
             // 
             this.ChkSenha.Appearance = System.Windows.Forms.Appearance.Button;
@@ -170,48 +212,6 @@
             this.ChkSenha.CheckedChanged += new System.EventHandler(this.ChkSenha_CheckedChanged);
             this.ChkSenha.MouseEnter += new System.EventHandler(this.ChkSenha_MouseEnter);
             this.ChkSenha.MouseLeave += new System.EventHandler(this.ChkSenha_MouseLeave);
-            // 
-            // BtnCadastrar
-            // 
-            this.BtnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCadastrar.FlatAppearance.BorderSize = 0;
-            this.BtnCadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.BtnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCadastrar.Image = global::SacoiIII.Properties.Resources.plus_32b;
-            this.BtnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnCadastrar.Location = new System.Drawing.Point(194, 5);
-            this.BtnCadastrar.Name = "BtnCadastrar";
-            this.BtnCadastrar.Size = new System.Drawing.Size(157, 75);
-            this.BtnCadastrar.TabIndex = 1;
-            this.BtnCadastrar.TabStop = false;
-            this.BtnCadastrar.Text = " &Cadastrar";
-            this.BtnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Hint.SetToolTip(this.BtnCadastrar, "Clique aqui para se cadastrar");
-            this.BtnCadastrar.UseVisualStyleBackColor = true;
-            this.BtnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
-            this.BtnCadastrar.MouseEnter += new System.EventHandler(this.BtnCadastrar_MouseEnter);
-            this.BtnCadastrar.MouseLeave += new System.EventHandler(this.BtnCadastrar_MouseLeave);
-            // 
-            // BtnInfo
-            // 
-            this.BtnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnInfo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnInfo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnInfo.FlatAppearance.BorderSize = 0;
-            this.BtnInfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
-            this.BtnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInfo.ForeColor = System.Drawing.Color.White;
-            this.BtnInfo.Image = global::SacoiIII.Properties.Resources.info;
-            this.BtnInfo.Location = new System.Drawing.Point(211, 0);
-            this.BtnInfo.Name = "BtnInfo";
-            this.BtnInfo.Size = new System.Drawing.Size(77, 38);
-            this.BtnInfo.TabIndex = 1;
-            this.BtnInfo.TabStop = false;
-            this.BtnInfo.Text = " So&bre";
-            this.BtnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Hint.SetToolTip(this.BtnInfo, "Clique aqui para maid informações sobre o programa");
-            this.BtnInfo.UseVisualStyleBackColor = true;
-            this.BtnInfo.Click += new System.EventHandler(this.BtnInfo_Click);
             // 
             // FrmLogin
             // 
@@ -235,6 +235,7 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SACOI - Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
             this.PnlMenu.ResumeLayout(false);
             this.PnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);

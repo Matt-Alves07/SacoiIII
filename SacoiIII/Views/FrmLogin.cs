@@ -166,5 +166,10 @@ namespace SacoiIII
             FrmSobre sobre = new FrmSobre();
             sobre.ShowDialog();
         }
+
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

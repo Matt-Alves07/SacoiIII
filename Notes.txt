@@ -19,20 +19,26 @@
 -> Alteração da funcionalidade de efetuar login, qua agora aponto para as telas home usuário e home administrador, dependendo do nú“el de acesso do usuário que efetue o login.
 
 02/06/2018 (Segundo Commit) -> O que foi feito:
--> Edição da tela home de administradores para acrescentar o painel info, onde ficam: imagem de administrador, mensagem de boas vindas(OlE+ nome de usuário) e os botões de uso de um administrador do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
--> Edição da tela home de usuários para acrescentar o painel info, onde ficam: imagem de usuário, mensagem de boas vindas(OlE+ nome de usuário) e os botões de uso de um usuário do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
--> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irElistar as mensagens enviadas e recebidas por um administrador que tenha efetuado login);
--> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irElistar as mensagens recebidas por um usuário que tenha efetuado login);
--> Criada a tela que lista os usuários cadastrados no sistema, mas também estEimplementado apenas o botão fechar(IrElistar todos os usuários cadastrados no sistema, sejam usuários ou administradores);
+-> Edição da tela home de administradores para acrescentar o painel info, onde ficam: imagem de administrador, mensagem de boas vindas(OlE+ nome de usuário) e os botões de uso de um administrador do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
+-> Edição da tela home de usuários para acrescentar o painel info, onde ficam: imagem de usuário, mensagem de boas vindas(Olá + nome de usuário) e os botões de uso de um usuário do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
+-> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irá listar as mensagens enviadas e recebidas por um administrador que tenha efetuado login);
+-> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irá listar as mensagens recebidas por um usuário que tenha efetuado login);
+-> Criada a tela que lista os usuários cadastrados no sistema, mas também estEimplementado apenas o botão fechar(Irá listar todos os usuários cadastrados no sistema, sejam usuários ou administradores);
 -> Adição dos icones necessários para os novos botões que foram criados nas telas home de usuário e administrador.
 
 02/06/2018 (Terceiro Commit) -> O que foi feito:
 -> Cópia dos arquivos de scripts para o repositório atual;
 -> Adição de scripts relativos a notificações(Importante: Existe uma correção referente a tabela de notificações no primeiro que vc deve executar);
--> Criação da tela feed, para ser exibida como filha das telas home(JEestEcomo filha);
--> Criação dos arquivos Constants, DTO, DAO e Controller relativos a notificações(JEfuncionando o inserir e, eu acho, o exibir notificações).
+-> Criação da tela feed, para ser exibida como filha das telas home(Já está como filha);
+-> Criação dos arquivos Constants, DTO, DAO e Controller relativos a notificações(Já funcionando o inserir e, eu acho, o exibir notificações).
 
 04/06/2018 -> O que foi feito:
 -> Correcao de um bug que ocorria quando o programa duplicava a tela de login, quando fechado tanto no botao de sair, quanto no "X" da janela do windows;
 -> Implementado o codigo das notificacoes;
 -> Identificado um bug que ocorre quando fazemos login e saimos do programa, ele fecha porem continua no processo.
+
+04/06/2018 -> O que foi feito(Segundo commit):
+-> Corrigido o erro que fazia com que da segunda notificação em diante tivesse uma borda em volta do texto da mensagem;
+-> Corrigido o resize do form feed ao mudar o tamnho da tela pai(seja a de usuário ou de administrador);
+-> Corrigido o erro que não parava a execução do projeto quando fechava a tela de login clicando no botão fechar.
+*Obs*.: Falta corrigir a largura das labels, para que ao invés de exibir a barra de elevador na horizontal, ele quebre a linha de acordo com o tamanho disponível.

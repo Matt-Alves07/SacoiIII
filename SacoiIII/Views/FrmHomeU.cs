@@ -21,6 +21,8 @@ namespace SacoiIII.Views
         #region Local Attributtes
         //Variáveis locais e de acesso interno exclusivamente
         private string UserName = "";
+        //Instância do form feed usado para exibir as notificações para usuário e administradores
+        FrmFeed feed = new FrmFeed();
         #endregion
 
         public FrmHomeU(string _user_name)
@@ -58,7 +60,7 @@ namespace SacoiIII.Views
 
         private void BtnRelistar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Essa funcionalidade ainda não está implementada.", "Em progresso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            feed.ExibirNotificacoes();
         }
 
         private void BtnUserAtualizar_MouseEnter(object sender, EventArgs e)
@@ -103,7 +105,6 @@ namespace SacoiIII.Views
 
         private void FrmHomeU_Load(object sender, EventArgs e)
         {
-            FrmFeed feed = new FrmFeed();
             feed.TopLevel = false;
             PnlFeed.Controls.Add(feed);
             feed.Show();
@@ -159,6 +160,12 @@ namespace SacoiIII.Views
         {
             BtnShare.ForeColor = Color.Black;
             BtnShare.Image = Properties.Resources.share_option_24b;
+        }
+
+        private void FrmHomeU_Resize(object sender, EventArgs e)
+        {
+            feed.WindowState = FormWindowState.Minimized;
+            feed.WindowState = FormWindowState.Maximized;
         }
     }
 }
