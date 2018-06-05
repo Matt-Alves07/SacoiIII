@@ -41,4 +41,9 @@
 -> Corrigido o erro que fazia com que da segunda notificação em diante tivesse uma borda em volta do texto da mensagem;
 -> Corrigido o resize do form feed ao mudar o tamnho da tela pai(seja a de usuário ou de administrador);
 -> Corrigido o erro que não parava a execução do projeto quando fechava a tela de login clicando no botão fechar.
+
+04/06/2018 -> O que foi feito(Terceiro commit):
+-> Implementado a função de atualizar a listagem de notificações ao clicar no botão Recarregar;
+-> Corrigida a mensagem exibida para o usuário(padrão e administrado), não pedindo mais para o usuário clicar em recarregar, mas recarregando mostrando as notificações mais recentes automaticamente, em caso de sucesso ao inserir a nova notificação;
+-> Criado um metodo que executa o processo de relistagem das notificações, pra agora ser executado ao clicar no botão recarregar e também após inserir uma nova notificação, evitando repetição de codigo.
 *Obs*.: Falta corrigir a largura das labels, para que ao invés de exibir a barra de elevador na horizontal, ele quebre a linha de acordo com o tamanho disponível.

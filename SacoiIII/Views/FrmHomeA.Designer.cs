@@ -307,6 +307,9 @@
             this.BtnShare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Hint.SetToolTip(this.BtnShare, "Clique aqui para enviar essa notificação");
             this.BtnShare.UseVisualStyleBackColor = false;
+            this.BtnShare.Click += new System.EventHandler(this.BtnShare_Click);
+            this.BtnShare.MouseEnter += new System.EventHandler(this.BtnShare_MouseEnter);
+            this.BtnShare.MouseLeave += new System.EventHandler(this.BtnShare_MouseLeave);
             // 
             // PnlInfo
             // 

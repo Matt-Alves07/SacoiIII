@@ -54,7 +54,7 @@ namespace SacoiIII.Views
 
         private void BtnRelistar_Click(object sender, EventArgs e)
         {
-            feed.ExibirNotificacoes();
+            RefreshNotificacao();
         }
 
         private void BtnMensagens_Click(object sender, EventArgs e)
@@ -162,7 +162,8 @@ namespace SacoiIII.Views
                 //Caso não tenha ocorrido problemas pra cadastrar a nova notificação
                 if (status == "sucesso")
                 {
-                    MessageBox.Show("Notificação cadastrada com sucesso.\nAtualize a pagina e ela estará na lista de notificações recentes", "Notificação cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Notificação cadastrada com sucesso.", "Notificação cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshNotificacao();
                     TxtNotification.Text = "";
                 }
                 //Caso tenha ocorrido algum erro generico
@@ -182,6 +183,15 @@ namespace SacoiIII.Views
         {
             feed.WindowState = FormWindowState.Minimized;
             feed.WindowState = FormWindowState.Maximized;
+        }
+
+        private void RefreshNotificacao()
+        {
+            this.feed.Close();
+            FrmFeed feed = new FrmFeed();
+            feed.TopLevel = false;
+            PnlFeed.Controls.Add(feed);
+            feed.Show();
         }
     }
 }
