@@ -55,3 +55,6 @@
 -> Feito o sistema de envio de email*;
 -> Corrigido para todas as label das notificacoes terem o tamanho exato, para ter a quebra de linha.
 *Obs:Sera necessario o teste do sistema.
+
+08/06/2018 -> O que foi feito:
+-> Sistema de email corrigido e testado.
