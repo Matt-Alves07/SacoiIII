@@ -299,11 +299,11 @@
             this.BtnShare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShare.Image = global::SacoiIII.Properties.Resources.share_option_24b;
             this.BtnShare.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnShare.Location = new System.Drawing.Point(554, 0);
+            this.BtnShare.Location = new System.Drawing.Point(540, 0);
             this.BtnShare.Name = "BtnShare";
-            this.BtnShare.Size = new System.Drawing.Size(76, 40);
+            this.BtnShare.Size = new System.Drawing.Size(90, 40);
             this.BtnShare.TabIndex = 2;
-            this.BtnShare.Text = "Enviar";
+            this.BtnShare.Text = "Notificar";
             this.BtnShare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Hint.SetToolTip(this.BtnShare, "Clique aqui para enviar essa notificação");
             this.BtnShare.UseVisualStyleBackColor = false;

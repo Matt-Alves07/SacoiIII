@@ -25,6 +25,11 @@ namespace SacoiIII.Views
         FrmFeed feed = new FrmFeed();
         #endregion
 
+        #region Usuário Controller
+        //Instâmcia do objeto UsuarioController para ser acessado para realizar operações referentes ao cadastro do mesmo
+        UsuarioController UsuarioController = new UsuarioController();
+        #endregion
+
         public FrmHomeU(string _user_name)
         {
             InitializeComponent();
@@ -63,6 +68,7 @@ namespace SacoiIII.Views
             RefreshNotificacao();
         }
 
+        #region Hover effect in buttons part 1
         private void BtnUserAtualizar_MouseEnter(object sender, EventArgs e)
         {
             BtnUserAtualizar.ForeColor = Color.White;
@@ -102,6 +108,7 @@ namespace SacoiIII.Views
         {
             BtnListarNotificacoes.ForeColor = Color.Black;
         }
+        #endregion
 
         private void FrmHomeU_Load(object sender, EventArgs e)
         {
@@ -118,7 +125,7 @@ namespace SacoiIII.Views
             //Validação caso o campo notificação não tenha sido preenchido
             if (TxtNotification.Text == "")
             {
-                MessageBox.Show("Não é possível criar uma notificação vazia.\nPreench o campo de notificação e tente novamente.", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Não é possível criar uma notificação vazia.\nPreencha o campo de notificação e tente novamente.", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             //Validação caso o tamanho do texto seja maior que o suportado pelo banco
             else if (TxtNotification.TextLength > 255)
@@ -151,6 +158,7 @@ namespace SacoiIII.Views
             }
         }
 
+        #region Hover effect in buttons part 2
         private void BtnShare_MouseEnter(object sender, EventArgs e)
         {
             BtnShare.ForeColor = Color.White;
@@ -162,11 +170,19 @@ namespace SacoiIII.Views
             BtnShare.ForeColor = Color.Black;
             BtnShare.Image = Properties.Resources.share_option_24b;
         }
+        #endregion
 
         private void FrmHomeU_Resize(object sender, EventArgs e)
         {
-            feed.WindowState = FormWindowState.Minimized;
-            feed.WindowState = FormWindowState.Maximized;
+            this.feed.WindowState = FormWindowState.Minimized;
+            this.feed.WindowState = FormWindowState.Maximized;
+
+            //Refaz esse processo para forçaros labels do form Feed se ajustarem
+            this.feed.Close();
+            FrmFeed feed = new FrmFeed();
+            feed.TopLevel = false;
+            PnlFeed.Controls.Add(feed);
+            feed.Show();
         }
 
         private void RefreshNotificacao()
@@ -176,6 +192,28 @@ namespace SacoiIII.Views
             feed.TopLevel = false;
             PnlFeed.Controls.Add(feed);
             feed.Show();
+        }
+
+        private void BtnSolModerar_Click(object sender, EventArgs e)
+        {
+            #region Local Attributes
+            string situacao = "";
+            #endregion
+
+            #region Controller Access
+            situacao = UsuarioController.SolicitarAdmin(UserName);
+            #endregion
+
+            #region Result Validation
+            if (situacao == "sucesso")
+            {
+                MessageBox.Show("Solicitação enviada.\nAguarde enquanto um dos administradores do sistema avalia seu pedido.", "Pedido realizado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else if (situacao == "solicitado")
+            {
+                MessageBox.Show("Essa solicitação já foi feita.\nAguarde enquanto um dos administradores do sistema avalia seu pedido.", "Soliciação em analise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            #endregion
         }
     }
 }

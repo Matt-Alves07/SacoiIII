@@ -48,5 +48,17 @@ namespace SacoiIII.Constants
         private const string pVerificarNome = ".VerificarNomeUsuario";
         public string GetPVerificarNome() => connection.GetDataBase() + pVerificarNome;
         #endregion
+
+        #region PRetornarUsuario
+        //Criação da constante que aponta a Procedure RetornarUsuario e metodo que retorna a string com a informação necessária para chamar a Procedure
+        private const string pRetornarUsuario = ".RetornarUsuario";
+        public string GetPRetornarUsuario() => connection.GetDataBase() + pRetornarUsuario;
+        #endregion
+
+        #region PSolicitarAdmin
+        //Criação da constante que aponta a Procedure SolicitarAdmin e metodo que retorna a string com a informação necessária para chamar a Procedure
+        private const string pSolicitarAdmin = ".SolicitarAdmin";
+        public string GetSolicitarAdmin() => connection.GetDataBase() + pSolicitarAdmin;
+        #endregion
     }
 }

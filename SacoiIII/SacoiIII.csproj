@@ -52,6 +52,7 @@
     <Compile Include="Constants\Constant.Connection.cs" />
     <Compile Include="Constants\Constant.Notification.cs" />
     <Compile Include="Constants\Constant.Pessoa.cs" />
+    <Compile Include="Controller\Controller.Admin.cs" />
     <Compile Include="Controller\Controller.Notificacoes.cs" />
     <Compile Include="Controller\Controller.Pessoa.cs" />
     <Compile Include="Controller\Controller.Usuario.cs" />

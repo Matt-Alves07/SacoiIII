@@ -35,8 +35,9 @@ namespace SacoiIII.Views
             int i = 1;
             int top_align = 50;
             int top_align_user = 35;
-            int left_align = 40;
-            int left_align_user = 40;
+            int left_align = 25;
+            int left_align_user = 25;
+            int width = Size.Width - 50;
             foreach (NotificacaoDTO Linha in NotificacoesController.ExibirNotificacoes())
             {
                 switch (i)
@@ -54,7 +55,7 @@ namespace SacoiIII.Views
                         lblNot1.Top = top_align;
                         lblNot1.Left = left_align;
                         lblNot1.AutoSize = true;
-                        lblNot1.MaximumSize = new Size(500,0);
+                        lblNot1.MaximumSize = new Size(width,0);
                         //Comandos para adicionar as duas label no programa
                         this.Controls.Add(lblUser1);
                         this.Controls.Add(lblNot1);
@@ -72,7 +73,7 @@ namespace SacoiIII.Views
                         lblNot2.Left = left_align;
                         lblNot2.Top = top_align + 100;
                         lblNot2.AutoSize = true;
-                        lblNot2.MaximumSize = new Size(500, 0);
+                        lblNot2.MaximumSize = new Size(width, 0);
                         //Comandos para adicionar as duas label no programa
                         this.Controls.Add(lblUser2);
                         this.Controls.Add(lblNot2);
@@ -90,7 +91,7 @@ namespace SacoiIII.Views
                         lblNot3.Left = left_align;
                         lblNot3.Top = top_align + 200;
                         lblNot3.AutoSize = true;
-                        lblNot3.MaximumSize = new Size(500, 0);
+                        lblNot3.MaximumSize = new Size(width, 0);
                         //Comandos para adicionar as duas label no programa
                         this.Controls.Add(lblUser3);
                         this.Controls.Add(lblNot3);
@@ -108,7 +109,7 @@ namespace SacoiIII.Views
                         lblNot4.Left = left_align;
                         lblNot4.Top = top_align + 300;
                         lblNot4.AutoSize = true;
-                        lblNot4.MaximumSize = new Size(500, 0);
+                        lblNot4.MaximumSize = new Size(width, 0);
                         //Comandos para adicionar as duas label no programa
                         this.Controls.Add(lblUser4);
                         this.Controls.Add(lblNot4);
@@ -126,7 +127,7 @@ namespace SacoiIII.Views
                         lblNot5.Left = left_align;
                         lblNot5.Top = top_align + 400;
                         lblNot5.AutoSize = true;
-                        lblNot5.MaximumSize = new Size(500, 0);
+                        lblNot5.MaximumSize = new Size(width, 0);
                         //Comandos para adicionar as duas label no programa
                         this.Controls.Add(lblUser5);
                         this.Controls.Add(lblNot5);
@@ -144,7 +145,7 @@ namespace SacoiIII.Views
                         lblNot6.Left = left_align;
                         lblNot6.Top = top_align + 500;
                         lblNot6.AutoSize = true;
-                        lblNot6.MaximumSize = new Size(500, 0);
+                        lblNot6.MaximumSize = new Size(width, 0);
                         //Comandos para adicionar as duas label no programa
                         this.Controls.Add(lblUser6);
                         this.Controls.Add(lblNot6);
@@ -162,7 +163,7 @@ namespace SacoiIII.Views
                         lblNot7.Left = left_align;
                         lblNot7.Top = top_align + 600;
                         lblNot7.AutoSize = true;
-                        lblNot7.MaximumSize = new Size(500, 0);
+                        lblNot7.MaximumSize = new Size(width, 0);
                         //Comandos para adicionar as duas label no programa
                         this.Controls.Add(lblUser7);
                         this.Controls.Add(lblNot7);
@@ -180,7 +181,7 @@ namespace SacoiIII.Views
                         lblNot8.Left = left_align;
                         lblNot8.Top = top_align + 700;
                         lblNot8.AutoSize = true;
-                        lblNot8.MaximumSize = new Size(500, 0);
+                        lblNot8.MaximumSize = new Size(width, 0);
                         //Comandos para adicionar as duas label no programa
                         this.Controls.Add(lblUser8);
                         this.Controls.Add(lblNot8);
@@ -198,7 +199,7 @@ namespace SacoiIII.Views
                         lblNot9.Left = left_align;
                         lblNot9.Top = top_align + 800;
                         lblNot9.AutoSize = true;
-                        lblNot9.MaximumSize = new Size(500, 0);
+                        lblNot9.MaximumSize = new Size(width, 0);
                         //Comandos para adicionar as duas label no programa
                         this.Controls.Add(lblUser9);
                         this.Controls.Add(lblNot9);
@@ -216,7 +217,7 @@ namespace SacoiIII.Views
                         lblNot10.Left = left_align;
                         lblNot10.Top = top_align + 900;
                         lblNot10.AutoSize = true;
-                        lblNot10.MaximumSize = new Size(500, 0);
+                        lblNot10.MaximumSize = new Size(width, 0);
                         //Comandos para adicionar as duas label no programa
                         this.Controls.Add(lblUser10);
                         this.Controls.Add(lblNot10);

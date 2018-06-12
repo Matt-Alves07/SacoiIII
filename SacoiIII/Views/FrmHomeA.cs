@@ -69,6 +69,8 @@ namespace SacoiIII.Views
             userList.ShowDialog();
         }
 
+        #region Hover effect in buttons
+
         private void BtnSolicitaExclusao_MouseEnter(object sender, EventArgs e)
         {
             BtnSolicitaExclusao.ForeColor = Color.White;
@@ -131,6 +133,8 @@ namespace SacoiIII.Views
             BtnShare.Image = Properties.Resources.share_option_24b;
         }
 
+        #endregion
+
         private void FrmHomeA_Load(object sender, EventArgs e)
         {
             feed.TopLevel = false;
@@ -146,7 +150,7 @@ namespace SacoiIII.Views
             //Validação caso o campo notificação não tenha sido preenchido
             if (TxtNotification.Text == "")
             {
-                MessageBox.Show("Não é possível criar uma notificação vazia.\nPreench o campo de notificação e tente novamente.", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Não é possível criar uma notificação vazia.\nPreencha o campo de notificação e tente novamente.", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             //Validação caso o tamanho do texto seja maior que o suportado pelo banco
             else if (TxtNotification.TextLength > 255)
@@ -181,8 +185,15 @@ namespace SacoiIII.Views
 
         private void FrmHomeA_Resize(object sender, EventArgs e)
         {
-            feed.WindowState = FormWindowState.Minimized;
-            feed.WindowState = FormWindowState.Maximized;
+            this.feed.WindowState = FormWindowState.Minimized;
+            this.feed.WindowState = FormWindowState.Maximized;
+
+            //Refaz esse processo para forçaros labels do form Feed se ajustarem
+            this.feed.Close();
+            FrmFeed feed = new FrmFeed();
+            feed.TopLevel = false;
+            PnlFeed.Controls.Add(feed);
+            feed.Show();
         }
 
         private void RefreshNotificacao()

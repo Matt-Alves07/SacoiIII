@@ -121,7 +121,7 @@ namespace SacoiIII.DAO
         #endregion
 
         #region Login
-        //Metodo que usa os atributos do DTO, os valores das constantes de conexão e pessoa e para efetuar login
+        //Metodo que usa os atributos do DTO, os valores das constantes de conexão e pessoa para efetuar login
         public string[] EfetuarLogin()
         {
             //Criação e inicialização do vetor que retorna o resultado da procedure do banco de dados
@@ -170,7 +170,7 @@ namespace SacoiIII.DAO
         #endregion
 
         #region Disponibility
-        //Metodo que o atributo user_name do DTO, os valores das constantes de conexão e pessoa verificar se o nome de usuário já está cadastrado
+        //Metodo que usa o atributo user_name do DTO, os valores das constantes de conexão e pessoa para verificar se o nome de usuário já está cadastrado
         public Boolean VerificarDisponibilidade()
         {
             #region Change attributes values
@@ -212,6 +212,103 @@ namespace SacoiIII.DAO
                 }
 
                 return false;
+            }
+            catch (Exception ex)
+            {
+                //No caso de erro no MySQL, dispara uma exceção dizendo o que ocorreu
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                //Encerra a conexão com o banco de dados
+                connection.Close();
+            }
+            #endregion
+        }
+        #endregion
+
+        #region Solicitar Admin
+        //Metodo que usa o atributo user_name do DTO e as constants de pessoa e conexão para acessar o banco e realizar o pedido de admin para usuários
+        public string SolicitarAdmin()
+        {
+            #region Local Attributes
+            string situacao = "";
+            #endregion
+
+            #region Change attributes values
+            //atribuição dos valores que serão usados nesse metodo nas variaveis de uso comum da classe
+            query = $"CALL {ConstantPessoa.GetSolicitarAdmin()}('{DTOPessoa.user_name}');";
+            connection = new MySqlConnection(ConstantConnection.GetConnection());
+            command = new MySqlCommand(query, connection);
+            #endregion
+
+            #region Database access
+            //Abertura da conexão com o MySQL e tentativa de chamada da Procedure para verificar a disponibilidade do nome de usuário
+            try
+            {
+                //Abertura da conexão ao banco de dados
+                connection.Open();
+
+                //Faz a consulta a Procedure no banco e atribui os valores aos atributos do DTO
+                using (reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        situacao = reader.GetString(0);
+                    }
+                }
+
+                return situacao;
+            }
+            catch (Exception ex)
+            {
+                //No caso de erro no MySQL, dispara uma exceção dizendo o que ocorreu
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                //Encerra a conexão com o banco de dados
+                connection.Close();
+            }
+            #endregion
+        }
+        #endregion
+
+        #region Return User
+        //Metodo que usa o atributo user_name do DTO e as constants de pessoa e conexão para retornar um registro que será usado para preencher um DTO completo
+        public PessoaDTO RetornaPessoa()
+        {
+            #region Change attributes values
+            //atribuição dos valores que serão usados nesse metodo nas variaveis de uso comum da classe
+            query = $"CALL {ConstantPessoa.GetPRetornarUsuario()}('{DTOPessoa.user_name}');";
+            connection = new MySqlConnection(ConstantConnection.GetConnection());
+            command = new MySqlCommand(query, connection);
+            #endregion
+
+            #region Database access
+            //Abertura da conexão com o MySQL e tentativa de chamada da Procedure para verificar a disponibilidade do nome de usuário
+            try
+            {
+                //Abertura da conexão ao banco de dados
+                connection.Open();
+
+                //Faz a consulta a Procedure no banco e atribui os valores aos atributos do DTO
+                using (reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        DTOPessoa.pessoa = reader.GetString(0);
+                        DTOPessoa.user_name = reader.GetString(1);
+                        DTOPessoa.p_nome = reader.GetString(2);
+                        DTOPessoa.s_nome = reader.GetString(3);
+                        DTOPessoa.email = reader.GetString(4);
+                        DTOPessoa.senha = reader.GetString(5);
+                        DTOPessoa.cargo = reader.GetString(6);
+                        DTOPessoa.admin = reader.GetString(7);
+                    }
+                }
+
+                return DTOPessoa;
             }
             catch (Exception ex)
             {
