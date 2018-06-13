@@ -58,7 +58,13 @@ namespace SacoiIII.Constants
         #region PSolicitarAdmin
         //Criação da constante que aponta a Procedure SolicitarAdmin e metodo que retorna a string com a informação necessária para chamar a Procedure
         private const string pSolicitarAdmin = ".SolicitarAdmin";
-        public string GetSolicitarAdmin() => connection.GetDataBase() + pSolicitarAdmin;
+        public string GetPSolicitarAdmin() => connection.GetDataBase() + pSolicitarAdmin;
+        #endregion
+
+        #region PListarUsuários
+        //Criação da constante que aponta a Procedure ListarUsuarios e metodo que retorna a string com a informação necessária para chamar a Procedure
+        private const string pListarUsuarios = ".ListarUsuarios";
+        public string GetPListarUsuarios() => connection.GetDataBase() + pListarUsuarios;
         #endregion
     }
 }
