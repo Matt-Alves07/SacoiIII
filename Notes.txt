@@ -59,7 +59,11 @@
 
 11/06/2018 -> O que foi feito:
 -> Criados os metodos necessários para realizar o pedido de mudança de perfil para administrador do sistema;
--> Criada validação para caso o usuário solicite a mudança de perfil para administrador mais de uma vez, a mensagem informar que o pedido já foi feito, da segunda vez em diante;
+-> Criada validação para caso o usuário solicite a mudança de perfil para administrador mais de uma vez, a mensagem informar que o pedido jEfoi feito, da segunda vez em diante;
 -> Criado metodo que retorna os valores referentes a um registro de usuário em especifico[(seja usuário mesmo ou administrador) NÃO FOI IMPLEMENTADO EM LUGAR ALGUM, ainda...];
 -> Corrigido a maneira que os labels de notificações eram ajustados, fazendo com que se ajustem ao formato da tela usando como parâmetro o tamanho do form feed.
-*Obs*-> Falta corrigir o endereço de email do trabalho, que se encontra como sacoi.tcc@outlook.com e trocar por sacoi.tcc@outlook.com.br, que é o correto(Acabei esquecendo de alterar).
+*Obs*-> Falta corrigir o endereço de email do trabalho, que se encontra como sacoi.tcc@outlook.com e trocar por sacoi.tcc@outlook.com.br, que Eo correto(Acabei esquecendo de alterar).
+
+13/06/2018 -> O que foi feito:
+-> Realocado o codigo do sistema de email para outro form*;
+* -> Precisa ser feito um botao para chamar a tela dentro do FrmHome.
