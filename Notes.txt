@@ -16,21 +16,21 @@
 -> Criada a tela sobre, exibindo as principais informações do projeto e o email para contato;
 -> Alteração na fonte da tela de cadastro para se adequar ao restante do sistema;
 -> Alteração do tamanho dos botões inferiores das telas de login e cadastro;
--> Alteração da funcionalidade de efetuar login, qua agora aponto para as telas home usuário e home administrador, dependendo do nú“el de acesso do usuário que efetue o login.
+-> Alteração da funcionalidade de efetuar login, qua agora aponto para as telas home usuário e home administrador, dependendo do nível de acesso do usuário que efetue o login.
 
 02/06/2018 (Segundo Commit) -> O que foi feito:
--> Edição da tela home de administradores para acrescentar o painel info, onde ficam: imagem de administrador, mensagem de boas vindas(OlE+ nome de usuário) e os botões de uso de um administrador do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
--> Edição da tela home de usuários para acrescentar o painel info, onde ficam: imagem de usuário, mensagem de boas vindas(OlE+ nome de usuário) e os botões de uso de um usuário do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
--> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irElistar as mensagens enviadas e recebidas por um administrador que tenha efetuado login);
--> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irElistar as mensagens recebidas por um usuário que tenha efetuado login);
--> Criada a tela que lista os usuários cadastrados no sistema, mas também estEimplementado apenas o botão fechar(IrElistar todos os usuários cadastrados no sistema, sejam usuários ou administradores);
+-> Edição da tela home de administradores para acrescentar o painel info, onde ficam: imagem de administrador, mensagem de boas vindas(Olá + nome de usuário) e os botões de uso de um administrador do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
+-> Edição da tela home de usuários para acrescentar o painel info, onde ficam: imagem de usuário, mensagem de boas vindas(Olá + nome de usuário) e os botões de uso de um usuário do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
+-> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irá listar as mensagens enviadas e recebidas por um administrador que tenha efetuado login);
+-> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irá listar as mensagens recebidas por um usuário que tenha efetuado login);
+-> Criada a tela que lista os usuários cadastrados no sistema, mas também está implementado apenas o botão fechar(Irá listar todos os usuários cadastrados no sistema, sejam usuários ou administradores);
 -> Adição dos icones necessários para os novos botões que foram criados nas telas home de usuário e administrador.
 
 02/06/2018 (Terceiro Commit) -> O que foi feito:
 -> Cópia dos arquivos de scripts para o repositório atual;
--> Adição de scripts relativos a notificações(Importante: Existe uma correção referente a tabela de notificações no primeiro que vc deve executar);
--> Criação da tela feed, para ser exibida como filha das telas home(JEestEcomo filha);
--> Criação dos arquivos Constants, DTO, DAO e Controller relativos a notificações(JEfuncionando o inserir e, eu acho, o exibir notificações).
+-> Adição de scripts relativos a notificações(Importante: Existe uma correção referente a tabela de notificações no primeiro que deve ser executada);
+-> Criação da tela feed, para ser exibida como filha das telas home(Já está como filha);
+-> Criação dos arquivos Constants, DTO, DAO e Controller relativos a notificações(Já funcionando o inserir e, eu acho, o exibir notificações).
 
 04/06/2018 -> O que foi feito:
 -> Correcao de um bug que ocorria quando o programa duplicava a tela de login, quando fechado tanto no botao de sair, quanto no "X" da janela do windows;
@@ -44,7 +44,7 @@
 
 04/06/2018 -> O que foi feito(Terceiro commit):
 -> Implementado a função de atualizar a listagem de notificações ao clicar no botão Recarregar;
--> Corrigida a mensagem exibida para o usuário(padrão e administrado), não pedindo mais para o usuário clicar em recarregar, mas recarregando mostrando as notificações mais recentes automaticamente, em caso de sucesso ao inserir a nova notificação;
+-> Corrigida a mensagem exibida para o usuário(padrão e administrado), não pedindo mais para o usuário clicar em recarregar, mas recarregando e mostrando as notificações mais recentes automaticamente, em caso de sucesso ao inserir a nova notificação;
 -> Criado um metodo que executa o processo de relistagem das notificações, pra agora ser executado ao clicar no botão recarregar e também após inserir uma nova notificação, evitando repetição de codigo.
 
 06/06/2018 -> O que foi feito:
@@ -59,11 +59,12 @@
 
 11/06/2018 -> O que foi feito:
 -> Criados os metodos necessários para realizar o pedido de mudança de perfil para administrador do sistema;
--> Criada validação para caso o usuário solicite a mudança de perfil para administrador mais de uma vez, a mensagem informar que o pedido jEfoi feito, da segunda vez em diante;
+-> Criada validação para caso o usuário solicite a mudança de perfil para administrador mais de uma vez, a mensagem informar que o pedido já foi feito, da segunda vez em diante;
 -> Criado metodo que retorna os valores referentes a um registro de usuário em especifico[(seja usuário mesmo ou administrador) NÃO FOI IMPLEMENTADO EM LUGAR ALGUM, ainda...];
 -> Corrigido a maneira que os labels de notificações eram ajustados, fazendo com que se ajustem ao formato da tela usando como parâmetro o tamanho do form feed.
-*Obs*-> Falta corrigir o endereço de email do trabalho, que se encontra como sacoi.tcc@outlook.com e trocar por sacoi.tcc@outlook.com.br, que Eo correto(Acabei esquecendo de alterar).
 
 13/06/2018 -> O que foi feito:
--> Realocado o codigo do sistema de email para outro form*;
-* -> Precisa ser feito um botao para chamar a tela dentro do FrmHome.
+-> Realocado o codigo do sistema de email para outro form;
+
+13/06/2018 -> O que foi feito:
+-> Corrigido o Script que lista os usuários para trazer também os GUIDs(identificadores unicos) dos usuários, para ser salvo junto ao identificador do administrador que enviou a mensagem(Ficará oculto para o usuário por finalidades esteticas);
