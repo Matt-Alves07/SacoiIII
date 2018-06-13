@@ -237,7 +237,7 @@ namespace SacoiIII.DAO
 
             #region Change attributes values
             //atribuição dos valores que serão usados nesse metodo nas variaveis de uso comum da classe
-            query = $"CALL {ConstantPessoa.GetSolicitarAdmin()}('{DTOPessoa.user_name}');";
+            query = $"CALL {ConstantPessoa.GetPSolicitarAdmin()}('{DTOPessoa.user_name}');";
             connection = new MySqlConnection(ConstantConnection.GetConnection());
             command = new MySqlCommand(query, connection);
             #endregion
@@ -319,6 +319,69 @@ namespace SacoiIII.DAO
             {
                 //Encerra a conexão com o banco de dados
                 connection.Close();
+            }
+            #endregion
+        }
+        #endregion
+
+        #region User List
+        //Criação do metodo que usa as constantes de conexão e de pessoa para chamar a procedure que lista todos os usuários e retorna um lista de DTOs
+        public List<PessoaDTO> ListarUsuarios()
+        {
+            #region Local Attributes
+            //Criação dos metodos locais responsáveis por receber a lista que será retornada
+            List<PessoaDTO> lista = new List<PessoaDTO>();
+
+            //Limpa a lista para evitar lixo de memória na lista
+            lista.Clear();
+            #endregion
+
+            #region Change attributes values
+            //atribuição dos valores que serão usados nesse metodo nas variaveis de uso comum da classe
+            query = $"CALL {ConstantPessoa.GetPListarUsuarios()}();";
+            connection = new MySqlConnection(ConstantConnection.GetConnection());
+            command = new MySqlCommand(query, connection);
+            #endregion
+
+            #region Database access
+            //Abertura da conexão com o MySQL e tentativa de chamada da Procedure para listar todos os usuários
+            try
+            {
+                //Abre a conexão ao MySQL
+                connection.Open();
+
+                //Usa a variável temporária para armazenar o resultado da query e que será atribuído depois na lista
+                using (reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        //Instância do DTO Pessoa para atribuição dos valores resultantes da query
+                        PessoaDTO pessoa = new PessoaDTO();
+
+                        //Atribuição dos valores resultantes da query aos atributos do DTO Pessoa
+                        pessoa.pessoa = reader.GetString(0);
+                        pessoa.user_name = reader.GetString(1);
+                        pessoa.p_nome = reader.GetString(2);
+                        pessoa.s_nome = reader.GetString(3);
+                        pessoa.email = reader.GetString(4);
+                        pessoa.cargo = reader.GetString(5);
+                        pessoa.admin = reader.GetString(6);
+
+                        //Inclusão do DTO Pessoa preenchido a lista que será retornada posteriormente
+                        lista.Add(pessoa);
+                    }
+                }
+
+                //Retorna a lista com todos os usuários registrados
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                connection.Clone();
             }
             #endregion
         }

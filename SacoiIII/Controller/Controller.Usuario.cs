@@ -10,7 +10,7 @@ namespace SacoiIII.Controller
     class UsuarioController : PessoaController
     {
         #region
-        //Instância de objeto que será usado para acessar a camada model
+        //Instância de objeto que será usado para acessar a camada model(dao)
         PessoaDAO PessoaDAO = new PessoaDAO();
         #endregion
 

@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SacoiIII.DAO;
+using SacoiIII.DTO;
 
 namespace SacoiIII.Controller
 {
     abstract class PessoaController
     {
-        #region
-        //Instância de objeto que será usado para acessar a camada model
+        #region DAO & DTO
+        //Instância de objeto que será usado para acessar a camada model(dao)
         PessoaDAO PessoaDAO = new PessoaDAO();
+        //Instância de objeto que será usado para acessar a camada model(dto)
+        PessoaDTO PessoaDTO = new PessoaDTO();
         #endregion
 
         #region Insert Pessoa
