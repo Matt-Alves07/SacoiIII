@@ -109,6 +109,7 @@
             this.BtnSair.Text = " &Fechar";
             this.BtnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnSair.UseVisualStyleBackColor = true;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // LblAssunto
             // 
@@ -163,6 +164,7 @@
             this.Controls.Add(this.PnlMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMessage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SACOI - Enviar Mensagem";
             this.PnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);

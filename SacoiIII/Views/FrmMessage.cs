@@ -69,5 +69,10 @@ namespace SacoiIII.Views
             TxtSubject.Text = "";
             TxtTo.Text = "";
         }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

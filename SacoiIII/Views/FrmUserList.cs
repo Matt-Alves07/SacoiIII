@@ -52,5 +52,11 @@ namespace SacoiIII.Views
         {
             ListarUsuarios();
         }
+
+        private void DGVUser_DoubleClick(object sender, EventArgs e)
+        {
+            FrmMessage Message = new FrmMessage();
+            Message.Show();
+        }
     }
 }

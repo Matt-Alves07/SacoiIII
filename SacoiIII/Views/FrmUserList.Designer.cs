@@ -98,6 +98,7 @@
             this.DGVUser.ReadOnly = true;
             this.DGVUser.Size = new System.Drawing.Size(814, 481);
             this.DGVUser.TabIndex = 6;
+            this.DGVUser.DoubleClick += new System.EventHandler(this.DGVUser_DoubleClick);
             // 
             // Usuario
             // 
