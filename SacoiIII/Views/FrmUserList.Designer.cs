@@ -41,6 +41,7 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnRelistar = new System.Windows.Forms.Button();
             this.PnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUser)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             this.PnlMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.PnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlMenu.Controls.Add(this.BtnRelistar);
             this.PnlMenu.Controls.Add(this.BtnSair);
             this.PnlMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlMenu.Location = new System.Drawing.Point(0, 0);
@@ -102,6 +104,7 @@
             // 
             // Usuario
             // 
+            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Usuario.HeaderText = "Usuário";
             this.Usuario.Name = "Usuario";
             this.Usuario.ReadOnly = true;
@@ -127,6 +130,7 @@
             // 
             // Email
             // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
@@ -142,6 +146,27 @@
             this.Admin.HeaderText = "Administrador";
             this.Admin.Name = "Admin";
             this.Admin.ReadOnly = true;
+            // 
+            // BtnRelistar
+            // 
+            this.BtnRelistar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRelistar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnRelistar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnRelistar.FlatAppearance.BorderSize = 0;
+            this.BtnRelistar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.BtnRelistar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRelistar.ForeColor = System.Drawing.Color.White;
+            this.BtnRelistar.Image = global::SacoiIII.Properties.Resources.circular_arrow_24w;
+            this.BtnRelistar.Location = new System.Drawing.Point(0, 0);
+            this.BtnRelistar.Name = "BtnRelistar";
+            this.BtnRelistar.Size = new System.Drawing.Size(109, 38);
+            this.BtnRelistar.TabIndex = 4;
+            this.BtnRelistar.TabStop = false;
+            this.BtnRelistar.Text = " &Recarregar";
+            this.BtnRelistar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Hint.SetToolTip(this.BtnRelistar, "Clique aqui para atualizar a lista de notificações");
+            this.BtnRelistar.UseVisualStyleBackColor = true;
+            this.BtnRelistar.Click += new System.EventHandler(this.BtnRelistar_Click);
             // 
             // FrmUserList
             // 
@@ -178,5 +203,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Admin;
+        private System.Windows.Forms.Button BtnRelistar;
     }
 }

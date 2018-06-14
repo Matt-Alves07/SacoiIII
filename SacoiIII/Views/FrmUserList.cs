@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,8 +28,8 @@ namespace SacoiIII.Views
             DGVUser.AllowUserToOrderColumns = false;
             DGVUser.AllowUserToResizeColumns = false;
             DGVUser.AllowUserToResizeRows = false;
-            DGVUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            DGVUser.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //DGVUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //DGVUser.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             DGVUser.ReadOnly = true;
         }
 
@@ -57,6 +57,11 @@ namespace SacoiIII.Views
         {
             FrmMessage Message = new FrmMessage();
             Message.Show();
+        }
+
+        private void BtnRelistar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

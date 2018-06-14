@@ -72,3 +72,8 @@
 14/06/2018 -> O que foi feito:
 -> Inserido o codigo do botao fechar da FrmMessage que faltava;
 -> Feito o evento de aparecer o FrmMessage ao clicar duas vezes na DataGridView.
+
+14/06/2018 -> O que foi feito(Segundo commit):
+-> Feito a arrumacao da DataGridView para melhor visualizacao do email;
+-> Criado o botao de atualizar da DataGridView*.
+*Obs: Ainda falta colocar o codigo para o mesmo funcionar.
