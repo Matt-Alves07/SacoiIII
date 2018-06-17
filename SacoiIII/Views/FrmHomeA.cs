@@ -65,8 +65,8 @@ namespace SacoiIII.Views
 
         private void BtnListarUsers_Click(object sender, EventArgs e)
         {
-            FrmUserList userList = new FrmUserList();
-            userList.ShowDialog();
+            FrmUserList userList = new FrmUserList(UserName);
+            userList.Show();
         }
 
         #region Hover effect in buttons
@@ -203,6 +203,12 @@ namespace SacoiIII.Views
             feed.TopLevel = false;
             PnlFeed.Controls.Add(feed);
             feed.Show();
+        }
+
+        private void BtnListPedidoAdmin_Click(object sender, EventArgs e)
+        {
+            FrmPedidosAdmin pedidosAdmin = new FrmPedidosAdmin();
+            pedidosAdmin.Show();
         }
     }
 }

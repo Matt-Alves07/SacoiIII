@@ -224,6 +224,7 @@
             this.Hint.SetToolTip(this.BtnListPedidoAdmin, "Clique aqui para listar as solicitações de usuários que desejam se tornar adminis" +
         "tradores");
             this.BtnListPedidoAdmin.UseVisualStyleBackColor = false;
+            this.BtnListPedidoAdmin.Click += new System.EventHandler(this.BtnListPedidoAdmin_Click);
             this.BtnListPedidoAdmin.MouseEnter += new System.EventHandler(this.BtnListPedidoAdmin_MouseEnter);
             this.BtnListPedidoAdmin.MouseLeave += new System.EventHandler(this.BtnListPedidoAdmin_MouseLeave);
             // 

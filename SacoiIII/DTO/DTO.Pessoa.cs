@@ -16,5 +16,7 @@ namespace SacoiIII.DTO
         public string senha { get; set; }
         public string cargo { get; set; }
         public string admin { get; set; }
+        public string pedido { get; set; }
+        public string data_pedido { get; set; }
     }
 }

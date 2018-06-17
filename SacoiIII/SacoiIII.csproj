@@ -60,6 +60,12 @@
     <Compile Include="DAO\DAO.Pessoa.cs" />
     <Compile Include="DTO\DTO.Notificacao.cs" />
     <Compile Include="DTO\DTO.Pessoa.cs" />
+    <Compile Include="Views\FrmPedidosAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmPedidosAdmin.Designer.cs">
+      <DependentUpon>FrmPedidosAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     <EmbeddedResource Include="Views\FrmMessageU.resx">
       <DependentUpon>FrmMessageU.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmPedidosAdmin.resx">
+      <DependentUpon>FrmPedidosAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmSobre.resx">
       <DependentUpon>FrmSobre.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +228,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="chat.ico" />
+    <None Include="Resources\sent_email_24w.png" />
     <None Include="Resources\share-option_24w.png" />
     <None Include="Resources\share-option_24b.png" />
     <None Include="Resources\user_64b.png" />

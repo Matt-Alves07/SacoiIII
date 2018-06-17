@@ -25,5 +25,14 @@ namespace SacoiIII.Controller
             return PessoaDAO.ListarUsuarios();
         }
         #endregion
+
+        #region Lista de Pedidos de Admin
+        //Metodo responsável por retornar a lista de usuários vindos da camada DAO para a camada View
+        public List<PessoaDTO> GetPedidosadmin()
+        {
+            //Chamada e retorno da lista de usuários vindos da camada DAO
+            return PessoaDAO.ListarPedidosAdmin();
+        }
+        #endregion
     }
 }

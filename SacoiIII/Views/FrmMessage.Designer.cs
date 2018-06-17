@@ -34,9 +34,7 @@
             this.BtnEnviar = new System.Windows.Forms.Button();
             this.BtnSair = new System.Windows.Forms.Button();
             this.LblAssunto = new System.Windows.Forms.Label();
-            this.LblDestinatario = new System.Windows.Forms.Label();
             this.TxtSubject = new System.Windows.Forms.TextBox();
-            this.TxtTo = new System.Windows.Forms.TextBox();
             this.TxtBody = new System.Windows.Forms.TextBox();
             this.PnlMenu.SuspendLayout();
             this.SuspendLayout();
@@ -52,20 +50,22 @@
             this.PnlMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlMenu.Location = new System.Drawing.Point(0, 0);
             this.PnlMenu.Name = "PnlMenu";
-            this.PnlMenu.Size = new System.Drawing.Size(814, 40);
+            this.PnlMenu.Size = new System.Drawing.Size(543, 46);
             this.PnlMenu.TabIndex = 7;
             // 
             // BtnLimpar
             // 
             this.BtnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpar.Dock = System.Windows.Forms.DockStyle.Left;
             this.BtnLimpar.FlatAppearance.BorderSize = 0;
             this.BtnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimpar.Location = new System.Drawing.Point(150, 5);
+            this.BtnLimpar.Image = global::SacoiIII.Properties.Resources.backspace_32w;
+            this.BtnLimpar.Location = new System.Drawing.Point(80, 0);
             this.BtnLimpar.Name = "BtnLimpar";
-            this.BtnLimpar.Size = new System.Drawing.Size(109, 29);
+            this.BtnLimpar.Size = new System.Drawing.Size(91, 44);
             this.BtnLimpar.TabIndex = 13;
-            this.BtnLimpar.Text = "&Limpar";
+            this.BtnLimpar.Text = " &Limpar";
             this.BtnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnLimpar.UseVisualStyleBackColor = true;
@@ -75,14 +75,15 @@
             // 
             this.BtnEnviar.BackColor = System.Drawing.Color.Transparent;
             this.BtnEnviar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEnviar.Dock = System.Windows.Forms.DockStyle.Left;
             this.BtnEnviar.FlatAppearance.BorderSize = 0;
             this.BtnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEnviar.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
             this.BtnEnviar.ForeColor = System.Drawing.Color.White;
-            this.BtnEnviar.Image = global::SacoiIII.Properties.Resources.share_option_24w;
-            this.BtnEnviar.Location = new System.Drawing.Point(13, 3);
+            this.BtnEnviar.Image = global::SacoiIII.Properties.Resources.sent_email_24w;
+            this.BtnEnviar.Location = new System.Drawing.Point(0, 0);
             this.BtnEnviar.Name = "BtnEnviar";
-            this.BtnEnviar.Size = new System.Drawing.Size(109, 32);
+            this.BtnEnviar.Size = new System.Drawing.Size(80, 44);
             this.BtnEnviar.TabIndex = 12;
             this.BtnEnviar.Text = "&Enviar";
             this.BtnEnviar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -101,9 +102,9 @@
             this.BtnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSair.ForeColor = System.Drawing.Color.White;
             this.BtnSair.Image = global::SacoiIII.Properties.Resources.error_24w;
-            this.BtnSair.Location = new System.Drawing.Point(728, 0);
+            this.BtnSair.Location = new System.Drawing.Point(443, 0);
             this.BtnSair.Name = "BtnSair";
-            this.BtnSair.Size = new System.Drawing.Size(84, 38);
+            this.BtnSair.Size = new System.Drawing.Size(98, 44);
             this.BtnSair.TabIndex = 0;
             this.BtnSair.TabStop = false;
             this.BtnSair.Text = " &Fechar";
@@ -114,58 +115,46 @@
             // LblAssunto
             // 
             this.LblAssunto.AutoSize = true;
-            this.LblAssunto.Location = new System.Drawing.Point(29, 90);
+            this.LblAssunto.Location = new System.Drawing.Point(12, 55);
             this.LblAssunto.Name = "LblAssunto";
-            this.LblAssunto.Size = new System.Drawing.Size(48, 13);
+            this.LblAssunto.Size = new System.Drawing.Size(57, 15);
             this.LblAssunto.TabIndex = 15;
             this.LblAssunto.Text = "Assunto:";
             // 
-            // LblDestinatario
-            // 
-            this.LblDestinatario.AutoSize = true;
-            this.LblDestinatario.Location = new System.Drawing.Point(29, 64);
-            this.LblDestinatario.Name = "LblDestinatario";
-            this.LblDestinatario.Size = new System.Drawing.Size(66, 13);
-            this.LblDestinatario.TabIndex = 14;
-            this.LblDestinatario.Text = "Destinatário:";
-            // 
             // TxtSubject
             // 
-            this.TxtSubject.Location = new System.Drawing.Point(97, 88);
+            this.TxtSubject.Location = new System.Drawing.Point(75, 52);
             this.TxtSubject.Name = "TxtSubject";
-            this.TxtSubject.Size = new System.Drawing.Size(308, 20);
+            this.TxtSubject.Size = new System.Drawing.Size(455, 21);
             this.TxtSubject.TabIndex = 13;
-            // 
-            // TxtTo
-            // 
-            this.TxtTo.Location = new System.Drawing.Point(97, 61);
-            this.TxtTo.Name = "TxtTo";
-            this.TxtTo.Size = new System.Drawing.Size(308, 20);
-            this.TxtTo.TabIndex = 12;
             // 
             // TxtBody
             // 
-            this.TxtBody.Location = new System.Drawing.Point(12, 134);
+            this.TxtBody.Location = new System.Drawing.Point(14, 79);
             this.TxtBody.Multiline = true;
             this.TxtBody.Name = "TxtBody";
-            this.TxtBody.Size = new System.Drawing.Size(789, 375);
+            this.TxtBody.Size = new System.Drawing.Size(516, 434);
             this.TxtBody.TabIndex = 16;
             // 
             // FrmMessage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.BtnEnviar;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 521);
+            this.CancelButton = this.BtnSair;
+            this.ClientSize = new System.Drawing.Size(543, 517);
             this.Controls.Add(this.TxtBody);
             this.Controls.Add(this.LblAssunto);
-            this.Controls.Add(this.LblDestinatario);
             this.Controls.Add(this.TxtSubject);
-            this.Controls.Add(this.TxtTo);
             this.Controls.Add(this.PnlMenu);
+            this.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmMessage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SACOI - Enviar Mensagem";
+            this.Load += new System.EventHandler(this.FrmMessage_Load);
             this.PnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -179,9 +168,7 @@
         private System.Windows.Forms.Button BtnEnviar;
         private System.Windows.Forms.Button BtnSair;
         private System.Windows.Forms.Label LblAssunto;
-        private System.Windows.Forms.Label LblDestinatario;
         private System.Windows.Forms.TextBox TxtSubject;
-        private System.Windows.Forms.TextBox TxtTo;
         private System.Windows.Forms.TextBox TxtBody;
     }
 }

@@ -52,5 +52,17 @@ namespace SacoiIII.Controller
             return PessoaDAO.VerificarDisponibilidade();
         }
         #endregion
+
+        #region Return User
+        //Metodo responsável por atribuir os valores que vieram da camada view aos atributos do DTO e chamar os metodos necessários da Camada DAO
+        public PessoaDTO GetPessoa(string _user_name)
+        {
+            //Atribuição do nome de usuário para ser usado como parâmetro de pesquisa no MySQL e retornar os atributos do usuário desejado
+            PessoaDAO.SetPessoa(_user_name);
+
+            //Retorno do registro encontrado com o nome de usuário que foi informado
+            return PessoaDAO.RetornaPessoa();
+        }
+        #endregion
     }
 }

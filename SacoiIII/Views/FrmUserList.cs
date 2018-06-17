@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,12 +14,16 @@ namespace SacoiIII.Views
 {
     public partial class FrmUserList : Form
     {
+        #region Local Attributes
+        string username = "";
+        #endregion
+
         #region Controller
         //Instância de objeto para acessar a camada Controller
         AdminController AdminController = new AdminController();
         #endregion
 
-        public FrmUserList()
+        public FrmUserList(string _user_name)
         {
             InitializeComponent();
             DGVUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -28,9 +32,8 @@ namespace SacoiIII.Views
             DGVUser.AllowUserToOrderColumns = false;
             DGVUser.AllowUserToResizeColumns = false;
             DGVUser.AllowUserToResizeRows = false;
-            //DGVUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            //DGVUser.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             DGVUser.ReadOnly = true;
+            username = _user_name;
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
@@ -40,6 +43,10 @@ namespace SacoiIII.Views
 
         private void ListarUsuarios()
         {
+            #region Data Grid View Clear
+            DGVUser.Rows.Clear();
+            #endregion
+
             #region List Read
             foreach (PessoaDTO pessoa in AdminController.ListarUsuarios())
             {
@@ -55,13 +62,13 @@ namespace SacoiIII.Views
 
         private void DGVUser_DoubleClick(object sender, EventArgs e)
         {
-            FrmMessage Message = new FrmMessage();
+            FrmMessage Message = new FrmMessage(username, DGVUser.SelectedRows[0].Cells[1].Value.ToString());
             Message.Show();
         }
 
         private void BtnRelistar_Click(object sender, EventArgs e)
         {
-            
+            ListarUsuarios();
         }
     }
 }

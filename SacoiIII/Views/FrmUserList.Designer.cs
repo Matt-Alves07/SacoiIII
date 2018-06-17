@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUserList));
             this.PnlMenu = new System.Windows.Forms.Panel();
+            this.BtnRelistar = new System.Windows.Forms.Button();
             this.BtnSair = new System.Windows.Forms.Button();
             this.Hint = new System.Windows.Forms.ToolTip(this.components);
             this.DGVUser = new System.Windows.Forms.DataGridView();
@@ -41,7 +42,6 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnRelistar = new System.Windows.Forms.Button();
             this.PnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUser)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +58,27 @@
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(814, 40);
             this.PnlMenu.TabIndex = 5;
+            // 
+            // BtnRelistar
+            // 
+            this.BtnRelistar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRelistar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnRelistar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnRelistar.FlatAppearance.BorderSize = 0;
+            this.BtnRelistar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.BtnRelistar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRelistar.ForeColor = System.Drawing.Color.White;
+            this.BtnRelistar.Image = global::SacoiIII.Properties.Resources.circular_arrow_24w;
+            this.BtnRelistar.Location = new System.Drawing.Point(0, 0);
+            this.BtnRelistar.Name = "BtnRelistar";
+            this.BtnRelistar.Size = new System.Drawing.Size(125, 38);
+            this.BtnRelistar.TabIndex = 4;
+            this.BtnRelistar.TabStop = false;
+            this.BtnRelistar.Text = " Atualiza&r Lista";
+            this.BtnRelistar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Hint.SetToolTip(this.BtnRelistar, "Clique aqui para atualizar a lista de notificações");
+            this.BtnRelistar.UseVisualStyleBackColor = true;
+            this.BtnRelistar.Click += new System.EventHandler(this.BtnRelistar_Click);
             // 
             // BtnSair
             // 
@@ -146,27 +167,6 @@
             this.Admin.HeaderText = "Administrador";
             this.Admin.Name = "Admin";
             this.Admin.ReadOnly = true;
-            // 
-            // BtnRelistar
-            // 
-            this.BtnRelistar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnRelistar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnRelistar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnRelistar.FlatAppearance.BorderSize = 0;
-            this.BtnRelistar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
-            this.BtnRelistar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRelistar.ForeColor = System.Drawing.Color.White;
-            this.BtnRelistar.Image = global::SacoiIII.Properties.Resources.circular_arrow_24w;
-            this.BtnRelistar.Location = new System.Drawing.Point(0, 0);
-            this.BtnRelistar.Name = "BtnRelistar";
-            this.BtnRelistar.Size = new System.Drawing.Size(109, 38);
-            this.BtnRelistar.TabIndex = 4;
-            this.BtnRelistar.TabStop = false;
-            this.BtnRelistar.Text = " &Recarregar";
-            this.BtnRelistar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Hint.SetToolTip(this.BtnRelistar, "Clique aqui para atualizar a lista de notificações");
-            this.BtnRelistar.UseVisualStyleBackColor = true;
-            this.BtnRelistar.Click += new System.EventHandler(this.BtnRelistar_Click);
             // 
             // FrmUserList
             // 

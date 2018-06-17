@@ -212,7 +212,7 @@
             this.BtnSolModerar.Name = "BtnSolModerar";
             this.BtnSolModerar.Size = new System.Drawing.Size(209, 20);
             this.BtnSolModerar.TabIndex = 3;
-            this.BtnSolModerar.Text = "Solicitar Moderação";
+            this.BtnSolModerar.Text = "Solicitar Administração";
             this.Hint.SetToolTip(this.BtnSolModerar, "Clique aqui para solicitar a mudança para o perfil de administrador");
             this.BtnSolModerar.UseVisualStyleBackColor = false;
             this.BtnSolModerar.Click += new System.EventHandler(this.BtnSolModerar_Click);

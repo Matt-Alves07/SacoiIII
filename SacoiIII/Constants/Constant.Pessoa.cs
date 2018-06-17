@@ -66,5 +66,11 @@ namespace SacoiIII.Constants
         private const string pListarUsuarios = ".ListarUsuarios";
         public string GetPListarUsuarios() => connection.GetDataBase() + pListarUsuarios;
         #endregion
+
+        #region PListarPedidosExclusão
+        //Criação da constante que aponta a Procedure ListarPedidosAdmin e metodo que retorna a string com a informação necessária para chamar a Procedure
+        private const string pListarPedidosAdmin = ".ListarPedidosAdmin";
+        public string GetListarPedidosAdmin() => connection.GetDataBase() + pListarPedidosAdmin;
+        #endregion
     }
 }
