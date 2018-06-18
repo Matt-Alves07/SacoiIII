@@ -287,6 +287,7 @@
             this.BtnListPedidoExlusao.Text = "Listar Pedidos de Exclusão";
             this.Hint.SetToolTip(this.BtnListPedidoExlusao, "Clique aqui para listar os pedidos de exclusão");
             this.BtnListPedidoExlusao.UseVisualStyleBackColor = true;
+            this.BtnListPedidoExlusao.Click += new System.EventHandler(this.BtnListPedidoExlusao_Click);
             this.BtnListPedidoExlusao.MouseEnter += new System.EventHandler(this.BtnListPedidoExlusao_MouseEnter);
             this.BtnListPedidoExlusao.MouseLeave += new System.EventHandler(this.BtnListPedidoExlusao_MouseLeave);
             // 

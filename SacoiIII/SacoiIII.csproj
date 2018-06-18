@@ -116,6 +116,12 @@
     <Compile Include="Views\FrmMessageU.Designer.cs">
       <DependentUpon>FrmMessageU.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmPedidosExclusao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmPedidosExclusao.Designer.cs">
+      <DependentUpon>FrmPedidosExclusao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmSobre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmPedidosAdmin.resx">
       <DependentUpon>FrmPedidosAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmPedidosExclusao.resx">
+      <DependentUpon>FrmPedidosExclusao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmSobre.resx">
       <DependentUpon>FrmSobre.cs</DependentUpon>

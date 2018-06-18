@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using SacoiIII.Controller;
 using SacoiIII.DTO;
 
-namespace SacoiIII
+namespace SacoiIII.Views
 {
-    public partial class FrmPedidosAdmin : Form
+    public partial class FrmPedidosExclusao : Form
     {
         #region Local Atributtes
         //Variáveis de uso local do Form
@@ -20,7 +20,7 @@ namespace SacoiIII
         PessoaDTO Pessoa = new PessoaDTO();
         #endregion
 
-        public FrmPedidosAdmin()
+        public FrmPedidosExclusao()
         {
             InitializeComponent();
             DGVUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -33,21 +33,21 @@ namespace SacoiIII
             ListarRegistros();
         }
 
-        private void BtnSair_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void ListarRegistros()
         {
             //Limpa os registros existentes na Grid
             DGVUser.Rows.Clear();
 
             //Loop para cada pedido registrado no banco
-            foreach (PessoaDTO Pessoa in Controller.GetPedidosadmin())
+            foreach (PessoaDTO Pessoa in Controller.GetPedidosExclusao())
             {
                 DGVUser.Rows.Add(Pessoa.pessoa, Pessoa.pedido, Pessoa.user_name, Pessoa.data_pedido);
             }
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void BtnRelistar_Click(object sender, EventArgs e)
@@ -59,13 +59,13 @@ namespace SacoiIII
         {
             string pessoa = DGVUser.SelectedRows[0].Cells[0].Value.ToString();
             string situacao = "";
-            DialogResult result = MessageBox.Show("Deseja tornar este usuário um administrador do sistema?", "Alterar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3);
-            if(result == DialogResult.Yes)
+            DialogResult result = MessageBox.Show("Deseja apagar este usuário do sistema?", "Apagar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3);
+            if (result == DialogResult.Yes)
             {
-                situacao = Controller.AprovarAdmin(pessoa);
+                situacao = Controller.DeletarUsuario(pessoa);
                 if (situacao == "sucesso")
                 {
-                    MessageBox.Show("Usuário alterado com sucesso.\nQuando ele acessar novamente o sistema já será um administrador", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuário apagado com sucesso.\nEle não terá mais acesso ao sistema", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ListarRegistros();
                 }
                 else
@@ -78,7 +78,7 @@ namespace SacoiIII
                 result = MessageBox.Show("Deseja excluir o pedido deste usuário?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (result == DialogResult.Yes)
                 {
-                    situacao = Controller.RejeitarAdmin(pessoa);
+                    situacao = Controller.DeletarPedidoExclusao(pessoa);
                     if (situacao == "sucesso")
                     {
                         MessageBox.Show("Pedido recusado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);

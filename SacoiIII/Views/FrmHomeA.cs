@@ -210,5 +210,11 @@ namespace SacoiIII.Views
             FrmPedidosAdmin pedidosAdmin = new FrmPedidosAdmin();
             pedidosAdmin.Show();
         }
+
+        private void BtnListPedidoExlusao_Click(object sender, EventArgs e)
+        {
+            FrmPedidosExclusao pedidosExclusao = new FrmPedidosExclusao();
+            pedidosExclusao.Show();
+        }
     }
 }

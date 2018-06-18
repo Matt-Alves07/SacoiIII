@@ -60,15 +60,15 @@ namespace SacoiIII.Views
             ListarUsuarios();
         }
 
-        private void DGVUser_DoubleClick(object sender, EventArgs e)
-        {
-            FrmMessage Message = new FrmMessage(username, DGVUser.SelectedRows[0].Cells[1].Value.ToString());
-            Message.Show();
-        }
-
         private void BtnRelistar_Click(object sender, EventArgs e)
         {
             ListarUsuarios();
+        }
+
+        private void DGVUser_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FrmMessage Message = new FrmMessage(username, DGVUser.SelectedRows[0].Cells[1].Value.ToString());
+            Message.Show();
         }
     }
 }

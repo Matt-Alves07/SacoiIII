@@ -89,3 +89,10 @@
 -> Criação da tela que lista os pedidos de administração do sistema;
 -> Implementação da listagem de pedidos de administração por ordem de pedido(mais antigos primeiro);
 -> Exclusão de linhas de codigo que não estavam em uso mais;
+
+18/06/2018 -> O que foi feito:
+-> Criação dos scripts para aceitar e rejeitar os pedidos de administração(separadas em aprovaradmin e rejeitaradmin);
+-> Criação dos scripts para rejeitar os pedidos de exclusão;
+-> Criação de script para criar a procedure que lista os pedidos de exclusão do sistema;
+-> correção do script para criação da procedure DeletarUsuario(foi criado um novo script para ser executado);
+-> Implementação do recurso de aceitar ou rejeitar um pedido de administração;

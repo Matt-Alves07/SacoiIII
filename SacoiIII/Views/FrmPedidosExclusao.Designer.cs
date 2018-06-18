@@ -1,6 +1,6 @@
 ﻿namespace SacoiIII.Views
 {
-    partial class FrmUserList
+    partial class FrmPedidosExclusao
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUserList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPedidosExclusao));
             this.PnlMenu = new System.Windows.Forms.Panel();
             this.BtnRelistar = new System.Windows.Forms.Button();
             this.BtnSair = new System.Windows.Forms.Button();
-            this.Hint = new System.Windows.Forms.ToolTip(this.components);
             this.DGVUser = new System.Windows.Forms.DataGridView();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUser)).BeginInit();
             this.SuspendLayout();
@@ -56,8 +51,8 @@
             this.PnlMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlMenu.Location = new System.Drawing.Point(0, 0);
             this.PnlMenu.Name = "PnlMenu";
-            this.PnlMenu.Size = new System.Drawing.Size(814, 40);
-            this.PnlMenu.TabIndex = 5;
+            this.PnlMenu.Size = new System.Drawing.Size(514, 46);
+            this.PnlMenu.TabIndex = 7;
             // 
             // BtnRelistar
             // 
@@ -71,12 +66,11 @@
             this.BtnRelistar.Image = global::SacoiIII.Properties.Resources.circular_arrow_24w;
             this.BtnRelistar.Location = new System.Drawing.Point(0, 0);
             this.BtnRelistar.Name = "BtnRelistar";
-            this.BtnRelistar.Size = new System.Drawing.Size(125, 38);
+            this.BtnRelistar.Size = new System.Drawing.Size(146, 44);
             this.BtnRelistar.TabIndex = 4;
             this.BtnRelistar.TabStop = false;
             this.BtnRelistar.Text = " Atualiza&r Lista";
             this.BtnRelistar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Hint.SetToolTip(this.BtnRelistar, "Clique aqui para atualizar a lista de notificações");
             this.BtnRelistar.UseVisualStyleBackColor = true;
             this.BtnRelistar.Click += new System.EventHandler(this.BtnRelistar_Click);
             // 
@@ -91,14 +85,13 @@
             this.BtnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSair.ForeColor = System.Drawing.Color.White;
             this.BtnSair.Image = global::SacoiIII.Properties.Resources.error_24w;
-            this.BtnSair.Location = new System.Drawing.Point(728, 0);
+            this.BtnSair.Location = new System.Drawing.Point(414, 0);
             this.BtnSair.Name = "BtnSair";
-            this.BtnSair.Size = new System.Drawing.Size(84, 38);
+            this.BtnSair.Size = new System.Drawing.Size(98, 44);
             this.BtnSair.TabIndex = 0;
             this.BtnSair.TabStop = false;
             this.BtnSair.Text = " &Fechar";
             this.BtnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Hint.SetToolTip(this.BtnSair, "Clique aqui para fechar esta tela");
             this.BtnSair.UseVisualStyleBackColor = true;
             this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
@@ -109,18 +102,15 @@
             this.DGVUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Usuario,
-            this.UserName,
-            this.PNome,
-            this.SNome,
-            this.Email,
-            this.Cargo,
-            this.Admin});
+            this.Pedido,
+            this.NomeUser,
+            this.DataPedido});
             this.DGVUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGVUser.Location = new System.Drawing.Point(0, 40);
+            this.DGVUser.Location = new System.Drawing.Point(0, 46);
             this.DGVUser.Name = "DGVUser";
             this.DGVUser.ReadOnly = true;
-            this.DGVUser.Size = new System.Drawing.Size(814, 481);
-            this.DGVUser.TabIndex = 6;
+            this.DGVUser.Size = new System.Drawing.Size(514, 350);
+            this.DGVUser.TabIndex = 8;
             this.DGVUser.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVUser_CellContentDoubleClick);
             // 
             // Usuario
@@ -131,59 +121,43 @@
             this.Usuario.ReadOnly = true;
             this.Usuario.Visible = false;
             // 
-            // UserName
+            // Pedido
             // 
-            this.UserName.HeaderText = "Nome de Usuário";
-            this.UserName.Name = "UserName";
-            this.UserName.ReadOnly = true;
+            this.Pedido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Pedido.HeaderText = "Pedido";
+            this.Pedido.Name = "Pedido";
+            this.Pedido.ReadOnly = true;
+            this.Pedido.Visible = false;
             // 
-            // PNome
+            // NomeUser
             // 
-            this.PNome.HeaderText = "Primeiro Nome";
-            this.PNome.Name = "PNome";
-            this.PNome.ReadOnly = true;
+            this.NomeUser.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomeUser.HeaderText = "Nome de Usuário";
+            this.NomeUser.Name = "NomeUser";
+            this.NomeUser.ReadOnly = true;
             // 
-            // SNome
+            // DataPedido
             // 
-            this.SNome.HeaderText = "Sobrenome";
-            this.SNome.Name = "SNome";
-            this.SNome.ReadOnly = true;
+            this.DataPedido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DataPedido.HeaderText = "Data da Solicitação";
+            this.DataPedido.Name = "DataPedido";
+            this.DataPedido.ReadOnly = true;
             // 
-            // Email
-            // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // Cargo
-            // 
-            this.Cargo.HeaderText = "Cargo";
-            this.Cargo.Name = "Cargo";
-            this.Cargo.ReadOnly = true;
-            // 
-            // Admin
-            // 
-            this.Admin.HeaderText = "Administrador";
-            this.Admin.Name = "Admin";
-            this.Admin.ReadOnly = true;
-            // 
-            // FrmUserList
+            // FrmPedidosExclusao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnSair;
-            this.ClientSize = new System.Drawing.Size(814, 521);
+            this.ClientSize = new System.Drawing.Size(514, 396);
             this.Controls.Add(this.DGVUser);
             this.Controls.Add(this.PnlMenu);
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FrmUserList";
+            this.Name = "FrmPedidosExclusao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SACOI - Lista de Usuários";
-            this.Load += new System.EventHandler(this.FrmUserList_Load);
+            this.Text = "SACOI - Pedidos para exclusão de cadastro no sistema";
             this.PnlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVUser)).EndInit();
             this.ResumeLayout(false);
@@ -193,16 +167,12 @@
         #endregion
 
         private System.Windows.Forms.Panel PnlMenu;
+        private System.Windows.Forms.Button BtnRelistar;
         private System.Windows.Forms.Button BtnSair;
-        private System.Windows.Forms.ToolTip Hint;
         private System.Windows.Forms.DataGridView DGVUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Admin;
-        private System.Windows.Forms.Button BtnRelistar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataPedido;
     }
 }

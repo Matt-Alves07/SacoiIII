@@ -72,5 +72,35 @@ namespace SacoiIII.Constants
         private const string pListarPedidosAdmin = ".ListarPedidosAdmin";
         public string GetListarPedidosAdmin() => connection.GetDataBase() + pListarPedidosAdmin;
         #endregion
+
+        #region PAprovarAdmin
+        //Criação da constante que aponta a Procedure AprovarAdmin e metodo que retorna a string com a informação necessária para chamar a Procedure
+        private const string pAprovarAdmin = ".AprovarAdmin";
+        public string GetAprovarAdmin() => connection.GetDataBase() + pAprovarAdmin;
+        #endregion
+
+        #region PRejeitarAdmin
+        //Criação da constante que aponta a Procedure RejeitarAdmin e metodo que retorna a string com a informação necessária para chamar a Procedure
+        private const string pRejeitarAdmin = ".RejeitarAdmin";
+        public string GetRejeitarAdmin() => connection.GetDataBase() + pRejeitarAdmin;
+        #endregion
+
+        #region ListarPedidosExclusao
+        //Criação da constante que aponta a Procedure ListarPedidosExclusao e metodo que retorna a string com a informação necessária para chamar a Procedure
+        private const string pListarPedidosExclusao = ".ListarPedidosExclusao";
+        public string GetListarPedidosExclusao() => connection.GetDataBase() + pListarPedidosExclusao;
+        #endregion
+
+        #region PDeletarUsuario
+        //Criação da constante que aponta a Procedure DeletarUsuario e metodo que retorna a string com a informação necessária para chamar a Procedure
+        private const string pDeletarUsuario = ".DeletarUsuario";
+        public string GetDeletarUsuario() => connection.GetDataBase() + pDeletarUsuario;
+        #endregion
+
+        #region PDeletarPedidoExclusao
+        //Criação da constante que aponta a Procedure ApagarPedidoExclusao e metodo que retorna a string com a informação necessária para chamar a Procedure
+        private const string pApagarPedidoExclusao = ".ApagarPedidoExclusao";
+        public string GetApagarPedidoExclusao() => connection.GetDataBase() + pApagarPedidoExclusao;
+        #endregion
     }
 }
