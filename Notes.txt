@@ -96,3 +96,9 @@
 -> Criação de script para criar a procedure que lista os pedidos de exclusão do sistema;
 -> correção do script para criação da procedure DeletarUsuario(foi criado um novo script para ser executado);
 -> Implementação do recurso de aceitar ou rejeitar um pedido de administração;
+
+23/06/2018 -> O que foi feito(Primeiro commit):
+-> Criado script para criação da procedure Solicitar Exclusão;
+-> Criado script para criação da procedure Listar Pedidos Exclusão(Ainda não implementado);
+-> Implementação da função de solicitar exclusão do cadastro;
+-> Reordenação dos botões da panel lateral esquerdo nas telas home(admin e usuário), para estabelecer um padrão de ordenação e exibição.

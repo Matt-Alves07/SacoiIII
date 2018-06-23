@@ -85,7 +85,13 @@ namespace SacoiIII.Constants
         public string GetRejeitarAdmin() => connection.GetDataBase() + pRejeitarAdmin;
         #endregion
 
-        #region ListarPedidosExclusao
+        #region PSolicitarExclusao
+        //Criação da constante que aponta a procedure SolicitarExclusao e metodo que retorna a string com a informação necessário para chamar a Procedure
+        private const string pSolicitarExclusao = ".SolicitarExclusao";
+        public string GetPSolicitarExclusao() => connection.GetDataBase() + pSolicitarExclusao;
+        #endregion
+
+        #region PListarPedidosExclusao
         //Criação da constante que aponta a Procedure ListarPedidosExclusao e metodo que retorna a string com a informação necessária para chamar a Procedure
         private const string pListarPedidosExclusao = ".ListarPedidosExclusao";
         public string GetListarPedidosExclusao() => connection.GetDataBase() + pListarPedidosExclusao;

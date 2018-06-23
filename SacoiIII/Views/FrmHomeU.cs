@@ -215,5 +215,27 @@ namespace SacoiIII.Views
             }
             #endregion
         }
+
+        private void BtnSolExcluir_Click(object sender, EventArgs e)
+        {
+            #region Local Attributes
+            string situacao = "";
+            #endregion
+
+            #region Controller Access
+            situacao = UsuarioController.SolicitarExclusao(UserName);
+            #endregion
+
+            #region Result Validation
+            if (situacao == "sucesso")
+            {
+                MessageBox.Show("Solicitação enviada.\nAguarde enquanto um dos administradores do sistema avalia seu pedido.", "Pedido realizado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else if (situacao == "solicitado")
+            {
+                MessageBox.Show("Essa solicitação já foi feita.\nAguarde enquanto um dos administradores do sistema avalia seu pedido.", "Soliciação em analise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            #endregion
+        }
     }
 }

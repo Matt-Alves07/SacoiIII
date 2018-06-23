@@ -64,5 +64,17 @@ namespace SacoiIII.Controller
             return PessoaDAO.RetornaPessoa();
         }
         #endregion
+
+        #region Solicitar Exclusao
+        //Metodo responsável por atribuir o valor que veio da camada view ao atriburo do DTO e chamar os metodos necessários da camada DAO
+        public string SolicitarExclusao(string _user_name)
+        {
+            //Atribuição de valor ao atributo User Name do DTO usado pela camada DAO para realizar o pedido de exclusão posteriormente
+            PessoaDAO.SetPessoa(_user_name);
+
+            //Chamada do metodo que executa a Procedure Solicitar Exclusão no banco de dados
+            return PessoaDAO.SolicitarExclusao();
+        }
+        #endregion
     }
 }

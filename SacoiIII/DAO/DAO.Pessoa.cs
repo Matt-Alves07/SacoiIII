@@ -545,6 +545,53 @@ namespace SacoiIII.DAO
         }
         #endregion
 
+        #region Solicitar Exclusao
+        //Metodo que usa o atributo user_name do DTO e as constants de pessoa e conexão para acessar o banco e realizar o pedido de admin para usuários
+        public string SolicitarExclusao()
+        {
+            #region Local Attributes
+            string situacao = "";
+            #endregion
+
+            #region Change attributes values
+            //atribuição dos valores que serão usados nesse metodo nas variaveis de uso comum da classe
+            query = $"CALL {ConstantPessoa.GetPSolicitarExclusao()}('{DTOPessoa.user_name}');";
+            connection = new MySqlConnection(ConstantConnection.GetConnection());
+            command = new MySqlCommand(query, connection);
+            #endregion
+
+            #region Database access
+            //Abertura da conexão com o MySQL e tentativa de chamada da Procedure para verificar a disponibilidade do nome de usuário
+            try
+            {
+                //Abertura da conexão ao banco de dados
+                connection.Open();
+
+                //Faz a consulta a Procedure no banco e atribui os valores aos atributos do DTO
+                using (reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        situacao = reader.GetString(0);
+                    }
+                }
+
+                return situacao;
+            }
+            catch (Exception ex)
+            {
+                //No caso de erro no MySQL, dispara uma exceção dizendo o que ocorreu
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                //Encerra a conexão com o banco de dados
+                connection.Close();
+            }
+            #endregion
+        }
+        #endregion
+
         #region ApagarPedidoExclusao
         public string ApagarPedidoExclusao()
         {
