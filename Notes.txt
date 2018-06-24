@@ -97,8 +97,16 @@
 -> correção do script para criação da procedure DeletarUsuario(foi criado um novo script para ser executado);
 -> Implementação do recurso de aceitar ou rejeitar um pedido de administração;
 
-23/06/2018 -> O que foi feito(Primeiro commit):
+23/06/2018 -> O que foi feito:
 -> Criado script para criação da procedure Solicitar Exclusão;
 -> Criado script para criação da procedure Listar Pedidos Exclusão(Ainda não implementado);
 -> Implementação da função de solicitar exclusão do cadastro;
 -> Reordenação dos botões da panel lateral esquerdo nas telas home(admin e usuário), para estabelecer um padrão de ordenação e exibição.
+
+24/06/2018 -> O que foi feito:
+-> Criado script que adiciona a coluna assunto na tabela mensagens para armazenar o assunto do email informado;
+-> Criado script para adicionar os dados dos emails enviados pelos Admins;
+-> Criado script para listar os emails recebidos pelos admins(Usuários);
+-> Criado script para listar os emails recebidos e enviados pelos admins(Admins);
+-> Criado script para retornar as informações referentes a um email selecionado.
+*Obs*-> Falta implementar no C#.
