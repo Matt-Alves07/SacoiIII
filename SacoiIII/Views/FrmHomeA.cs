@@ -62,8 +62,8 @@ namespace SacoiIII.Views
 
         private void BtnMensagens_Click(object sender, EventArgs e)
         {
-            FrmMessageA message = new FrmMessageA();
-            message.ShowDialog();
+            FrmMessageA message = new FrmMessageA(UserName);
+            message.Show();
         }
 
         private void BtnListarUsers_Click(object sender, EventArgs e)

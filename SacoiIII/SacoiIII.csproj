@@ -50,16 +50,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Constant.Connection.cs" />
+    <Compile Include="Constants\Constant.Mensagens.cs" />
     <Compile Include="Constants\Constant.Notification.cs" />
     <Compile Include="Constants\Constant.Pessoa.cs" />
     <Compile Include="Controller\Controller.Admin.cs" />
+    <Compile Include="Controller\Controller.Message.cs" />
     <Compile Include="Controller\Controller.Notificacoes.cs" />
     <Compile Include="Controller\Controller.Pessoa.cs" />
     <Compile Include="Controller\Controller.Usuario.cs" />
+    <Compile Include="DAO\DAO.Mensagem.cs" />
     <Compile Include="DAO\DAO.Notificacao.cs" />
     <Compile Include="DAO\DAO.Pessoa.cs" />
+    <Compile Include="DTO\DTO.Mensagem.cs" />
     <Compile Include="DTO\DTO.Notificacao.cs" />
     <Compile Include="DTO\DTO.Pessoa.cs" />
+    <Compile Include="Misc\Error.cs" />
+    <Compile Include="Views\FrmInfoMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmInfoMessage.Designer.cs">
+      <DependentUpon>FrmInfoMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmPedidosAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmHomeU.resx">
       <DependentUpon>FrmHomeU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmInfoMessage.resx">
+      <DependentUpon>FrmInfoMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

@@ -59,7 +59,7 @@ namespace SacoiIII.Views
 
         private void BtnMensagens_Click(object sender, EventArgs e)
         {
-            FrmMessageU message = new FrmMessageU();
+            FrmMessageU message = new FrmMessageU(UserName);
             message.ShowDialog();
         }
 

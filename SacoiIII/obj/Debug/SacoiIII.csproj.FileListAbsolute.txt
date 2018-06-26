@@ -45,3 +45,4 @@ C:\Users\João\Desktop\SacoiIII\SacoiIII\obj\Debug\SacoiIII.Views.FrmMessage.res
 C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmMessage.resources
 C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.FrmPedidosAdmin.resources
 C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmPedidosExclusao.resources
+C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmInfoMessage.resources
