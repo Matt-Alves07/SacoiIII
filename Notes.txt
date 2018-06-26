@@ -109,4 +109,11 @@
 -> Criado script para listar os emails recebidos pelos admins(Usuários);
 -> Criado script para listar os emails recebidos e enviados pelos admins(Admins);
 -> Criado script para retornar as informações referentes a um email selecionado.
-*Obs*-> Falta implementar no C#.
+
+25/06/2018 -> O que foi feito:
+-> Criados scripts de correção para as procedures que listam os emails, tanto para admins quanto para usuários;
+-> Criação dos arquivos do padrão MVC para mensagens;
+-> Criado arquivo que será usado para exibir mensagens para o usuário(Message Box), ao invés de chamar a Message Box diretamente;
+-> Implementado o sistema de leitura de mensagens dentro do sistema, tanto para admins quanto para usuários;
+-> Implementado o uso da unit de erro criada para o sistema de mensagens;
+-> Removida mensagem duplicada de sucesso ao enviar um email;

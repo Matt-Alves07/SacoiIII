@@ -24,6 +24,7 @@ namespace SacoiIII.Views
         PessoaDTO PessoaSender = new PessoaDTO();
         PessoaDTO PessoaReceiver = new PessoaDTO();
         AdminController Controller = new AdminController();
+        MessageController Message = new MessageController();
         #endregion
 
         public FrmMessage(string _sender, string _receiver)
@@ -58,7 +59,7 @@ namespace SacoiIII.Views
                     msg.To.Add(PessoaReceiver.email);
 
                     //Assunto do email
-                    msg.Subject = "SACOI " + PessoaSender.p_nome + TxtSubject.Text;
+                    msg.Subject = "SACOI " + PessoaSender.p_nome + " " + TxtSubject.Text;
 
                     //Corpo de texto do email
                     msg.Body = TxtBody.Text;
@@ -72,7 +73,7 @@ namespace SacoiIII.Views
                     //Envia o email
                     client.Send(msg);
 
-                    MessageBox.Show("Email enviado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Message.CreateMessage(Sender, Receiver, msg.Subject.ToString(), msg.Body.ToString());
                 }
                 catch
                 {
