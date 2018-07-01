@@ -1,6 +1,6 @@
 ﻿namespace SacoiIII.Views
 {
-    partial class FrmMessageA
+    partial class FrmListNotification
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMessageA));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListNotification));
             this.PnlMenu = new System.Windows.Forms.Panel();
             this.BtnRelistar = new System.Windows.Forms.Button();
             this.BtnSair = new System.Windows.Forms.Button();
-            this.Hint = new System.Windows.Forms.ToolTip(this.components);
-            this.DGVMessage = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.About = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Text = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PnlMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVMessage)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -53,7 +45,7 @@
             this.PnlMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlMenu.Location = new System.Drawing.Point(0, 0);
             this.PnlMenu.Name = "PnlMenu";
-            this.PnlMenu.Size = new System.Drawing.Size(814, 40);
+            this.PnlMenu.Size = new System.Drawing.Size(694, 40);
             this.PnlMenu.TabIndex = 6;
             // 
             // BtnRelistar
@@ -68,13 +60,12 @@
             this.BtnRelistar.Image = global::SacoiIII.Properties.Resources.circular_arrow_24w;
             this.BtnRelistar.Location = new System.Drawing.Point(0, 0);
             this.BtnRelistar.Name = "BtnRelistar";
-            this.BtnRelistar.Size = new System.Drawing.Size(165, 38);
-            this.BtnRelistar.TabIndex = 6;
+            this.BtnRelistar.Size = new System.Drawing.Size(125, 38);
+            this.BtnRelistar.TabIndex = 4;
             this.BtnRelistar.TabStop = false;
-            this.BtnRelistar.Text = " Atualiza&r Mensagens";
+            this.BtnRelistar.Text = " Atualiza&r Lista";
             this.BtnRelistar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnRelistar.UseVisualStyleBackColor = true;
-            this.BtnRelistar.Click += new System.EventHandler(this.BtnRelistar_Click);
             // 
             // BtnSair
             // 
@@ -87,88 +78,31 @@
             this.BtnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSair.ForeColor = System.Drawing.Color.White;
             this.BtnSair.Image = global::SacoiIII.Properties.Resources.error_24w;
-            this.BtnSair.Location = new System.Drawing.Point(728, 0);
+            this.BtnSair.Location = new System.Drawing.Point(608, 0);
             this.BtnSair.Name = "BtnSair";
             this.BtnSair.Size = new System.Drawing.Size(84, 38);
             this.BtnSair.TabIndex = 0;
             this.BtnSair.TabStop = false;
             this.BtnSair.Text = " &Fechar";
             this.BtnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Hint.SetToolTip(this.BtnSair, "Clique aqui para fechar esta tela");
             this.BtnSair.UseVisualStyleBackColor = true;
             this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
-            // DGVMessage
-            // 
-            this.DGVMessage.AllowUserToAddRows = false;
-            this.DGVMessage.AllowUserToDeleteRows = false;
-            this.DGVMessage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVMessage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.sender,
-            this.About,
-            this.Text});
-            this.DGVMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGVMessage.Location = new System.Drawing.Point(0, 40);
-            this.DGVMessage.Name = "DGVMessage";
-            this.DGVMessage.ReadOnly = true;
-            this.DGVMessage.Size = new System.Drawing.Size(814, 481);
-            this.DGVMessage.TabIndex = 9;
-            this.DGVMessage.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVMessage_CellContentDoubleClick);
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID.ToolTipText = "Identificador da mensagem";
-            this.ID.Visible = false;
-            // 
-            // sender
-            // 
-            this.sender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sender.HeaderText = "Remetente";
-            this.sender.Name = "sender";
-            this.sender.ReadOnly = true;
-            this.sender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.sender.ToolTipText = "Remetente da mensagem";
-            // 
-            // About
-            // 
-            this.About.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.About.HeaderText = "Assunto";
-            this.About.Name = "About";
-            this.About.ReadOnly = true;
-            this.About.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.About.ToolTipText = "Assunto da mensagem";
-            // 
-            // Text
-            // 
-            this.Text.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Text.HeaderText = "Texto";
-            this.Text.Name = "Text";
-            this.Text.ReadOnly = true;
-            this.Text.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Text.ToolTipText = "Texto da Mensagem";
-            // 
-            // FrmMessageA
+            // FrmListNotification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnSair;
-            this.ClientSize = new System.Drawing.Size(814, 521);
-            this.Controls.Add(this.DGVMessage);
+            this.ClientSize = new System.Drawing.Size(694, 407);
             this.Controls.Add(this.PnlMenu);
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FrmMessageA";
+            this.MinimizeBox = false;
+            this.Name = "FrmListNotification";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "SACOI - Lista de Notificações";
             this.PnlMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGVMessage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,13 +110,7 @@
         #endregion
 
         private System.Windows.Forms.Panel PnlMenu;
-        private System.Windows.Forms.Button BtnSair;
-        private System.Windows.Forms.ToolTip Hint;
-        private System.Windows.Forms.DataGridView DGVMessage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn About;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Text;
         private System.Windows.Forms.Button BtnRelistar;
+        private System.Windows.Forms.Button BtnSair;
     }
 }

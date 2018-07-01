@@ -237,5 +237,11 @@ namespace SacoiIII.Views
             }
             #endregion
         }
+
+        private void BtnListarNotificacoes_Click(object sender, EventArgs e)
+        {
+            FrmListNotification listNotification = new FrmListNotification();
+            listNotification.Show();
+        }
     }
 }

@@ -109,10 +109,6 @@ namespace SacoiIII
                         MessageBox.Show("Ocorreu um erro ao carregar as informações do servidor.\nTente novamente e, se persistir, contate o suporte.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Ocorreu um erro ao carregar as informações do servidor.\nTente novamente e, se persistir, contate o suporte.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 #endregion
             }
         }

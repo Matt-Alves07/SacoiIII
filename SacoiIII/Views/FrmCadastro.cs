@@ -8,14 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SacoiIII.Controller;
+using SacoiIII.Misc;
 
 namespace SacoiIII.Views
 {
     public partial class FrmCadastro : Form
     {
-        #region
+        #region Instances
         //Instância do objeto Controller que será usado para intermediar a camada view para a camada model
         UsuarioController UsuarioController = new UsuarioController();
+        Error Error = new Error();
         #endregion
 
         public FrmCadastro()
@@ -106,49 +108,49 @@ namespace SacoiIII.Views
         {
             if(TxtPNome.Text == "")
             {
-                MessageBox.Show("O campo primeiro nome tem preenchimento obrigatório", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Error.SendError("O campo primeiro nome tem preenchimento obrigatório", "Campo vazio");
                 TxtPNome.Focus();
                 return false;
             }
             else if (TxtSNome.Text == "")
             {
-                MessageBox.Show("O campo sobrenome tem preenchimento obrigatório", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Error.SendError("O campo sobrenome tem preenchimento obrigatório", "Campo vazio");
                 TxtSNome.Focus();
                 return false;
             }
             else if (TxtUserName.Text == "")
             {
-                MessageBox.Show("O campo nome de usuário tem preenchimento obrigatório", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Error.SendError("O campo nome de usuário tem preenchimento obrigatório", "Campo vazio");
                 TxtUserName.Focus();
                 return false;
             }
             else if (TxtEmail.Text == "")
             {
-                MessageBox.Show("O campo email tem preenchimento obrigatório", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Error.SendError("O campo email tem preenchimento obrigatório", "Campo vazio");
                 TxtEmail.Focus();
                 return false;
             }
             else if (TxtCargo.Text == "")
             {
-                MessageBox.Show("O campo cargo tem preenchimento obrigatório", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Error.SendError("O campo cargo tem preenchimento obrigatório", "Campo vazio");
                 TxtCargo.Focus();
                 return false;
             }
             else if (TxtSenha.Text == "")
             {
-                MessageBox.Show("O campo senha tem preenchimento obrigatório", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Error.SendError("O campo senha tem preenchimento obrigatório", "Campo vazio");
                 TxtSenha.Focus();
                 return false;
             }
             else if (TxtRSenha.Text == "")
             {
-                MessageBox.Show("O campo de repetição de senha tem preenchimento obrigatório", "Campo vazio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Error.SendError("O campo de repetição de senha tem preenchimento obrigatório", "Campo vazio");
                 TxtRSenha.Focus();
                 return false;
             }
             else if (TxtSenha.Text != TxtRSenha.Text)
             {
-                MessageBox.Show("As senhas devem ser iguais", "Senhas diferentes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Error.SendError("As senhas devem ser iguais", "Senhas diferentes");
                 TxtSenha.Focus();
                 return false;
             }
@@ -166,7 +168,7 @@ namespace SacoiIII.Views
                 status = UsuarioController.InsertPessoa(TxtUserName.Text, TxtPNome.Text, TxtSNome.Text, TxtEmail.Text, TxtSenha.Text, TxtCargo.Text);
                 if (status == "sucesso")
                 {
-                    MessageBox.Show("Cadastro efetuado com sucesso.\nClique em OK para voltar a tela de login.", "Bem vindo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Error.SendOK("Cadastro efetuado com sucesso.\nClique em OK para voltar a tela de login.", "Bem vindo");
                     Close();
                 }
                 else if (status == "falha")
@@ -182,15 +184,24 @@ namespace SacoiIII.Views
 
         private void BtnDisp_Click(object sender, EventArgs e)
         {
+            #region Local Atributtes
+            string resultado = "";
+            #endregion
+
             if (TxtUserName.Text != "")
             {
-                if (UsuarioController.VerificarNome(TxtUserName.Text))
+                resultado = UsuarioController.VerificarNome(TxtUserName.Text);
+                if (resultado == "livre")
                 {
                     MessageBox.Show("Este nome está disponível para uso.", "Disponível", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
+                else if (resultado == "usado")
                 {
                     MessageBox.Show("Este nome de usuário está sendo usado no momento.\nInsira outro e tente novamente.", "Não disponível", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    
                 }
             }
             else

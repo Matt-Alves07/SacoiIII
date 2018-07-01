@@ -38,6 +38,11 @@
             this.BtnSair = new System.Windows.Forms.Button();
             this.Hint = new System.Windows.Forms.ToolTip(this.components);
             this.BtnShare = new System.Windows.Forms.Button();
+            this.BtnAtualizarCadastro = new System.Windows.Forms.Button();
+            this.BtnListarNotificacoes = new System.Windows.Forms.Button();
+            this.BtnListPedidoAdmin = new System.Windows.Forms.Button();
+            this.BtnListPedidoExlusao = new System.Windows.Forms.Button();
+            this.BtnSolicitaExclusao = new System.Windows.Forms.Button();
             this.PnlInfo = new System.Windows.Forms.Panel();
             this.PnlOptions = new System.Windows.Forms.Panel();
             this.TblButtons = new System.Windows.Forms.TableLayoutPanel();
@@ -49,11 +54,6 @@
             this.PnlNewNotification = new System.Windows.Forms.Panel();
             this.PnlButtonShare = new System.Windows.Forms.Panel();
             this.TxtNotification = new System.Windows.Forms.TextBox();
-            this.BtnAtualizarCadastro = new System.Windows.Forms.Button();
-            this.BtnListarNotificacoes = new System.Windows.Forms.Button();
-            this.BtnListPedidoAdmin = new System.Windows.Forms.Button();
-            this.BtnListPedidoExlusao = new System.Windows.Forms.Button();
-            this.BtnSolicitaExclusao = new System.Windows.Forms.Button();
             this.PnlMenu.SuspendLayout();
             this.PnlInfo.SuspendLayout();
             this.PnlOptions.SuspendLayout();
@@ -207,6 +207,114 @@
             this.BtnShare.MouseEnter += new System.EventHandler(this.BtnShare_MouseEnter);
             this.BtnShare.MouseLeave += new System.EventHandler(this.BtnShare_MouseLeave);
             // 
+            // BtnAtualizarCadastro
+            // 
+            this.BtnAtualizarCadastro.BackColor = System.Drawing.Color.Transparent;
+            this.BtnAtualizarCadastro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAtualizarCadastro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnAtualizarCadastro.FlatAppearance.BorderSize = 0;
+            this.BtnAtualizarCadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.BtnAtualizarCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.BtnAtualizarCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAtualizarCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAtualizarCadastro.ForeColor = System.Drawing.Color.Black;
+            this.BtnAtualizarCadastro.Location = new System.Drawing.Point(3, 3);
+            this.BtnAtualizarCadastro.Name = "BtnAtualizarCadastro";
+            this.BtnAtualizarCadastro.Size = new System.Drawing.Size(207, 23);
+            this.BtnAtualizarCadastro.TabIndex = 14;
+            this.BtnAtualizarCadastro.Text = "Atualizar Cadastro";
+            this.Hint.SetToolTip(this.BtnAtualizarCadastro, "Clique aqui para atualizar seu cadastro");
+            this.BtnAtualizarCadastro.UseVisualStyleBackColor = false;
+            this.BtnAtualizarCadastro.MouseEnter += new System.EventHandler(this.BtnAtualizarCadastro_MouseEnter);
+            this.BtnAtualizarCadastro.MouseLeave += new System.EventHandler(this.BtnAtualizarCadastro_MouseLeave);
+            // 
+            // BtnListarNotificacoes
+            // 
+            this.BtnListarNotificacoes.BackColor = System.Drawing.Color.Transparent;
+            this.BtnListarNotificacoes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnListarNotificacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnListarNotificacoes.FlatAppearance.BorderSize = 0;
+            this.BtnListarNotificacoes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.BtnListarNotificacoes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.BtnListarNotificacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnListarNotificacoes.ForeColor = System.Drawing.Color.Black;
+            this.BtnListarNotificacoes.Location = new System.Drawing.Point(3, 32);
+            this.BtnListarNotificacoes.Name = "BtnListarNotificacoes";
+            this.BtnListarNotificacoes.Size = new System.Drawing.Size(207, 23);
+            this.BtnListarNotificacoes.TabIndex = 15;
+            this.BtnListarNotificacoes.Text = "Listar todas notificações";
+            this.Hint.SetToolTip(this.BtnListarNotificacoes, "Clique aqui para visualizar todas as notificações criadas");
+            this.BtnListarNotificacoes.UseVisualStyleBackColor = false;
+            this.BtnListarNotificacoes.Click += new System.EventHandler(this.BtnListarNotificacoes_Click);
+            this.BtnListarNotificacoes.MouseEnter += new System.EventHandler(this.BtnListarNotificacoes_MouseEnter);
+            this.BtnListarNotificacoes.MouseLeave += new System.EventHandler(this.BtnListarNotificacoes_MouseLeave);
+            // 
+            // BtnListPedidoAdmin
+            // 
+            this.BtnListPedidoAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.BtnListPedidoAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnListPedidoAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnListPedidoAdmin.FlatAppearance.BorderSize = 0;
+            this.BtnListPedidoAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.BtnListPedidoAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.BtnListPedidoAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnListPedidoAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnListPedidoAdmin.ForeColor = System.Drawing.Color.Black;
+            this.BtnListPedidoAdmin.Location = new System.Drawing.Point(3, 61);
+            this.BtnListPedidoAdmin.Name = "BtnListPedidoAdmin";
+            this.BtnListPedidoAdmin.Size = new System.Drawing.Size(207, 23);
+            this.BtnListPedidoAdmin.TabIndex = 16;
+            this.BtnListPedidoAdmin.Text = "Listar Pedidos de Administrador";
+            this.Hint.SetToolTip(this.BtnListPedidoAdmin, "Clique aqui para listar as solicitações de usuários que desejam se tornar adminis" +
+        "tradores");
+            this.BtnListPedidoAdmin.UseVisualStyleBackColor = false;
+            this.BtnListPedidoAdmin.Click += new System.EventHandler(this.BtnListPedidoAdmin_Click);
+            this.BtnListPedidoAdmin.MouseEnter += new System.EventHandler(this.BtnListPedidoAdmin_MouseEnter);
+            this.BtnListPedidoAdmin.MouseLeave += new System.EventHandler(this.BtnListPedidoAdmin_MouseLeave);
+            // 
+            // BtnListPedidoExlusao
+            // 
+            this.BtnListPedidoExlusao.AutoSize = true;
+            this.BtnListPedidoExlusao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnListPedidoExlusao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnListPedidoExlusao.FlatAppearance.BorderSize = 0;
+            this.BtnListPedidoExlusao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.BtnListPedidoExlusao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.BtnListPedidoExlusao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnListPedidoExlusao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnListPedidoExlusao.Location = new System.Drawing.Point(3, 90);
+            this.BtnListPedidoExlusao.Name = "BtnListPedidoExlusao";
+            this.BtnListPedidoExlusao.Size = new System.Drawing.Size(207, 23);
+            this.BtnListPedidoExlusao.TabIndex = 17;
+            this.BtnListPedidoExlusao.Text = "Listar Pedidos de Exclusão";
+            this.Hint.SetToolTip(this.BtnListPedidoExlusao, "Clique aqui para listar os pedidos de exclusão");
+            this.BtnListPedidoExlusao.UseVisualStyleBackColor = true;
+            this.BtnListPedidoExlusao.Click += new System.EventHandler(this.BtnListPedidoExlusao_Click);
+            this.BtnListPedidoExlusao.MouseEnter += new System.EventHandler(this.BtnListPedidoExlusao_MouseEnter);
+            this.BtnListPedidoExlusao.MouseLeave += new System.EventHandler(this.BtnListPedidoExlusao_MouseLeave);
+            // 
+            // BtnSolicitaExclusao
+            // 
+            this.BtnSolicitaExclusao.BackColor = System.Drawing.Color.Transparent;
+            this.BtnSolicitaExclusao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSolicitaExclusao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnSolicitaExclusao.FlatAppearance.BorderSize = 0;
+            this.BtnSolicitaExclusao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.BtnSolicitaExclusao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.BtnSolicitaExclusao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSolicitaExclusao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSolicitaExclusao.ForeColor = System.Drawing.Color.Black;
+            this.BtnSolicitaExclusao.Location = new System.Drawing.Point(3, 119);
+            this.BtnSolicitaExclusao.Name = "BtnSolicitaExclusao";
+            this.BtnSolicitaExclusao.Size = new System.Drawing.Size(207, 27);
+            this.BtnSolicitaExclusao.TabIndex = 18;
+            this.BtnSolicitaExclusao.Text = "Solicitar Exclusão";
+            this.Hint.SetToolTip(this.BtnSolicitaExclusao, "Clique aqui para solicitar a exclusão do seu cadastro");
+            this.BtnSolicitaExclusao.UseVisualStyleBackColor = false;
+            this.BtnSolicitaExclusao.Click += new System.EventHandler(this.BtnSolicitaExclusao_Click);
+            this.BtnSolicitaExclusao.MouseEnter += new System.EventHandler(this.BtnSolicitaExclusao_MouseEnter);
+            this.BtnSolicitaExclusao.MouseLeave += new System.EventHandler(this.BtnSolicitaExclusao_MouseLeave);
+            // 
             // PnlInfo
             // 
             this.PnlInfo.BackColor = System.Drawing.Color.White;
@@ -336,113 +444,6 @@
             this.TxtNotification.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.TxtNotification.Size = new System.Drawing.Size(624, 98);
             this.TxtNotification.TabIndex = 0;
-            // 
-            // BtnAtualizarCadastro
-            // 
-            this.BtnAtualizarCadastro.BackColor = System.Drawing.Color.Transparent;
-            this.BtnAtualizarCadastro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnAtualizarCadastro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnAtualizarCadastro.FlatAppearance.BorderSize = 0;
-            this.BtnAtualizarCadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnAtualizarCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.BtnAtualizarCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAtualizarCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAtualizarCadastro.ForeColor = System.Drawing.Color.Black;
-            this.BtnAtualizarCadastro.Location = new System.Drawing.Point(3, 3);
-            this.BtnAtualizarCadastro.Name = "BtnAtualizarCadastro";
-            this.BtnAtualizarCadastro.Size = new System.Drawing.Size(207, 23);
-            this.BtnAtualizarCadastro.TabIndex = 14;
-            this.BtnAtualizarCadastro.Text = "Atualizar Cadastro";
-            this.Hint.SetToolTip(this.BtnAtualizarCadastro, "Clique aqui para atualizar seu cadastro");
-            this.BtnAtualizarCadastro.UseVisualStyleBackColor = false;
-            this.BtnAtualizarCadastro.MouseEnter += new System.EventHandler(this.BtnAtualizarCadastro_MouseEnter);
-            this.BtnAtualizarCadastro.MouseLeave += new System.EventHandler(this.BtnAtualizarCadastro_MouseLeave);
-            // 
-            // BtnListarNotificacoes
-            // 
-            this.BtnListarNotificacoes.BackColor = System.Drawing.Color.Transparent;
-            this.BtnListarNotificacoes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnListarNotificacoes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnListarNotificacoes.FlatAppearance.BorderSize = 0;
-            this.BtnListarNotificacoes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnListarNotificacoes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.BtnListarNotificacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnListarNotificacoes.ForeColor = System.Drawing.Color.Black;
-            this.BtnListarNotificacoes.Location = new System.Drawing.Point(3, 32);
-            this.BtnListarNotificacoes.Name = "BtnListarNotificacoes";
-            this.BtnListarNotificacoes.Size = new System.Drawing.Size(207, 23);
-            this.BtnListarNotificacoes.TabIndex = 15;
-            this.BtnListarNotificacoes.Text = "Listar todas notificações";
-            this.Hint.SetToolTip(this.BtnListarNotificacoes, "Clique aqui para visualizar todas as notificações criadas");
-            this.BtnListarNotificacoes.UseVisualStyleBackColor = false;
-            this.BtnListarNotificacoes.MouseEnter += new System.EventHandler(this.BtnListarNotificacoes_MouseEnter);
-            this.BtnListarNotificacoes.MouseLeave += new System.EventHandler(this.BtnListarNotificacoes_MouseLeave);
-            // 
-            // BtnListPedidoAdmin
-            // 
-            this.BtnListPedidoAdmin.BackColor = System.Drawing.Color.Transparent;
-            this.BtnListPedidoAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnListPedidoAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnListPedidoAdmin.FlatAppearance.BorderSize = 0;
-            this.BtnListPedidoAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnListPedidoAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.BtnListPedidoAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnListPedidoAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnListPedidoAdmin.ForeColor = System.Drawing.Color.Black;
-            this.BtnListPedidoAdmin.Location = new System.Drawing.Point(3, 61);
-            this.BtnListPedidoAdmin.Name = "BtnListPedidoAdmin";
-            this.BtnListPedidoAdmin.Size = new System.Drawing.Size(207, 23);
-            this.BtnListPedidoAdmin.TabIndex = 16;
-            this.BtnListPedidoAdmin.Text = "Listar Pedidos de Administrador";
-            this.Hint.SetToolTip(this.BtnListPedidoAdmin, "Clique aqui para listar as solicitações de usuários que desejam se tornar adminis" +
-        "tradores");
-            this.BtnListPedidoAdmin.UseVisualStyleBackColor = false;
-            this.BtnListPedidoAdmin.Click += new System.EventHandler(this.BtnListPedidoAdmin_Click);
-            this.BtnListPedidoAdmin.MouseEnter += new System.EventHandler(this.BtnListPedidoAdmin_MouseEnter);
-            this.BtnListPedidoAdmin.MouseLeave += new System.EventHandler(this.BtnListPedidoAdmin_MouseLeave);
-            // 
-            // BtnListPedidoExlusao
-            // 
-            this.BtnListPedidoExlusao.AutoSize = true;
-            this.BtnListPedidoExlusao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnListPedidoExlusao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnListPedidoExlusao.FlatAppearance.BorderSize = 0;
-            this.BtnListPedidoExlusao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnListPedidoExlusao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.BtnListPedidoExlusao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnListPedidoExlusao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnListPedidoExlusao.Location = new System.Drawing.Point(3, 90);
-            this.BtnListPedidoExlusao.Name = "BtnListPedidoExlusao";
-            this.BtnListPedidoExlusao.Size = new System.Drawing.Size(207, 23);
-            this.BtnListPedidoExlusao.TabIndex = 17;
-            this.BtnListPedidoExlusao.Text = "Listar Pedidos de Exclusão";
-            this.Hint.SetToolTip(this.BtnListPedidoExlusao, "Clique aqui para listar os pedidos de exclusão");
-            this.BtnListPedidoExlusao.UseVisualStyleBackColor = true;
-            this.BtnListPedidoExlusao.Click += new System.EventHandler(this.BtnListPedidoExlusao_Click);
-            this.BtnListPedidoExlusao.MouseEnter += new System.EventHandler(this.BtnListPedidoExlusao_MouseEnter);
-            this.BtnListPedidoExlusao.MouseLeave += new System.EventHandler(this.BtnListPedidoExlusao_MouseLeave);
-            // 
-            // BtnSolicitaExclusao
-            // 
-            this.BtnSolicitaExclusao.BackColor = System.Drawing.Color.Transparent;
-            this.BtnSolicitaExclusao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSolicitaExclusao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnSolicitaExclusao.FlatAppearance.BorderSize = 0;
-            this.BtnSolicitaExclusao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnSolicitaExclusao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.BtnSolicitaExclusao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSolicitaExclusao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSolicitaExclusao.ForeColor = System.Drawing.Color.Black;
-            this.BtnSolicitaExclusao.Location = new System.Drawing.Point(3, 119);
-            this.BtnSolicitaExclusao.Name = "BtnSolicitaExclusao";
-            this.BtnSolicitaExclusao.Size = new System.Drawing.Size(207, 27);
-            this.BtnSolicitaExclusao.TabIndex = 18;
-            this.BtnSolicitaExclusao.Text = "Solicitar Exclusão";
-            this.Hint.SetToolTip(this.BtnSolicitaExclusao, "Clique aqui para solicitar a exclusão do seu cadastro");
-            this.BtnSolicitaExclusao.UseVisualStyleBackColor = false;
-            this.BtnSolicitaExclusao.Click += new System.EventHandler(this.BtnSolicitaExclusao_Click);
-            this.BtnSolicitaExclusao.MouseEnter += new System.EventHandler(this.BtnSolicitaExclusao_MouseEnter);
-            this.BtnSolicitaExclusao.MouseLeave += new System.EventHandler(this.BtnSolicitaExclusao_MouseLeave);
             // 
             // FrmHomeA
             // 
