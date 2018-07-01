@@ -37,6 +37,10 @@
             this.BtnSair = new System.Windows.Forms.Button();
             this.Hint = new System.Windows.Forms.ToolTip(this.components);
             this.BtnShare = new System.Windows.Forms.Button();
+            this.BtnUserAtualizar = new System.Windows.Forms.Button();
+            this.BtnListarNotificacoes = new System.Windows.Forms.Button();
+            this.BtnSolModerar = new System.Windows.Forms.Button();
+            this.BtnSolExcluir = new System.Windows.Forms.Button();
             this.PnlInfo = new System.Windows.Forms.Panel();
             this.PnlBottom = new System.Windows.Forms.Panel();
             this.TblButtons = new System.Windows.Forms.TableLayoutPanel();
@@ -46,10 +50,6 @@
             this.PnlNewNotification = new System.Windows.Forms.Panel();
             this.PnlButtonShare = new System.Windows.Forms.Panel();
             this.TxtNotification = new System.Windows.Forms.TextBox();
-            this.BtnUserAtualizar = new System.Windows.Forms.Button();
-            this.BtnListarNotificacoes = new System.Windows.Forms.Button();
-            this.BtnSolModerar = new System.Windows.Forms.Button();
-            this.BtnSolExcluir = new System.Windows.Forms.Button();
             this.PnlMenu.SuspendLayout();
             this.PnlInfo.SuspendLayout();
             this.TblButtons.SuspendLayout();
@@ -180,6 +180,89 @@
             this.BtnShare.MouseEnter += new System.EventHandler(this.BtnShare_MouseEnter);
             this.BtnShare.MouseLeave += new System.EventHandler(this.BtnShare_MouseLeave);
             // 
+            // BtnUserAtualizar
+            // 
+            this.BtnUserAtualizar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnUserAtualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnUserAtualizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnUserAtualizar.FlatAppearance.BorderSize = 0;
+            this.BtnUserAtualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.BtnUserAtualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.BtnUserAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUserAtualizar.ForeColor = System.Drawing.Color.Black;
+            this.BtnUserAtualizar.Location = new System.Drawing.Point(3, 3);
+            this.BtnUserAtualizar.Name = "BtnUserAtualizar";
+            this.BtnUserAtualizar.Size = new System.Drawing.Size(209, 20);
+            this.BtnUserAtualizar.TabIndex = 2;
+            this.BtnUserAtualizar.Text = "Atualizar Cadastro";
+            this.Hint.SetToolTip(this.BtnUserAtualizar, "Clique aqui para atualizar seu cadastro");
+            this.BtnUserAtualizar.UseVisualStyleBackColor = false;
+            this.BtnUserAtualizar.MouseEnter += new System.EventHandler(this.BtnUserAtualizar_MouseEnter);
+            this.BtnUserAtualizar.MouseLeave += new System.EventHandler(this.BtnUserAtualizar_MouseLeave);
+            // 
+            // BtnListarNotificacoes
+            // 
+            this.BtnListarNotificacoes.BackColor = System.Drawing.Color.Transparent;
+            this.BtnListarNotificacoes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnListarNotificacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnListarNotificacoes.FlatAppearance.BorderSize = 0;
+            this.BtnListarNotificacoes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.BtnListarNotificacoes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.BtnListarNotificacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnListarNotificacoes.ForeColor = System.Drawing.Color.Black;
+            this.BtnListarNotificacoes.Location = new System.Drawing.Point(3, 29);
+            this.BtnListarNotificacoes.Name = "BtnListarNotificacoes";
+            this.BtnListarNotificacoes.Size = new System.Drawing.Size(209, 20);
+            this.BtnListarNotificacoes.TabIndex = 8;
+            this.BtnListarNotificacoes.Text = "Listar todas notificações";
+            this.Hint.SetToolTip(this.BtnListarNotificacoes, "Clique aqui para visualizar todas as notificações criadas");
+            this.BtnListarNotificacoes.UseVisualStyleBackColor = false;
+            this.BtnListarNotificacoes.Click += new System.EventHandler(this.BtnListarNotificacoes_Click);
+            this.BtnListarNotificacoes.MouseEnter += new System.EventHandler(this.BtnListarNotificacoes_MouseEnter);
+            this.BtnListarNotificacoes.MouseLeave += new System.EventHandler(this.BtnListarNotificacoes_MouseLeave);
+            // 
+            // BtnSolModerar
+            // 
+            this.BtnSolModerar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnSolModerar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSolModerar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnSolModerar.FlatAppearance.BorderSize = 0;
+            this.BtnSolModerar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.BtnSolModerar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.BtnSolModerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSolModerar.ForeColor = System.Drawing.Color.Black;
+            this.BtnSolModerar.Location = new System.Drawing.Point(3, 55);
+            this.BtnSolModerar.Name = "BtnSolModerar";
+            this.BtnSolModerar.Size = new System.Drawing.Size(209, 20);
+            this.BtnSolModerar.TabIndex = 9;
+            this.BtnSolModerar.Text = "Solicitar Administração";
+            this.Hint.SetToolTip(this.BtnSolModerar, "Clique aqui para solicitar a mudança para o perfil de administrador");
+            this.BtnSolModerar.UseVisualStyleBackColor = false;
+            this.BtnSolModerar.Click += new System.EventHandler(this.BtnSolModerar_Click);
+            this.BtnSolModerar.MouseEnter += new System.EventHandler(this.BtnSolModerar_MouseEnter);
+            this.BtnSolModerar.MouseLeave += new System.EventHandler(this.BtnSolModerar_MouseLeave);
+            // 
+            // BtnSolExcluir
+            // 
+            this.BtnSolExcluir.BackColor = System.Drawing.Color.Transparent;
+            this.BtnSolExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSolExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnSolExcluir.FlatAppearance.BorderSize = 0;
+            this.BtnSolExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.BtnSolExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.BtnSolExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSolExcluir.ForeColor = System.Drawing.Color.Black;
+            this.BtnSolExcluir.Location = new System.Drawing.Point(3, 81);
+            this.BtnSolExcluir.Name = "BtnSolExcluir";
+            this.BtnSolExcluir.Size = new System.Drawing.Size(209, 23);
+            this.BtnSolExcluir.TabIndex = 10;
+            this.BtnSolExcluir.Text = "Solicitar Exclusão";
+            this.Hint.SetToolTip(this.BtnSolExcluir, "Clique aqui para solicitar a exclusão do seu cadastro");
+            this.BtnSolExcluir.UseVisualStyleBackColor = false;
+            this.BtnSolExcluir.Click += new System.EventHandler(this.BtnSolExcluir_Click);
+            this.BtnSolExcluir.MouseEnter += new System.EventHandler(this.BtnSolExcluir_MouseEnter);
+            this.BtnSolExcluir.MouseLeave += new System.EventHandler(this.BtnSolExcluir_MouseLeave);
+            // 
             // PnlInfo
             // 
             this.PnlInfo.BackColor = System.Drawing.Color.White;
@@ -288,88 +371,6 @@
             this.TxtNotification.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.TxtNotification.Size = new System.Drawing.Size(624, 98);
             this.TxtNotification.TabIndex = 0;
-            // 
-            // BtnUserAtualizar
-            // 
-            this.BtnUserAtualizar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnUserAtualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnUserAtualizar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnUserAtualizar.FlatAppearance.BorderSize = 0;
-            this.BtnUserAtualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnUserAtualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.BtnUserAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUserAtualizar.ForeColor = System.Drawing.Color.Black;
-            this.BtnUserAtualizar.Location = new System.Drawing.Point(3, 3);
-            this.BtnUserAtualizar.Name = "BtnUserAtualizar";
-            this.BtnUserAtualizar.Size = new System.Drawing.Size(209, 20);
-            this.BtnUserAtualizar.TabIndex = 2;
-            this.BtnUserAtualizar.Text = "Atualizar Cadastro";
-            this.Hint.SetToolTip(this.BtnUserAtualizar, "Clique aqui para atualizar seu cadastro");
-            this.BtnUserAtualizar.UseVisualStyleBackColor = false;
-            this.BtnUserAtualizar.MouseEnter += new System.EventHandler(this.BtnUserAtualizar_MouseEnter);
-            this.BtnUserAtualizar.MouseLeave += new System.EventHandler(this.BtnUserAtualizar_MouseLeave);
-            // 
-            // BtnListarNotificacoes
-            // 
-            this.BtnListarNotificacoes.BackColor = System.Drawing.Color.Transparent;
-            this.BtnListarNotificacoes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnListarNotificacoes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnListarNotificacoes.FlatAppearance.BorderSize = 0;
-            this.BtnListarNotificacoes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnListarNotificacoes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.BtnListarNotificacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnListarNotificacoes.ForeColor = System.Drawing.Color.Black;
-            this.BtnListarNotificacoes.Location = new System.Drawing.Point(3, 29);
-            this.BtnListarNotificacoes.Name = "BtnListarNotificacoes";
-            this.BtnListarNotificacoes.Size = new System.Drawing.Size(209, 20);
-            this.BtnListarNotificacoes.TabIndex = 8;
-            this.BtnListarNotificacoes.Text = "Listar todas notificações";
-            this.Hint.SetToolTip(this.BtnListarNotificacoes, "Clique aqui para visualizar todas as notificações criadas");
-            this.BtnListarNotificacoes.UseVisualStyleBackColor = false;
-            this.BtnListarNotificacoes.MouseEnter += new System.EventHandler(this.BtnListarNotificacoes_MouseEnter);
-            this.BtnListarNotificacoes.MouseLeave += new System.EventHandler(this.BtnListarNotificacoes_MouseLeave);
-            // 
-            // BtnSolModerar
-            // 
-            this.BtnSolModerar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnSolModerar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSolModerar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnSolModerar.FlatAppearance.BorderSize = 0;
-            this.BtnSolModerar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnSolModerar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.BtnSolModerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSolModerar.ForeColor = System.Drawing.Color.Black;
-            this.BtnSolModerar.Location = new System.Drawing.Point(3, 55);
-            this.BtnSolModerar.Name = "BtnSolModerar";
-            this.BtnSolModerar.Size = new System.Drawing.Size(209, 20);
-            this.BtnSolModerar.TabIndex = 9;
-            this.BtnSolModerar.Text = "Solicitar Administração";
-            this.Hint.SetToolTip(this.BtnSolModerar, "Clique aqui para solicitar a mudança para o perfil de administrador");
-            this.BtnSolModerar.UseVisualStyleBackColor = false;
-            this.BtnSolModerar.Click += new System.EventHandler(this.BtnSolModerar_Click);
-            this.BtnSolModerar.MouseEnter += new System.EventHandler(this.BtnSolModerar_MouseEnter);
-            this.BtnSolModerar.MouseLeave += new System.EventHandler(this.BtnSolModerar_MouseLeave);
-            // 
-            // BtnSolExcluir
-            // 
-            this.BtnSolExcluir.BackColor = System.Drawing.Color.Transparent;
-            this.BtnSolExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSolExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnSolExcluir.FlatAppearance.BorderSize = 0;
-            this.BtnSolExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnSolExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.BtnSolExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSolExcluir.ForeColor = System.Drawing.Color.Black;
-            this.BtnSolExcluir.Location = new System.Drawing.Point(3, 81);
-            this.BtnSolExcluir.Name = "BtnSolExcluir";
-            this.BtnSolExcluir.Size = new System.Drawing.Size(209, 23);
-            this.BtnSolExcluir.TabIndex = 10;
-            this.BtnSolExcluir.Text = "Solicitar Exclusão";
-            this.Hint.SetToolTip(this.BtnSolExcluir, "Clique aqui para solicitar a exclusão do seu cadastro");
-            this.BtnSolExcluir.UseVisualStyleBackColor = false;
-            this.BtnSolExcluir.Click += new System.EventHandler(this.BtnSolExcluir_Click);
-            this.BtnSolExcluir.MouseEnter += new System.EventHandler(this.BtnSolExcluir_MouseEnter);
-            this.BtnSolExcluir.MouseLeave += new System.EventHandler(this.BtnSolExcluir_MouseLeave);
             // 
             // FrmHomeU
             // 

@@ -43,7 +43,7 @@ namespace SacoiIII.Controller
 
         #region Veriify User Name
         //Metodo responsável por atribuir o nome de usuário que veio da View para o atributo user_name do DTO e chamar os metodos necessários da camada DAO
-        public Boolean VerificarNome(string _user_name)
+        public string VerificarNome(string _user_name)
         {
             //Atribuição de valor ao atributo user_name do DTO usado pela camada DAO para realizar o metodo de Verificar Disponibilidade
             PessoaDAO.SetPessoa(_user_name);

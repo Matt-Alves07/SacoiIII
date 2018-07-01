@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using SacoiIII.Constants;
 using SacoiIII.DTO;
+using SacoiIII.Misc;
 
 namespace SacoiIII.DAO
 {
@@ -20,6 +21,10 @@ namespace SacoiIII.DAO
         #region DTOs
         //Instânciação do DTO Pessoa para leitura e escrita dos atributos presentes no DTO
         PessoaDTO DTOPessoa = new PessoaDTO();
+        #endregion
+
+        #region Error
+        private Error Error = new Error();
         #endregion
 
         #region MySQL Attributes
@@ -81,6 +86,10 @@ namespace SacoiIII.DAO
         //Metodo que usa os atributos do DTO e as constantes de conexão e pessoa para inserir um novo usuário no banco
         public string InsertPessoa()
         {
+            #region Local Atributtes
+            string resultado = "";
+            #endregion
+
             #region Change attributes values
             //Atribuição dos valores que serão usados nesse metodo nas variáveis de uso comum da classe
             query = $"CALL {ConstantPessoa.GetPAdicionarUsuario()}('{DTOPessoa.user_name}', '{DTOPessoa.p_nome}', '{DTOPessoa.s_nome}', '{DTOPessoa.email}', '{DTOPessoa.senha}', '{DTOPessoa.cargo}');";
@@ -100,24 +109,28 @@ namespace SacoiIII.DAO
                 {
                     if (reader == null)
                     {
-                        return "falha";
+                        resultado = "falha";
                     }
                     else
                     {
-                        return "sucesso";
+                        resultado = "sucesso";
                     }
                 }
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 //Lança uma exceção, caso seja gerada alguma
-                throw new Exception(ex.ToString());
+                Error.SendError(ex.Number.ToString(), "Erro interno");
             }
             finally
             {
                 //Encerramento da conexão ao banco de dados
                 connection.Close();
             }
+            #endregion
+
+            #region Return
+            return resultado;
             #endregion
         }
         #endregion
@@ -153,14 +166,11 @@ namespace SacoiIII.DAO
                         result[1] = reader.GetString(1).ToLower();
                     }
                 }
-
-                //Retorno o array com os resultados da Procedure EfetuarLogin
-                return result;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 //Lança uma exceção, caso seja gerada alguma
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro Interno");
             }
             finally
             {
@@ -168,13 +178,22 @@ namespace SacoiIII.DAO
                 connection.Close();
             }
             #endregion
+
+            #region Return
+            //Retorno o array com os resultados da Procedure EfetuarLogin
+            return result;
+            #endregion
         }
         #endregion
 
         #region Disponibility
         //Metodo que usa o atributo user_name do DTO, os valores das constantes de conexão e pessoa para verificar se o nome de usuário já está cadastrado
-        public Boolean VerificarDisponibilidade()
+        public string VerificarDisponibilidade()
         {
+            #region Local Atributtes
+            string result = "";
+            #endregion
+
             #region Change attributes values
             //atribuição dos valores que serão usados nesse metodo nas variaveis de uso comum da classe
             query = $"CALL {ConstantPessoa.GetPVerificarNome()}('{DTOPessoa.user_name}');";
@@ -196,35 +215,44 @@ namespace SacoiIII.DAO
                 while (reader.Read())
                 {
                     //Verifica qual foi o resultado da consulta existente em reader
-                    if (reader.GetString(0).ToLower() == "usado")
+                    //usado == significa que já existe um usuário com esse nome de usuário
+                    //livre == significa que não existe registro desse nome de usuário no sistema
+                    //Se vier vazia, ocorreu 
+                    if (reader.GetString(0).ToLower() != "")
                     {
-                        //Informa que o nome de usuário já está em uso
-                        return false;
-                    }
-                    else if (reader.GetString(0).ToLower() == "livre")
-                    {
-                        //Informa que o nome de usuário está disponível
-                        return true;
+                        if (reader.GetString(0).ToLower() == "usado")
+                        {
+                            result = reader.GetString(0).ToLower();
+                        }
+                        else if (reader.GetString(0).ToLower() == "livre")
+                        {
+                            result = reader.GetString(0).ToLower();
+                        }
+                        else
+                        {
+                            Error.SendAttention("O valor retornado não é aceito pelo sistema.\nCaso persista, contate o suporte.", "Entrada invalida");
+                        }
                     }
                     else
                     {
-                        //Lança uma exceção caso nenhuma das condições acima sejam satisfeitas
-                        throw new Exception("O valor retornado não é aceito pelo sistema.");
+                        Error.SendAttention("O valor retornado não é aceito pelo sistema.\nCaso persista, contate o suporte.", "Entrada invalida");
                     }
                 }
-
-                return false;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 //No caso de erro no MySQL, dispara uma exceção dizendo o que ocorreu
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso perista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
                 //Encerra a conexão com o banco de dados
                 connection.Close();
             }
+            #endregion
+
+            #region Return
+            return result;
             #endregion
         }
         #endregion
@@ -259,19 +287,21 @@ namespace SacoiIII.DAO
                         situacao = reader.GetString(0);
                     }
                 }
-
-                return situacao;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 //No caso de erro no MySQL, dispara uma exceção dizendo o que ocorreu
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
                 //Encerra a conexão com o banco de dados
                 connection.Close();
             }
+            #endregion
+
+            #region Return
+            return situacao;
             #endregion
         }
         #endregion
@@ -309,19 +339,21 @@ namespace SacoiIII.DAO
                         DTOPessoa.admin = reader.GetString(7);
                     }
                 }
-
-                return DTOPessoa;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 //No caso de erro no MySQL, dispara uma exceção dizendo o que ocorreu
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
                 //Encerra a conexão com o banco de dados
                 connection.Close();
             }
+            #endregion
+
+            #region Return
+            return DTOPessoa;
             #endregion
         }
         #endregion
@@ -373,18 +405,20 @@ namespace SacoiIII.DAO
                         lista.Add(pessoa);
                     }
                 }
-
-                //Retorna a lista com todos os usuários registrados
-                return lista;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro Interno");
             }
             finally
             {
                 connection.Clone();
             }
+            #endregion
+
+            #region Return
+            //Retorna a lista com todos os usuários registrados
+            return lista;
             #endregion
         }
         #endregion
@@ -433,18 +467,20 @@ namespace SacoiIII.DAO
                         lista.Add(pessoa);
                     }
                 }
-
-                //Retorna a lista com todos os usuários registrados
-                return lista;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.ToString(), "Erro interno");
             }
             finally
             {
                 connection.Clone();
             }
+            #endregion
+
+            #region Return
+            //Retorna a lista com todos os usuários registrados
+            return lista;
             #endregion
         }
         #endregion
@@ -479,20 +515,22 @@ namespace SacoiIII.DAO
                         resultado = reader.GetString(0);
                     }
                 }
-
-                //retorno do resultado da execução da query no banco
-                return resultado;
             }
-            catch(Exception ex)
+            catch(MySqlException ex)
             {
                 //Lança uma exceção, caso seja gerada alguma
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codugo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
                 //Encerra a conexão aberta ao MySQL
                 connection.Close();
             }
+            #endregion
+
+            #region Return
+            //retorno do resultado da execução da query no banco
+            return resultado;
             #endregion
         }
         #endregion
@@ -527,20 +565,22 @@ namespace SacoiIII.DAO
                         resultado = reader.GetString(0);
                     }
                 }
-
-                //retorno do resultado da execução da query no banco
-                return resultado;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 //Lança uma exceção, caso seja gerada alguma
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
                 //Encerra a conexão aberta ao MySQL
                 connection.Close();
             }
+            #endregion
+
+            #region Return
+            //retorno do resultado da execução da query no banco
+            return resultado;
             #endregion
         }
         #endregion
@@ -575,19 +615,22 @@ namespace SacoiIII.DAO
                         situacao = reader.GetString(0);
                     }
                 }
-
-                return situacao;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 //No caso de erro no MySQL, dispara uma exceção dizendo o que ocorreu
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
                 //Encerra a conexão com o banco de dados
                 connection.Close();
             }
+            #endregion
+
+            #region Return
+            //Retorna a string com o resultada da operação
+            return situacao;
             #endregion
         }
         #endregion
@@ -622,20 +665,21 @@ namespace SacoiIII.DAO
                         resultado = reader.GetString(0);
                     }
                 }
-
-                //retorno do resultado da execução da query no banco
-                return resultado;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 //Lança uma exceção, caso seja gerada alguma
-                throw new Exception(ex.ToString());
+                 Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
                 //Encerra a conexão aberta ao MySQL
                 connection.Close();
             }
+            #endregion
+
+            #region Return
+            return resultado;
             #endregion
         }
         #endregion
@@ -684,18 +728,20 @@ namespace SacoiIII.DAO
                         lista.Add(pessoa);
                     }
                 }
-
-                //Retorna a lista com todos os usuários registrados
-                return lista;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.ToString(), "Erro interno");
             }
             finally
             {
                 connection.Clone();
             }
+            #endregion
+
+            #region Return
+            //Retorna a lista com todos os usuários registrados
+            return lista;
             #endregion
         }
         #endregion
@@ -730,20 +776,22 @@ namespace SacoiIII.DAO
                         resultado = reader.GetString(0);
                     }
                 }
-
-                //retorno do resultado da execução da query no banco
-                return resultado;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 //Lança uma exceção, caso seja gerada alguma
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
                 //Encerra a conexão aberta ao MySQL
                 connection.Close();
             }
+            #endregion
+
+            #region Return
+            //retorno do resultado da execução da query no banco
+            return resultado;
             #endregion
         }
         #endregion
@@ -778,20 +826,22 @@ namespace SacoiIII.DAO
                         resultado = reader.GetString(0);
                     }
                 }
-
-                //retorno do resultado da execução da query no banco
-                return resultado;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 //Lança uma exceção, caso seja gerada alguma
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.ToString(), "Erro interno");
             }
             finally
             {
                 //Encerra a conexão aberta ao MySQL
                 connection.Close();
             }
+            #endregion
+
+            #region Return
+            //retorno do resultado da execução da query no banco
+            return resultado;
             #endregion
         }
         #endregion

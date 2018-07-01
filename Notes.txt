@@ -117,3 +117,9 @@
 -> Implementado o sistema de leitura de mensagens dentro do sistema, tanto para admins quanto para usuários;
 -> Implementado o uso da unit de erro criada para o sistema de mensagens;
 -> Removida mensagem duplicada de sucesso ao enviar um email;
+
+01/07/2018 -> O que foi feito:
+-> Criado o form que irá listar todas as notificações(falta implementar);
+-> Criado script para corrigir a procedure que apaga o pedido de exclusão;
+-> Implementada completamente e testada a funcionalidade referente a pedidos de exclusão;
+-> Apagado o que constava como a fazer, mas que já tinha sido feito no leia-me do Dropbox.
