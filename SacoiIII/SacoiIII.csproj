@@ -71,6 +71,12 @@
     <Compile Include="Views\FrmInfoMessage.Designer.cs">
       <DependentUpon>FrmInfoMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmInfoNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmInfoNotification.Designer.cs">
+      <DependentUpon>FrmInfoNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmListNotification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmInfoMessage.resx">
       <DependentUpon>FrmInfoMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmInfoNotification.resx">
+      <DependentUpon>FrmInfoNotification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmListNotification.resx">
       <DependentUpon>FrmListNotification.cs</DependentUpon>

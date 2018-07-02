@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using SacoiIII.Constants;
 using SacoiIII.DTO;
+using SacoiIII.Misc;
 
 namespace SacoiIII.DAO
 {
@@ -22,6 +23,11 @@ namespace SacoiIII.DAO
         NotificacaoDTO DTONotificacao = new NotificacaoDTO();
         #endregion
 
+        #region Error
+        //Instância da classe de mensagens
+        Error Error = new Error();
+        #endregion
+
         #region MySQL Attributes
         //Criação e instânciação das variáveis de uso comum do MySQL
         string query = "";
@@ -33,10 +39,36 @@ namespace SacoiIII.DAO
 
         #region Sets
         //Metodo e seus overloads para inserir dados nos atributos do DTO
+        public void SetNotificacao(string _notification) => DTONotificacao.notificacao = _notification;
+
         public void SetNotificacao(string _user_name, string _texto)
         {
             DTONotificacao.user_name = _user_name;
             DTONotificacao.texto = _texto;
+        }
+
+        public void SetNotificacao(string _notification, string _user_name, string _texto)
+        {
+            DTONotificacao.notificacao = _notification;
+            DTONotificacao.user_name = _user_name;
+            DTONotificacao.texto = _texto;
+        }
+
+        public void SetNotificacao(string _notification, string _usuario, string _user_name, string _texto)
+        {
+            DTONotificacao.notificacao = _notification;
+            DTONotificacao.usuario = _usuario;
+            DTONotificacao.user_name = _user_name;
+            DTONotificacao.texto = _texto;
+        }
+
+        public void SetNotificacao(string _notification, string _usuario, string _user_name, string _texto, string _valido)
+        {
+            DTONotificacao.notificacao = _notification;
+            DTONotificacao.usuario = _usuario;
+            DTONotificacao.user_name = _user_name;
+            DTONotificacao.texto = _texto;
+            DTONotificacao.valido = _valido;
         }
         #endregion
 
@@ -44,6 +76,10 @@ namespace SacoiIII.DAO
         //Metodo que usa os atributos do DTO e as constantes de conexão e pessoa para inserir uma nova notificação no banco de dados
         public string InsertNotification()
         {
+            #region Local Atributtes
+            string resultado = "";
+            #endregion
+
             #region Change attributes values
             //Atribuição dos valores que serão usados nesse metodo nas variáveis de uso comum da classe
             query = $"CALL {notificationconstant.GetPAdicionarNotificacao()}('{DTONotificacao.user_name}', '{DTONotificacao.texto}');";
@@ -63,24 +99,28 @@ namespace SacoiIII.DAO
                 {
                     if (reader == null)
                     {
-                        return "falha";
+                        resultado = "falha";
                     }
                     else
                     {
-                        return "sucesso";
+                        resultado = "sucesso";
                     }
                 }
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 //Lança uma exceção, caso seja gerada alguma
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, entre em contato com o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
                 //Encerramento da conexão ao banco de dados
                 connection.Close();
             }
+            #endregion
+
+            #region Return
+            return resultado;
             #endregion
         }
         #endregion
@@ -91,7 +131,7 @@ namespace SacoiIII.DAO
         {
             #region Change attributes values
             //Atribuição dos valores que serão usados nesse metodo nas variáveis de uso comum da classe
-            query = $"CALL {notificationconstant.GetPExibirNotificacoes()};";
+            query = $"CALL {notificationconstant.GetPExibirNotificacoes()}();";
             connection = new MySqlConnection(ConstantConnection.GetConnection());
             command = new MySqlCommand(query, connection);
             #endregion
@@ -120,20 +160,80 @@ namespace SacoiIII.DAO
                         notificacoes.Add(notificacao);
                     }
                 }
-
-                //Retorna a lista de notificações para o local onde foi chamado
-                return notificacoes;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 //Lança uma exceção, caso seja gerada alguma
-                throw new Exception(ex.ToString());
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
                 //Encerramento da conexão ao banco de dados
                 connection.Close();
             }
+            #endregion
+
+            #region Return
+            //Retorna a lista de notificações para o local onde foi chamado
+            return notificacoes;
+            #endregion
+        }
+        #endregion
+
+        #region Listar Notificações
+        //Lista todas as mensagens cadastradas, indiferente de quem criou
+        public List<NotificacaoDTO> GetNotificacoes()
+        {
+            #region Change attributes values
+            //Atribuição dos valores que serão usados nesse metodo nas variáveis de uso comum da classe
+            query = $"CALL {notificationconstant.GetPListarNotificacoes()}();";
+            connection = new MySqlConnection(ConstantConnection.GetConnection());
+            command = new MySqlCommand(query, connection);
+            #endregion
+
+            #region
+            //Criação da lista que será retornada com os valores vindos do banco
+            List<NotificacaoDTO> notificacoes = new List<NotificacaoDTO>();
+            notificacoes.Clear();
+            #endregion
+
+            #region Database Access
+            //Abertura da conexão ao MySQL e tentativa de chamada da procedure para exibir notificações
+            try
+            {
+                //Tentatica de abertura da conexão ao banco de dados
+                connection.Open();
+
+                //Usa a variável reader para armazenar o resultado, e em seguida preenche a lista com os registros vindos do banco
+                using (reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        NotificacaoDTO notificacao = new NotificacaoDTO();
+                        notificacao.notificacao = reader.GetString(0);
+                        notificacao.texto = reader.GetString(1);
+                        notificacao.usuario = reader.GetString(2);
+                        notificacao.user_name = reader.GetString(3);
+                        notificacao.valido = reader.GetString(4);
+                        notificacoes.Add(notificacao);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                //Lança uma exceção, caso seja gerada alguma
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
+            }
+            finally
+            {
+                //Encerramento da conexão ao banco de dados
+                connection.Close();
+            }
+            #endregion
+
+            #region Return
+            //Retorna a lista de notificações para o local onde foi chamado se não estiver vazia
+            return notificacoes;
             #endregion
         }
         #endregion

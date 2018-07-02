@@ -35,5 +35,13 @@ namespace SacoiIII.Controller
             return Notificacao.ExibirNotificacoes();
         }
         #endregion
+
+        #region Listar Notificacao
+        //Metodo responsável por retornar a lista completa de notificacoes preechidas na camada view
+        public List<NotificacaoDTO> GetNotificacoes()
+        {
+            return Notificacao.GetNotificacoes();
+        }
+        #endregion
     }
 }

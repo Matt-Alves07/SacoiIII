@@ -14,5 +14,17 @@ namespace SacoiIII.DTO
         public string user_name { get; set; }
         public string valido { get; set; }
         public string criacao { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            var dTO = obj as NotificacaoDTO;
+            return dTO != null &&
+                   notificacao == dTO.notificacao &&
+                   texto == dTO.texto &&
+                   usuario == dTO.usuario &&
+                   user_name == dTO.user_name &&
+                   valido == dTO.valido &&
+                   criacao == dTO.criacao;
+        }
     }
 }
