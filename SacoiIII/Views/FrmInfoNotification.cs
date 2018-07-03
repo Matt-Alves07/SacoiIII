@@ -32,9 +32,45 @@ namespace SacoiIII.Views
 
         private void FrmInfoNotification_Load(object sender, EventArgs e)
         {
-            LblUserName.Text = user_name;
-            LblValido.Text = valid;
+            LblUserName.Text = " " + user_name;
+            LblValido.Text = "Notificação valida: " + valid;
             LblTexto.Text = text;
+        }
+
+        private void BtnEdit_MouseEnter(object sender, EventArgs e)
+        {
+            BtnEdit.ForeColor = Color.White;
+            BtnEdit.Image = Properties.Resources.update_32w;
+        }
+
+        private void BtnEdit_MouseLeave(object sender, EventArgs e)
+        {
+            BtnEdit.ForeColor = Color.Black;
+            BtnEdit.Image = Properties.Resources.update_32b;
+        }
+
+        private void BtnDenunciar_MouseEnter(object sender, EventArgs e)
+        {
+            BtnDenunciar.ForeColor = Color.White;
+            BtnDenunciar.Image = Properties.Resources.warning_32w;
+        }
+
+        private void BtnDenunciar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnDenunciar.ForeColor = Color.Black;
+            BtnDenunciar.Image = Properties.Resources.warning_32b;
+        }
+
+        private void BtnExcluir_MouseEnter(object sender, EventArgs e)
+        {
+            BtnExcluir.ForeColor = Color.White;
+            BtnExcluir.Image = Properties.Resources.delete_32w;
+        }
+
+        private void BtnExcluir_MouseLeave(object sender, EventArgs e)
+        {
+            BtnExcluir.ForeColor = Color.Black;
+            BtnExcluir.Image = Properties.Resources.delete_32b;
         }
     }
 }

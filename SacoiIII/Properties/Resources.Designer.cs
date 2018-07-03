@@ -103,6 +103,26 @@ namespace SacoiIII.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_32b {
+            get {
+                object obj = ResourceManager.GetObject("delete_32b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_32w {
+            get {
+                object obj = ResourceManager.GetObject("delete_32w", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap email_24w {
             get {
                 object obj = ResourceManager.GetObject("email_24w", resourceCulture);
@@ -323,6 +343,26 @@ namespace SacoiIII.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap update_32b {
+            get {
+                object obj = ResourceManager.GetObject("update_32b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap update_32w {
+            get {
+                object obj = ResourceManager.GetObject("update_32w", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user_64b {
             get {
                 object obj = ResourceManager.GetObject("user_64b", resourceCulture);
@@ -336,6 +376,26 @@ namespace SacoiIII.Properties {
         internal static System.Drawing.Bitmap user_list_24w {
             get {
                 object obj = ResourceManager.GetObject("user-list_24w", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warning_32b {
+            get {
+                object obj = ResourceManager.GetObject("warning_32b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warning_32w {
+            get {
+                object obj = ResourceManager.GetObject("warning_32w", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

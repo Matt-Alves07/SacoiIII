@@ -269,6 +269,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="chat.ico" />
+    <None Include="Resources\delete_32w.png" />
+    <None Include="Resources\delete_32b.png" />
+    <None Include="Resources\warning_32w.png" />
+    <None Include="Resources\warning_32b.png" />
+    <None Include="Resources\update_32w.png" />
+    <None Include="Resources\update_32b.png" />
     <None Include="Resources\sent_email_24w.png" />
     <None Include="Resources\share-option_24w.png" />
     <None Include="Resources\share-option_24b.png" />

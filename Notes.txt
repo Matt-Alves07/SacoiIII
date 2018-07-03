@@ -130,3 +130,9 @@
 -> Criação do metodo que informa a camada view os registros encontrados pela camada DAO(no Controller);
 -> Implementado a funcionalidade de listar todas as notificações validas que estejam cadastradas no sistema;
 -> Implementado recurso de clicar duas vezes em uma notificação e aparecer uma tela pro usuário com as informações de quem criou, se ela está valida e o conteúdo da notificação completa.
+
+03/07/2018 -> O que foi feito:
+-> Adicionadas as imagens dos botões Editar, Invalidar e Excluir da tela de detalhes das notificações;
+-> Adicionado os efeitos hover para todos os botões incluídos na tela de detalhes de notificações;
+-> Alterado a maneira como é exibido o nome de usuário que criou um notificação na tela de detalhes de notificações, acrescentando um espaço vazio para não deixar o nome de usuário colado na lateral esquerda do form;
+-> Alterado a exibição da situação da notificação, acrescentando a mensagem "Notificação valida" antes da situação da notificação para facilitar o entendimento do usuário.
