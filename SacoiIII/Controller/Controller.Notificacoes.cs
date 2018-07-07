@@ -43,5 +43,31 @@ namespace SacoiIII.Controller
             return Notificacao.GetNotificacoes();
         }
         #endregion
+
+        #region Deletar Notificação
+        public string DeleteNotificacao(string _notification, string _user)
+        {
+            //Atribui o UUID da notificação para ser usado posteriormente
+            Notificacao.SetNotificacao(_notification);
+            //Atribui o UUID do usuário para ser usado posteriormente
+            Notificacao.SetUsuario(_user);
+
+            //Retorna o resultado da execução do metodo DeletarNotificacao na camada DAO
+            return Notificacao.DeletarNotificacao();
+        }
+        #endregion
+
+        #region Invalidar Notificação
+        public string InvalidateNotificacao(string _notification, string _user)
+        {
+            //Atribui o UUID da notificação para ser usado posteriormente
+            Notificacao.SetNotificacao(_notification);
+            //Atribui o UUID do usuário para ser usado posteriormente
+            Notificacao.SetUsuario(_user);
+
+            //Retorna o resultado da execução do metodo DeletarNotificacao na camada DAO
+            return Notificacao.InvalidarNotificacao();
+        }
+        #endregion
     }
 }

@@ -7,11 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SacoiIII.Controller;
+using SacoiIII.Misc;
 
 namespace SacoiIII.Views
 {
     public partial class FrmInfoNotification : Form
     {
+        #region Controller
+        //Instância do controller de notificações usado para realizar as operações de deletar e invalidar notificações nesta tela
+        private NotificacoesController Controller = new NotificacoesController();
+        #endregion
+
+        #region Erro
+        Error Error = new Error();
+        #endregion
+
         #region Local Atributtes
         string notificacao = "";
         string user = "";
@@ -71,6 +82,46 @@ namespace SacoiIII.Views
         {
             BtnExcluir.ForeColor = Color.Black;
             BtnExcluir.Image = Properties.Resources.delete_32b;
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            //Verifica se o usuário realmente deseja deletar e avisa que não há como desfazer isso
+            if (Error.SendQuestion("Deseja realmente deletar essa notificação?\nEssa ação não pode ser desfeita.", "Excluir") == DialogResult.Yes)
+            {
+                //Se o usuário clicar em sim, chama o metodo do Controller que cuida da exclusão
+                if ((Controller.DeleteNotificacao(notificacao, user)) == "sucesso")
+                {
+                    Error.SendOK("Notificação deletada com sucesso.", "Sucesso");
+                    Close();
+                }else
+                {
+                    Error.SendAttention("Ocorreu um erro ao realizar essa operação.\nCaso persista, contate o suporte.", "Falha");
+                }
+            }
+        }
+
+        private void FrmInfoNotification_Leave(object sender, EventArgs e)
+        {
+            BringToFront();
+        }
+
+        private void BtnDenunciar_Click(object sender, EventArgs e)
+        {
+            //Verifica se o usuário realmente deseja fazer isso e avisa que para reverter ele terá de ir a tela de editar notificação
+            if (Error.SendQuestion("Essa notificação não será mais exibida e para reverter será necessário ir em editar e salvar novamente a notificação para reverter.\nDeseja realmete invalidar essa notificação?", "Invalidar?") == DialogResult.Yes)
+            {
+                //Se o usuário clicar em sim, chama o metodo do Controllerque cuida do invalidar
+                if (Controller.InvalidateNotificacao(notificacao, user) == "sucesso")
+                {
+                    Error.SendOK("Notificação invalidada com sucesso.", "Sucesso");
+                    Close();
+                }
+                else
+                {
+                    Error.SendAttention("Ocorreu um erro ao realizar essa operação.\nCaso persista, contate o suporte.", "Falha");
+                }
+            }
         }
     }
 }

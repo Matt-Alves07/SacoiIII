@@ -136,3 +136,11 @@
 -> Adicionado os efeitos hover para todos os botões incluídos na tela de detalhes de notificações;
 -> Alterado a maneira como é exibido o nome de usuário que criou um notificação na tela de detalhes de notificações, acrescentando um espaço vazio para não deixar o nome de usuário colado na lateral esquerda do form;
 -> Alterado a exibição da situação da notificação, acrescentando a mensagem "Notificação valida" antes da situação da notificação para facilitar o entendimento do usuário.
+
+06/07/2018 -> O que foi feito:
+-> Criado script para corrigir a procedure DeletarNotificacao;
+-> Criado script para criar a procedure InvalidarNotificacao;
+-> Criadas as constantes necessárias para apontar as procedures;
+-> Implementados os metodos no Controller e na DAO para execução das procedures DeletarNotificacao e InvalidarNotificacao;
+-> Implementada a validação antes da chamada dos metodos DeletarNotificacao e InvalidarNotificacao do Controller.
+*Obs*.:Falta testar e verificar se ambas as funcionalidades estão de fato funcionando.

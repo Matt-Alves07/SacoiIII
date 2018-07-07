@@ -58,5 +58,10 @@ namespace SacoiIII.Views
                 frmInfo.ShowDialog();
             }
         }
+
+        private void FrmListNotification_Enter(object sender, EventArgs e)
+        {
+            ListarNotificacoes();
+        }
     }
 }

@@ -41,6 +41,8 @@ namespace SacoiIII.DAO
         //Metodo e seus overloads para inserir dados nos atributos do DTO
         public void SetNotificacao(string _notification) => DTONotificacao.notificacao = _notification;
 
+        public void SetUsuario(string _user) => DTONotificacao.usuario = _user;
+
         public void SetNotificacao(string _user_name, string _texto)
         {
             DTONotificacao.user_name = _user_name;
@@ -125,7 +127,7 @@ namespace SacoiIII.DAO
         }
         #endregion
 
-        #region
+        #region Exibir Notificações
         //Metodo que usa os atributos do DTO e as constantes de conexão e notificação para exibir as notificações cadastradas e validas
         public List<NotificacaoDTO> ExibirNotificacoes()
         {
@@ -234,6 +236,112 @@ namespace SacoiIII.DAO
             #region Return
             //Retorna a lista de notificações para o local onde foi chamado se não estiver vazia
             return notificacoes;
+            #endregion
+        }
+        #endregion
+
+        #region Invalidar Notificação
+        public string InvalidarNotificacao()
+        {
+            #region Change attributes values
+            //Atribuição dos valores que serão usados nesse metodo nas variáveis de uso comum da classe
+            query = $"CALL {notificationconstant.GetPInvalidarNotificacao()}();";
+            connection = new MySqlConnection(ConstantConnection.GetConnection());
+            command = new MySqlCommand(query, connection);
+            #endregion
+
+            #region Database Access
+            //Abertura da conexão ao MySQL e tentativa de chamada da procedure para exibir notificações
+            try
+            {
+                //Tentatica de abertura da conexão ao banco de dados
+                connection.Open();
+
+                //Usa a variável reader para armazenar o resultado, e em seguida preenche a lista com os registros vindos do banco
+                using (reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        return reader.GetString(0);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                //Verifica o numero do erro gerado, para saber se é uma mensagem personalizada ou se é erro do MySQL
+                if (ex.Number.ToString() == "1644")
+                {
+                    Error.SendError(ex.Message.ToString(), "Erro");
+                }
+                else
+                {
+                    //Lança a mensagem informando o numero da exceção encontrada
+                    Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
+                }
+            }
+            finally
+            {
+                //Encerramento da conexão ao banco de dados
+                connection.Close();
+            }
+            #endregion
+
+            #region Return
+            //Retorna a lista de notificações para o local onde foi chamado se não estiver vazia
+            return "";
+            #endregion
+        }
+        #endregion
+
+        #region Deletar Notificação
+        public string DeletarNotificacao()
+        {
+            #region Change attributes values
+            //Atribuição dos valores que serão usados nesse metodo nas variáveis de uso comum da classe
+            query = $"CALL {notificationconstant.GetPDeletarNotificacao()}();";
+            connection = new MySqlConnection(ConstantConnection.GetConnection());
+            command = new MySqlCommand(query, connection);
+            #endregion
+
+            #region Database Access
+            //Abertura da conexão ao MySQL e tentativa de chamada da procedure para exibir notificações
+            try
+            {
+                //Tentatica de abertura da conexão ao banco de dados
+                connection.Open();
+
+                //Usa a variável reader para armazenar o resultado, e em seguida preenche a lista com os registros vindos do banco
+                using (reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        return reader.GetString(0);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                //Verifica o numero do erro gerado, para saber se é uma mensagem personalizada ou se é erro do MySQL
+                if (ex.Number.ToString() == "1644")
+                {
+                    Error.SendError(ex.Message.ToString(), "Erro");
+                }
+                else
+                {
+                    //Lança a mensagem informando o numero da exceção encontrada
+                    Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
+                }
+            }
+            finally
+            {
+                //Encerramento da conexão ao banco de dados
+                connection.Close();
+            }
+            #endregion
+
+            #region Return
+            //Retorna a lista de notificações para o local onde foi chamado se não estiver vazia
+            return "";
             #endregion
         }
         #endregion
