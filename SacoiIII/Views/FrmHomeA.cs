@@ -244,7 +244,7 @@ namespace SacoiIII.Views
 
         private void BtnListarNotificacoes_Click(object sender, EventArgs e)
         {
-            FrmListNotification listNotification = new FrmListNotification();
+            FrmListNotification listNotification = new FrmListNotification(UserName);
             listNotification.Show();
         }
     }

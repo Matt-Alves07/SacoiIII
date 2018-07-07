@@ -175,6 +175,7 @@
             this.BtnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnEdit.UseVisualStyleBackColor = true;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             this.BtnEdit.MouseEnter += new System.EventHandler(this.BtnEdit_MouseEnter);
             this.BtnEdit.MouseLeave += new System.EventHandler(this.BtnEdit_MouseLeave);
             // 

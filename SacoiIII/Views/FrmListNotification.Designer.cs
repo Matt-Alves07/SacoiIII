@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListNotification));
             this.PnlMenu = new System.Windows.Forms.Panel();
+            this.ChkInvalidas = new System.Windows.Forms.CheckBox();
             this.BtnRelistar = new System.Windows.Forms.Button();
             this.BtnSair = new System.Windows.Forms.Button();
             this.DGVNotification = new System.Windows.Forms.DataGridView();
@@ -47,6 +48,7 @@
             this.PnlMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.PnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlMenu.Controls.Add(this.ChkInvalidas);
             this.PnlMenu.Controls.Add(this.BtnRelistar);
             this.PnlMenu.Controls.Add(this.BtnSair);
             this.PnlMenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -54,6 +56,26 @@
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(694, 40);
             this.PnlMenu.TabIndex = 6;
+            // 
+            // ChkInvalidas
+            // 
+            this.ChkInvalidas.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ChkInvalidas.AutoSize = true;
+            this.ChkInvalidas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChkInvalidas.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ChkInvalidas.FlatAppearance.BorderSize = 0;
+            this.ChkInvalidas.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(51)))));
+            this.ChkInvalidas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.ChkInvalidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChkInvalidas.ForeColor = System.Drawing.Color.White;
+            this.ChkInvalidas.Location = new System.Drawing.Point(125, 0);
+            this.ChkInvalidas.Name = "ChkInvalidas";
+            this.ChkInvalidas.Size = new System.Drawing.Size(104, 38);
+            this.ChkInvalidas.TabIndex = 5;
+            this.ChkInvalidas.TabStop = false;
+            this.ChkInvalidas.Text = "Listar Invalidas";
+            this.ChkInvalidas.UseVisualStyleBackColor = true;
+            this.ChkInvalidas.CheckedChanged += new System.EventHandler(this.ChkInvalidas_CheckedChanged);
             // 
             // BtnRelistar
             // 
@@ -181,8 +203,10 @@
             this.Name = "FrmListNotification";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SACOI - Lista de Notificações";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmListNotification_FormClosing);
             this.Enter += new System.EventHandler(this.FrmListNotification_Enter);
             this.PnlMenu.ResumeLayout(false);
+            this.PnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVNotification)).EndInit();
             this.ResumeLayout(false);
 
@@ -199,5 +223,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn valido;
+        private System.Windows.Forms.CheckBox ChkInvalidas;
     }
 }

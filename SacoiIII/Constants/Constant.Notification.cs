@@ -25,12 +25,6 @@ namespace SacoiIII.Constants
         public string GetPAdicionarNotificacao() => connection.GetDataBase() + pAdicionarNotificacao;
         #endregion
 
-        #region PAlterarNotificacao
-        //Criação da constante que aponta a Procedure AlterarNotificacao e metodo que retorna a string com a informação necessária para chamar a Procedure
-        private const string pAlterarNotificacao = ".AtualizarNotificacao";
-        public string GetPAlterarNotificacao() => connection.GetDataBase() + pAlterarNotificacao;
-        #endregion
-
         #region PDeletarNotificacao
         //Criação da constante que aponta a Procedure DeletarNotificacao e metodo que retorna a string com a informação necessária para chamar a Procedure
         private const string PDeletarNotificacao = ".DeletarNotificacao";
@@ -51,10 +45,23 @@ namespace SacoiIII.Constants
         public string GetPListarNotificacoes() => connection.GetDataBase() + pListarNotificacao;
         #endregion
 
+        #region PListarNotificacoesWithInvalidas
+        //Criação da constante que aponta a Procedure ListarNotificacao e metodo que retorna a string com a informação necessária para chamar a Procedure
+        //Essa procedure lista as notificações que são exibidas na tela de listar notificações incluind as invalidas
+        private const string pListarNotificacoes = ".ListarNotificacoesWithInvalidas";
+        public string GetPListarNotificacoesWithInvalidas() => connection.GetDataBase() + pListarNotificacoes;
+        #endregion
+
         #region PInvalidarNotificacao
         //Criação da constante que aponta a Procedure InvalidarNotificacao e metodo que retorna a string com a informação necessária para chamar a Procedure
         private const string pInvalidarNotificacao = ".InvalidarNotificacao";
         public string GetPInvalidarNotificacao() => connection.GetDataBase() + pInvalidarNotificacao;
+        #endregion
+
+        #region PAlterarNotificacao
+        //Criação da constante que aponta a Procedure AlterarNotificacao e metodo que retorna a string com a informação necessário para chamar a procedure
+        private const string pAlterarNotificacao = ".AlterarNotificacao";
+        public string GetPAlterarNotificacao() => connection.GetDataBase() + pAlterarNotificacao;
         #endregion
     }
 }

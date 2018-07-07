@@ -44,7 +44,16 @@ namespace SacoiIII.Controller
         }
         #endregion
 
+        #region Listar Notificação With Invalidas
+        //Metodo responsável por encaminhar a camada View a lista preenchida na camada DAO
+        public List<NotificacaoDTO> GetNotificacaosWithInvalidas()
+        {
+            return Notificacao.GetNotificacaosWithInvalidas();
+        }
+        #endregion
+
         #region Deletar Notificação
+        //Metodo responsável por retornar o texto vindo da camada DAO a camada View
         public string DeleteNotificacao(string _notification, string _user)
         {
             //Atribui o UUID da notificação para ser usado posteriormente
@@ -58,6 +67,7 @@ namespace SacoiIII.Controller
         #endregion
 
         #region Invalidar Notificação
+        //Metodo responsável por retornar o texto vindo da camada DAO a camada View
         public string InvalidateNotificacao(string _notification, string _user)
         {
             //Atribui o UUID da notificação para ser usado posteriormente
@@ -67,6 +77,18 @@ namespace SacoiIII.Controller
 
             //Retorna o resultado da execução do metodo DeletarNotificacao na camada DAO
             return Notificacao.InvalidarNotificacao();
+        }
+        #endregion
+
+        #region Alterar Notificação
+        //Metodo responsável por retornar o texto vindo da camada DAO a camada View
+        public string AlterarNotificacao(string _user, string _notification, string _text)
+        {
+            //Atribui os UUIDs de notificação e usuário, além de preencher o atributo texto com o texto vindo da camada View
+            Notificacao.SetNotificacao(_notification, _user, "", _text, "");
+
+            //Retorna o resultado da execuação do metodo AlterarNotificacao na camada DAO
+            return Notificacao.AlterarNotificacao();
         }
         #endregion
     }

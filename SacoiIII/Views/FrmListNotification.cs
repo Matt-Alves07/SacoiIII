@@ -13,13 +13,21 @@ namespace SacoiIII.Views
 {
     public partial class FrmListNotification : Form
     {
-        #region Controller
-        NotificacoesController Controller = new NotificacoesController();
+        #region Local Atributtes
+        string user_logged = "";
         #endregion
 
-        public FrmListNotification()
+        #region Controllers
+        //Instância do controller de notificações
+        NotificacoesController NotificacoesController = new NotificacoesController();
+        //Instância do controller de usuários
+        UsuarioController UsuarioController = new UsuarioController();
+        #endregion
+
+        public FrmListNotification(string _user_logged)
         {
             InitializeComponent();
+            user_logged = _user_logged;
             ListarNotificacoes();
         }
 
@@ -33,10 +41,22 @@ namespace SacoiIII.Views
             //Limpa os registros listados na Data Grid View para não duplicar os registros listados
             DGVNotification.Rows.Clear();
 
-            //Executa o loop montado na DAO e recebido pelo controller para popular a Data Grid View
-            foreach (var notificacao in Controller.GetNotificacoes())
+            //Verifica se o usuário deseja listar inclusive as notificações que estão invalidas
+            if (ChkInvalidas.Checked)
             {
-                DGVNotification.Rows.Add(notificacao.notificacao, notificacao.texto, notificacao.usuario, notificacao.user_name, notificacao.valido);
+                //Percorre a lista preenchida na camada DAO para popular a Data Grid View com todas as notificações
+                foreach (var notificacao in NotificacoesController.GetNotificacaosWithInvalidas())
+                {
+                    DGVNotification.Rows.Add(notificacao.notificacao, notificacao.texto, notificacao.usuario, notificacao.user_name, notificacao.valido);
+                }
+            }
+            else
+            {
+                //Percorre a lista preenchida na camada DAO para popular a Data Grid View com as notificações validas
+                foreach (var notificacao in NotificacoesController.GetNotificacoes())
+                {
+                    DGVNotification.Rows.Add(notificacao.notificacao, notificacao.texto, notificacao.usuario, notificacao.user_name, notificacao.valido);
+                }
             }
         }
 
@@ -54,7 +74,7 @@ namespace SacoiIII.Views
                 string usuario = DGVNotification.SelectedRows[0].Cells[2].Value.ToString();
                 string user_name = DGVNotification.SelectedRows[0].Cells[3].Value.ToString();
                 string valido = DGVNotification.SelectedRows[0].Cells[4].Value.ToString();
-                FrmInfoNotification frmInfo = new FrmInfoNotification(notificacao, usuario, user_name, conteudo, valido);
+                FrmInfoNotification frmInfo = new FrmInfoNotification(notificacao, usuario, user_name, conteudo, valido, user_logged);
                 frmInfo.ShowDialog();
             }
         }
@@ -62,6 +82,24 @@ namespace SacoiIII.Views
         private void FrmListNotification_Enter(object sender, EventArgs e)
         {
             ListarNotificacoes();
+        }
+
+        private void ChkInvalidas_CheckedChanged(object sender, EventArgs e)
+        {
+            ListarNotificacoes();
+        }
+
+        private void FrmListNotification_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var Usuario = UsuarioController.GetPessoa(user_logged);
+            if (Usuario.admin == "Sim")
+            {
+                Application.OpenForms["FrmHomeA"].Activate();
+            }
+            else if (Usuario.admin == "Não")
+            {
+                Application.OpenForms["FrmHomeU"].Activate();
+            }
         }
     }
 }

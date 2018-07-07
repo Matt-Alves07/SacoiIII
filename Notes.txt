@@ -143,4 +143,10 @@
 -> Criadas as constantes necessárias para apontar as procedures;
 -> Implementados os metodos no Controller e na DAO para execução das procedures DeletarNotificacao e InvalidarNotificacao;
 -> Implementada a validação antes da chamada dos metodos DeletarNotificacao e InvalidarNotificacao do Controller.
-*Obs*.:Falta testar e verificar se ambas as funcionalidades estão de fato funcionando.
+
+07/07/2018 -> O que foi feito:
+-> Adicionado os recursos(inclusive script novo) para listar todas as notificações incluindo as invalidas(Implementado);
+-> Criado script para corrigir a procedure AlterarNotificacao;
+-> Implementada a funcionalidade de alterar notificações, com as devidas validações e mensagens de erro;
+-> Corrigido o erro ao chamar as procedures InvalidarNotificacao e DeletarNotificacao;
+-> Corrigido o nome de usuário que é passado como parâmetro ao chamar as procedures InvalidarNotificacao e DeletarNotificacao;
