@@ -459,8 +459,8 @@ namespace SacoiIII.DAO
 
                         //Atribuição dos valores resultantes da query aos atributos do DTO Pessoa
                         pessoa.pessoa = reader.GetString(0);
-                        pessoa.pedido = reader.GetString(1);
-                        pessoa.user_name = reader.GetString(2);
+                        pessoa.user_name = reader.GetString(1);
+                        pessoa.pedido = reader.GetString(2);
                         pessoa.data_pedido = reader.GetString(3);
                         
                         //Inclusão do DTO Pessoa preenchido a lista que será retornada posteriormente
