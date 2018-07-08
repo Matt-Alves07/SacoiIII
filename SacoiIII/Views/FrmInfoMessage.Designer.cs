@@ -113,7 +113,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmInfoMessage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SACOI - Detalhes da Mensage";
+            this.Text = "SACOI - Detalhes da Mensagem";
             this.PnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

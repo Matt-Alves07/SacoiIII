@@ -156,5 +156,6 @@
 08/07/2018 -> O que foi feito:
 -> Criado script para correção da procedure AlterarUsuario;
 -> Corrigido os caracteres que estavam com problema de encoding;
+-> Coreção do caption da tela de detalhes dos emails;
 -> Renomeada a tela de atualizar o cadastro de usuários(usuários e admins);
 -> Implementado a funacionalidade de atualizar o cadastro para usuários e admins;
