@@ -243,5 +243,11 @@ namespace SacoiIII.Views
             FrmListNotification listNotification = new FrmListNotification(UserName);
             listNotification.Show();
         }
+
+        private void BtnUserAtualizar_Click(object sender, EventArgs e)
+        {
+            FrmUpdate Update = new FrmUpdate();
+            Update.Show();
+        }
     }
 }

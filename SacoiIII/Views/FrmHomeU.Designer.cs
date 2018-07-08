@@ -197,6 +197,7 @@
             this.BtnUserAtualizar.Text = "Atualizar Cadastro";
             this.Hint.SetToolTip(this.BtnUserAtualizar, "Clique aqui para atualizar seu cadastro");
             this.BtnUserAtualizar.UseVisualStyleBackColor = false;
+            this.BtnUserAtualizar.Click += new System.EventHandler(this.BtnUserAtualizar_Click);
             this.BtnUserAtualizar.MouseEnter += new System.EventHandler(this.BtnUserAtualizar_MouseEnter);
             this.BtnUserAtualizar.MouseLeave += new System.EventHandler(this.BtnUserAtualizar_MouseLeave);
             // 

@@ -49,3 +49,10 @@ C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.
 C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmListNotification.resources
 C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmInfoNotification.resources
 C:\Users\matha\Downloads\Installs\TCC\Projeto\SacoiIII\obj\Debug\SacoiIII.Views.FrmNotificationEdit.resources
+C:\Users\João\Desktop\SacoiIII\SacoiIII\obj\Debug\SacoiIII.Views.FrmInfoMessage.resources
+C:\Users\João\Desktop\SacoiIII\SacoiIII\obj\Debug\SacoiIII.Views.FrmInfoNotification.resources
+C:\Users\João\Desktop\SacoiIII\SacoiIII\obj\Debug\SacoiIII.Views.FrmListNotification.resources
+C:\Users\João\Desktop\SacoiIII\SacoiIII\obj\Debug\SacoiIII.FrmPedidosAdmin.resources
+C:\Users\João\Desktop\SacoiIII\SacoiIII\obj\Debug\SacoiIII.Views.FrmPedidosExclusao.resources
+C:\Users\João\Desktop\SacoiIII\SacoiIII\obj\Debug\SacoiIII.Views.FrmUpdate.resources
+C:\Users\João\Desktop\SacoiIII\SacoiIII\obj\Debug\SacoiIII.Views.FrmNotificationEdit.resources

@@ -82,8 +82,8 @@
 -> Mudança do Label do botão na tela de listar usuários de "Recerregar" para "Atualizar Lista";
 -> Mudança na exibição da tela de listagem de usuários, impedindo que a mesma se feche ao clicar no botão Atualizar;
 -> Validação para administradores perguntando se o mesmo deseja realmente enviar o email, permitindo cancelar o envio, sem sair da tela;
--> Alteração do assunto do email, adicionando a sigla SACOI, mais o primeiro nome do registro do admin que está enviando o email, mais o conteúdo preenchido pelo admin, caso preencha;
--> Recurso que diz quem é o admin que está enviando o email e para qual usuário o mesmo deseja enviar sem preenchimento manual;
+-> Alteração do assunto do email, adicionando a sigla SACOI, mais o primeiro nome do registro do admin que estEenviando o email, mais o conteúdo preenchido pelo admin, caso preencha;
+-> Recurso que diz quem Eo admin que estEenviando o email e para qual usuário o mesmo deseja enviar sem preenchimento manual;
 -> Alteração do icone em enviar email;
 -> Script para correção das procedures ListarUsuários e ListarPedidosAdmin;
 -> Criação da tela que lista os pedidos de administração do sistema;
@@ -113,28 +113,28 @@
 25/06/2018 -> O que foi feito:
 -> Criados scripts de correção para as procedures que listam os emails, tanto para admins quanto para usuários;
 -> Criação dos arquivos do padrão MVC para mensagens;
--> Criado arquivo que será usado para exibir mensagens para o usuário(Message Box), ao invés de chamar a Message Box diretamente;
+-> Criado arquivo que serEusado para exibir mensagens para o usuário(Message Box), ao invés de chamar a Message Box diretamente;
 -> Implementado o sistema de leitura de mensagens dentro do sistema, tanto para admins quanto para usuários;
 -> Implementado o uso da unit de erro criada para o sistema de mensagens;
 -> Removida mensagem duplicada de sucesso ao enviar um email;
 
 01/07/2018 -> O que foi feito:
--> Criado o form que irá listar todas as notificações(falta implementar);
+-> Criado o form que irElistar todas as notificações(falta implementar);
 -> Criado script para corrigir a procedure que apaga o pedido de exclusão;
 -> Implementada completamente e testada a funcionalidade referente a pedidos de exclusão;
--> Apagado o que constava como a fazer, mas que já tinha sido feito no leia-me do Dropbox.
+-> Apagado o que constava como a fazer, mas que jEtinha sido feito no leia-me do Dropbox.
 
 02/07/2018 -> O que foi feito:
 -> Criado script de correção da procedure que lista todas as notificações validas;
 -> Criação do metodo que consulta o MySQL para carregar todas as notificações da procedure ListarNotificacoes;
 -> Criação do metodo que informa a camada view os registros encontrados pela camada DAO(no Controller);
 -> Implementado a funcionalidade de listar todas as notificações validas que estejam cadastradas no sistema;
--> Implementado recurso de clicar duas vezes em uma notificação e aparecer uma tela pro usuário com as informações de quem criou, se ela está valida e o conteúdo da notificação completa.
+-> Implementado recurso de clicar duas vezes em uma notificação e aparecer uma tela pro usuário com as informações de quem criou, se ela estEvalida e o conteúdo da notificação completa.
 
 03/07/2018 -> O que foi feito:
 -> Adicionadas as imagens dos botões Editar, Invalidar e Excluir da tela de detalhes das notificações;
--> Adicionado os efeitos hover para todos os botões incluídos na tela de detalhes de notificações;
--> Alterado a maneira como é exibido o nome de usuário que criou um notificação na tela de detalhes de notificações, acrescentando um espaço vazio para não deixar o nome de usuário colado na lateral esquerda do form;
+-> Adicionado os efeitos hover para todos os botões incluúos na tela de detalhes de notificações;
+-> Alterado a maneira como Eexibido o nome de usuário que criou um notificação na tela de detalhes de notificações, acrescentando um espaço vazio para não deixar o nome de usuário colado na lateral esquerda do form;
 -> Alterado a exibição da situação da notificação, acrescentando a mensagem "Notificação valida" antes da situação da notificação para facilitar o entendimento do usuário.
 
 06/07/2018 -> O que foi feito:
@@ -149,4 +149,8 @@
 -> Criado script para corrigir a procedure AlterarNotificacao;
 -> Implementada a funcionalidade de alterar notificações, com as devidas validações e mensagens de erro;
 -> Corrigido o erro ao chamar as procedures InvalidarNotificacao e DeletarNotificacao;
--> Corrigido o nome de usuário que é passado como parâmetro ao chamar as procedures InvalidarNotificacao e DeletarNotificacao;
+-> Corrigido o nome de usuário que Epassado como parâmetro ao chamar as procedures InvalidarNotificacao e DeletarNotificacao;
+
+07/07/2018 -> O que foi feito (segundo commit):
+-> Criada a tela de Atualizar cadastro*;
+*: Criada visualmente, adicionado os codigos basicos dela. Exibir senha, tela de sobre, fechar e limpar dados.
