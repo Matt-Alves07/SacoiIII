@@ -1,6 +1,6 @@
 ﻿namespace SacoiIII.Views
 {
-    partial class FrmUpdate
+    partial class FrmUpdateUser
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUpdate));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUpdateUser));
             this.PnlMenu = new System.Windows.Forms.Panel();
-            this.BtnInfo = new System.Windows.Forms.Button();
             this.BtnSair = new System.Windows.Forms.Button();
             this.PnlContent = new System.Windows.Forms.Panel();
             this.TxtCargo = new System.Windows.Forms.TextBox();
@@ -59,33 +58,12 @@
             this.PnlMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.PnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PnlMenu.Controls.Add(this.BtnInfo);
             this.PnlMenu.Controls.Add(this.BtnSair);
             this.PnlMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlMenu.Location = new System.Drawing.Point(0, 0);
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(424, 40);
             this.PnlMenu.TabIndex = 2;
-            // 
-            // BtnInfo
-            // 
-            this.BtnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnInfo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnInfo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnInfo.FlatAppearance.BorderSize = 0;
-            this.BtnInfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
-            this.BtnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInfo.ForeColor = System.Drawing.Color.White;
-            this.BtnInfo.Image = global::SacoiIII.Properties.Resources.info;
-            this.BtnInfo.Location = new System.Drawing.Point(239, 0);
-            this.BtnInfo.Name = "BtnInfo";
-            this.BtnInfo.Size = new System.Drawing.Size(90, 38);
-            this.BtnInfo.TabIndex = 2;
-            this.BtnInfo.TabStop = false;
-            this.BtnInfo.Text = " So&bre";
-            this.BtnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnInfo.UseVisualStyleBackColor = true;
-            this.BtnInfo.Click += new System.EventHandler(this.BtnInfo_Click);
             // 
             // BtnSair
             // 
@@ -283,6 +261,8 @@
             this.BtnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnLimpar.UseVisualStyleBackColor = true;
             this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
+            this.BtnLimpar.MouseEnter += new System.EventHandler(this.BtnLimpar_MouseEnter);
+            this.BtnLimpar.MouseLeave += new System.EventHandler(this.BtnLimpar_MouseLeave);
             // 
             // BtnSalvar
             // 
@@ -300,8 +280,11 @@
             this.BtnSalvar.Text = " &Salvar";
             this.BtnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnSalvar.UseVisualStyleBackColor = true;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
+            this.BtnSalvar.MouseEnter += new System.EventHandler(this.BtnSalvar_MouseEnter);
+            this.BtnSalvar.MouseLeave += new System.EventHandler(this.BtnSalvar_MouseLeave);
             // 
-            // FrmUpdate
+            // FrmUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -309,8 +292,11 @@
             this.Controls.Add(this.PnlButtons);
             this.Controls.Add(this.PnlContent);
             this.Controls.Add(this.PnlMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmUpdate";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FrmUpdateUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sacoi - Atualização de cadastro";
             this.PnlMenu.ResumeLayout(false);
@@ -324,7 +310,6 @@
         #endregion
 
         private System.Windows.Forms.Panel PnlMenu;
-        private System.Windows.Forms.Button BtnInfo;
         private System.Windows.Forms.Button BtnSair;
         private System.Windows.Forms.Panel PnlContent;
         private System.Windows.Forms.TextBox TxtCargo;

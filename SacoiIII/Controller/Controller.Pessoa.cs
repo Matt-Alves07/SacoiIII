@@ -76,5 +76,17 @@ namespace SacoiIII.Controller
             return PessoaDAO.SolicitarExclusao();
         }
         #endregion
+
+        #region Update User
+        //Criação do metodo Controller para atribuir os valores dos seus parâmetros na DAO e execução do metodo AlterarUsuario da DAO
+        public string UpdateUser(string _pessoa, string _p_nome, string _s_nome, string _email, string _cargo, string _senha)
+        {
+            //Atribui o valor dos parâmetros ao atributos do DTO, acessado pela camada DAO
+            PessoaDAO.SetPessoa(_pessoa, "", _p_nome, _s_nome, _email, _senha, _cargo);
+
+            //Retorna o resultado encontrado na execução do metodo da DAO para a camada view
+            return PessoaDAO.AlterarUsuario();
+        }
+        #endregion
     }
 }

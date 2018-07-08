@@ -151,11 +151,11 @@
     <Compile Include="Views\FrmSobre.Designer.cs">
       <DependentUpon>FrmSobre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmUpdate.cs">
+    <Compile Include="Views\FrmUpdateUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmUpdate.Designer.cs">
-      <DependentUpon>FrmUpdate.cs</DependentUpon>
+    <Compile Include="Views\FrmUpdateUser.Designer.cs">
+      <DependentUpon>FrmUpdateUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmUserList.cs">
       <SubType>Form</SubType>
@@ -221,8 +221,8 @@
     <EmbeddedResource Include="Views\FrmSobre.resx">
       <DependentUpon>FrmSobre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmUpdate.resx">
-      <DependentUpon>FrmUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FrmUpdateUser.resx">
+      <DependentUpon>FrmUpdateUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmUserList.resx">
       <DependentUpon>FrmUserList.cs</DependentUpon>

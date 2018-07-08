@@ -16,21 +16,21 @@
 -> Criada a tela sobre, exibindo as principais informações do projeto e o email para contato;
 -> Alteração na fonte da tela de cadastro para se adequar ao restante do sistema;
 -> Alteração do tamanho dos botões inferiores das telas de login e cadastro;
--> Alteração da funcionalidade de efetuar login, qua agora aponto para as telas home usuário e home administrador, dependendo do nú“el de acesso do usuário que efetue o login.
+-> Alteração da funcionalidade de efetuar login, qua agora aponto para as telas home usuário e home administrador, dependendo do nível de acesso do usuário que efetue o login.
 
 02/06/2018 (Segundo Commit) -> O que foi feito:
 -> Edição da tela home de administradores para acrescentar o painel info, onde ficam: imagem de administrador, mensagem de boas vindas(OlE+ nome de usuário) e os botões de uso de um administrador do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
--> Edição da tela home de usuários para acrescentar o painel info, onde ficam: imagem de usuário, mensagem de boas vindas(OlE+ nome de usuário) e os botões de uso de um usuário do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
--> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irElistar as mensagens enviadas e recebidas por um administrador que tenha efetuado login);
--> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irElistar as mensagens recebidas por um usuário que tenha efetuado login);
--> Criada a tela que lista os usuários cadastrados no sistema, mas também estEimplementado apenas o botão fechar(IrElistar todos os usuários cadastrados no sistema, sejam usuários ou administradores);
+-> Edição da tela home de usuários para acrescentar o painel info, onde ficam: imagem de usuário, mensagem de boas vindas(Olá + nome de usuário) e os botões de uso de um usuário do sistema(ainda não estão funcionando, apenas o efeito hover funciona neles);
+-> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irá listar as mensagens enviadas e recebidas pelo administrador que tenha efetuado login);
+-> Crição da tela de mensagens para administradores, mas implementado apenas o botão fechar(irá listar as mensagens recebidas pelo usuário que tenha efetuado login);
+-> Criada a tela que lista os usuários cadastrados no sistema, mas também está implementado apenas o botão fechar(Irá listar todos os usuários cadastrados no sistema, sejam usuários ou administradores);
 -> Adição dos icones necessários para os novos botões que foram criados nas telas home de usuário e administrador.
 
 02/06/2018 (Terceiro Commit) -> O que foi feito:
 -> Cópia dos arquivos de scripts para o repositório atual;
 -> Adição de scripts relativos a notificações(Importante: Existe uma correção referente a tabela de notificações no primeiro que deve ser executada);
--> Criação da tela feed, para ser exibida como filha das telas home(JEestEcomo filha);
--> Criação dos arquivos Constants, DTO, DAO e Controller relativos a notificações(JEfuncionando o inserir e, eu acho, o exibir notificações).
+-> Criação da tela feed, para ser exibida como filha das telas home(Já está como filha);
+-> Criação dos arquivos Constants, DTO, DAO e Controller relativos a notificações(Já funcionando o inserir e o exibir notificações).
 
 04/06/2018 -> O que foi feito:
 -> Correcao de um bug que ocorria quando o programa duplicava a tela de login, quando fechado tanto no botao de sair, quanto no "X" da janela do windows;
@@ -59,7 +59,7 @@
 
 11/06/2018 -> O que foi feito:
 -> Criados os metodos necessários para realizar o pedido de mudança de perfil para administrador do sistema;
--> Criada validação para caso o usuário solicite a mudança de perfil para administrador mais de uma vez, a mensagem informar que o pedido jEfoi feito, da segunda vez em diante;
+-> Criada validação para caso o usuário solicite a mudança de perfil para administrador mais de uma vez, e a mensagem informando que o pedido já foi feito, da segunda vez em diante;
 -> Criado metodo que retorna os valores referentes a um registro de usuário em especifico[(seja usuário mesmo ou administrador) NÃO FOI IMPLEMENTADO EM LUGAR ALGUM, ainda...];
 -> Corrigido a maneira que os labels de notificações eram ajustados, fazendo com que se ajustem ao formato da tela usando como parâmetro o tamanho do form feed.
 
@@ -67,7 +67,7 @@
 -> Realocado o codigo do sistema de email para outro form;
 
 13/06/2018 -> O que foi feito:
--> Corrigido o Script que lista os usuários para trazer também os GUIDs(identificadores unicos) dos usuários, para ser salvo junto ao identificador do administrador que enviou a mensagem(FicarEoculto para o usuário por finalidades esteticas);
+-> Corrigido o Script que lista os usuários para trazer também os GUIDs(identificadores unicos) dos usuários, para ser salvo junto ao identificador do administrador que enviou a mensagem(Ficará oculto para o usuário por finalidades esteticas);
 
 14/06/2018 -> O que foi feito:
 -> Inserido o codigo do botao fechar da FrmMessage que faltava;
@@ -82,8 +82,8 @@
 -> Mudança do Label do botão na tela de listar usuários de "Recerregar" para "Atualizar Lista";
 -> Mudança na exibição da tela de listagem de usuários, impedindo que a mesma se feche ao clicar no botão Atualizar;
 -> Validação para administradores perguntando se o mesmo deseja realmente enviar o email, permitindo cancelar o envio, sem sair da tela;
--> Alteração do assunto do email, adicionando a sigla SACOI, mais o primeiro nome do registro do admin que estEenviando o email, mais o conteúdo preenchido pelo admin, caso preencha;
--> Recurso que diz quem Eo admin que estEenviando o email e para qual usuário o mesmo deseja enviar sem preenchimento manual;
+-> Alteração do assunto do email, adicionando a sigla SACOI, mais o primeiro nome do registro do admin que estEenviando o email, mais o conteúdo preenchido pelo admin, caso preencha;
+-> Recurso que diz quem Eo admin que estEenviando o email e para qual usuário o mesmo deseja enviar sem preenchimento manual;
 -> Alteração do icone em enviar email;
 -> Script para correção das procedures ListarUsuários e ListarPedidosAdmin;
 -> Criação da tela que lista os pedidos de administração do sistema;
@@ -113,28 +113,28 @@
 25/06/2018 -> O que foi feito:
 -> Criados scripts de correção para as procedures que listam os emails, tanto para admins quanto para usuários;
 -> Criação dos arquivos do padrão MVC para mensagens;
--> Criado arquivo que serEusado para exibir mensagens para o usuário(Message Box), ao invés de chamar a Message Box diretamente;
+-> Criado arquivo que serEusado para exibir mensagens para o usuário(Message Box), ao invés de chamar a Message Box diretamente;
 -> Implementado o sistema de leitura de mensagens dentro do sistema, tanto para admins quanto para usuários;
 -> Implementado o uso da unit de erro criada para o sistema de mensagens;
 -> Removida mensagem duplicada de sucesso ao enviar um email;
 
 01/07/2018 -> O que foi feito:
--> Criado o form que irElistar todas as notificações(falta implementar);
+-> Criado o form que irElistar todas as notificações(falta implementar);
 -> Criado script para corrigir a procedure que apaga o pedido de exclusão;
 -> Implementada completamente e testada a funcionalidade referente a pedidos de exclusão;
--> Apagado o que constava como a fazer, mas que jEtinha sido feito no leia-me do Dropbox.
+-> Apagado o que constava como a fazer, mas que jEtinha sido feito no leia-me do Dropbox.
 
 02/07/2018 -> O que foi feito:
 -> Criado script de correção da procedure que lista todas as notificações validas;
 -> Criação do metodo que consulta o MySQL para carregar todas as notificações da procedure ListarNotificacoes;
 -> Criação do metodo que informa a camada view os registros encontrados pela camada DAO(no Controller);
 -> Implementado a funcionalidade de listar todas as notificações validas que estejam cadastradas no sistema;
--> Implementado recurso de clicar duas vezes em uma notificação e aparecer uma tela pro usuário com as informações de quem criou, se ela estEvalida e o conteúdo da notificação completa.
+-> Implementado recurso de clicar duas vezes em uma notificação e aparecer uma tela pro usuário com as informações de quem criou, se ela estEvalida e o conteúdo da notificação completa.
 
 03/07/2018 -> O que foi feito:
 -> Adicionadas as imagens dos botões Editar, Invalidar e Excluir da tela de detalhes das notificações;
--> Adicionado os efeitos hover para todos os botões incluúos na tela de detalhes de notificações;
--> Alterado a maneira como Eexibido o nome de usuário que criou um notificação na tela de detalhes de notificações, acrescentando um espaço vazio para não deixar o nome de usuário colado na lateral esquerda do form;
+-> Adicionado os efeitos hover para todos os botões incluúos na tela de detalhes de notificações;
+-> Alterado a maneira como Eexibido o nome de usuário que criou um notificação na tela de detalhes de notificações, acrescentando um espaço vazio para não deixar o nome de usuário colado na lateral esquerda do form;
 -> Alterado a exibição da situação da notificação, acrescentando a mensagem "Notificação valida" antes da situação da notificação para facilitar o entendimento do usuário.
 
 06/07/2018 -> O que foi feito:
@@ -149,8 +149,12 @@
 -> Criado script para corrigir a procedure AlterarNotificacao;
 -> Implementada a funcionalidade de alterar notificações, com as devidas validações e mensagens de erro;
 -> Corrigido o erro ao chamar as procedures InvalidarNotificacao e DeletarNotificacao;
--> Corrigido o nome de usuário que Epassado como parâmetro ao chamar as procedures InvalidarNotificacao e DeletarNotificacao;
-
-07/07/2018 -> O que foi feito (segundo commit):
+-> Corrigido o nome de usuário que é passado como parâmetro ao chamar as procedures InvalidarNotificacao e DeletarNotificacao;
 -> Criada a tela de Atualizar cadastro*;
-*: Criada visualmente, adicionado os codigos basicos dela. Exibir senha, tela de sobre, fechar e limpar dados.
+*Obs*.: Criada visualmente, adicionado os codigos basicos dela. Exibir senha, tela de sobre, fechar e limpar dados.
+
+08/07/2018 -> O que foi feito:
+-> Criado script para correção da procedure AlterarUsuario;
+-> Corrigido os caracteres que estavam com problema de encoding;
+-> Renomeada a tela de atualizar o cadastro de usuários(usuários e admins);
+-> Implementado a funacionalidade de atualizar o cadastro para usuários e admins;

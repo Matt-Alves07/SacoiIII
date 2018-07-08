@@ -250,7 +250,7 @@ namespace SacoiIII.Views
 
         private void BtnAtualizarCadastro_Click(object sender, EventArgs e)
         {
-            FrmUpdate Update = new FrmUpdate();
+            FrmUpdateUser Update = new FrmUpdateUser(UserName);
             Update.Show();
         }
     }

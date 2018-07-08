@@ -120,7 +120,7 @@ namespace SacoiIII.DAO
             catch (MySqlException ex)
             {
                 //Lança uma exceção, caso seja gerada alguma
-                Error.SendError(ex.Number.ToString(), "Erro interno");
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
@@ -139,8 +139,11 @@ namespace SacoiIII.DAO
         //Metodo que usa os atributos do DTO, os valores das constantes de conexão e pessoa para efetuar login
         public string[] EfetuarLogin()
         {
+            #region Local Atributtes
             //Criação e inicialização do vetor que retorna o resultado da procedure do banco de dados
             string[] result = { "", "" };
+            #endregion
+
             #region Change attributes values
             //Atribuição dos valores que serão usados nesse metodo nas variaveis de uso comum da classe
             query = $"CALL {ConstantPessoa.GetPEfetuarLogin()}('{DTOPessoa.user_name}', '{DTOPessoa.senha}');";
@@ -470,7 +473,7 @@ namespace SacoiIII.DAO
             }
             catch (MySqlException ex)
             {
-                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.ToString(), "Erro interno");
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
@@ -731,7 +734,7 @@ namespace SacoiIII.DAO
             }
             catch (MySqlException ex)
             {
-                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.ToString(), "Erro interno");
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
@@ -830,7 +833,7 @@ namespace SacoiIII.DAO
             catch (MySqlException ex)
             {
                 //Lança uma exceção, caso seja gerada alguma
-                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.ToString(), "Erro interno");
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
             }
             finally
             {
@@ -841,6 +844,57 @@ namespace SacoiIII.DAO
 
             #region Return
             //retorno do resultado da execução da query no banco
+            return resultado;
+            #endregion
+        }
+        #endregion
+
+        #region Alterar Usuario
+        //Metodo encarregado por chamar a procedure responsável por alterar o cadastro do usuário
+        public string AlterarUsuario()
+        {
+            #region Local atributtes
+            //Criação da string que irá armazenar temporariamente o resultado da query no banco
+            string resultado = "";
+            #endregion
+
+            #region Change attributes values
+            //atribuição dos valores que serão usados nesse metodo nas variaveis de uso comum da classe
+            query = $"CALL {ConstantPessoa.GetAlterarUsuario()}('{DTOPessoa.pessoa}', '{DTOPessoa.p_nome}', '{DTOPessoa.s_nome}', '{DTOPessoa.email}', '{DTOPessoa.senha}', '{DTOPessoa.cargo}');";
+            connection = new MySqlConnection(ConstantConnection.GetConnection());
+            command = new MySqlCommand(query, connection);
+            #endregion
+
+            #region Database access
+            //Abertura da conexão ao MySQL e armazenagem do resultado da procedure AprovarAdmin
+            try
+            {
+                //Abre a conexão com o banco do MySQL
+                connection.Open();
+
+                //Efetua a chamada da procedure no banco e atribui o resultado ao reader
+                using (reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        resultado = reader.GetString(0);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                //Lança uma exceção, caso seja gerada alguma
+                Error.SendError("Ocorreu um erro interno.\nCaso persista, contate o suporte com o codigo: " + ex.Number.ToString(), "Erro interno");
+            }
+            finally
+            {
+                //Encerra a conexão aberta ao MySQL
+                connection.Close();
+            }
+            #endregion
+
+            #region Return
+            //Retorna o resultado da execução do metodo
             return resultado;
             #endregion
         }
