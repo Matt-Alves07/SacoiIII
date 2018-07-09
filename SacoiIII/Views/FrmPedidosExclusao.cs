@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SacoiIII.Controller;
-using SacoiIII.DTO;
+using SacoiIII.Misc;
 
 namespace SacoiIII.Views
 {
@@ -17,10 +17,11 @@ namespace SacoiIII.Views
         #region Local Atributtes
         //Variáveis de uso local do Form
         AdminController Controller = new AdminController();
-        PessoaDTO Pessoa = new PessoaDTO();
+        Error Error = new Error();
+        string UserName = "";
         #endregion
 
-        public FrmPedidosExclusao()
+        public FrmPedidosExclusao(string _username)
         {
             InitializeComponent();
             DGVUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -30,6 +31,7 @@ namespace SacoiIII.Views
             DGVUser.AllowUserToResizeColumns = false;
             DGVUser.AllowUserToResizeRows = false;
             DGVUser.ReadOnly = true;
+            UserName = _username;
             ListarRegistros();
         }
 
@@ -39,7 +41,7 @@ namespace SacoiIII.Views
             DGVUser.Rows.Clear();
 
             //Loop para cada pedido registrado no banco
-            foreach (PessoaDTO Pessoa in Controller.GetPedidosExclusao())
+            foreach (var Pessoa in Controller.GetPedidosExclusao())
             {
                 DGVUser.Rows.Add(Pessoa.pessoa, Pessoa.pedido, Pessoa.user_name, Pessoa.data_pedido);
             }
@@ -47,7 +49,9 @@ namespace SacoiIII.Views
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            Close();
+            FrmHomeA Form = new FrmHomeA(UserName);
+            Form.Show();
+            this.Close();
         }
 
         private void BtnRelistar_Click(object sender, EventArgs e)
@@ -59,34 +63,34 @@ namespace SacoiIII.Views
         {
             string pessoa = DGVUser.SelectedRows[0].Cells[0].Value.ToString();
             string situacao = "";
-            DialogResult result = MessageBox.Show("Deseja apagar este usuário do sistema?", "Apagar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3);
+            DialogResult result = Error.SendQuestion("Deseja apagar este usuário do sistema?", "Apagar");
             if (result == DialogResult.Yes)
             {
                 situacao = Controller.DeletarUsuario(pessoa);
                 if (situacao == "sucesso")
                 {
-                    MessageBox.Show("Usuário apagado com sucesso.\nEle não terá mais acesso ao sistema", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Error.SendOK("Usuário apagado com sucesso.\nEle não terá mais acesso ao sistema", "Sucesso");
                     ListarRegistros();
                 }
                 else
                 {
-                    MessageBox.Show("Ocorreu um erro: " + situacao, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Error.SendAttention("Ocorreu um erro: " + situacao, "Erro");
                 }
             }
             else if (result == DialogResult.No)
             {
-                result = MessageBox.Show("Deseja excluir o pedido deste usuário?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                result = Error.SendQuestion("Deseja excluir o pedido deste usuário?", "Excluir");
                 if (result == DialogResult.Yes)
                 {
                     situacao = Controller.DeletarPedidoExclusao(pessoa);
                     if (situacao == "sucesso")
                     {
-                        MessageBox.Show("Pedido recusado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Error.SendOK("Pedido recusado com sucesso.", "Sucesso");
                         ListarRegistros();
                     }
                     else
                     {
-                        MessageBox.Show("Ocorreu um erro: " + situacao, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Error.SendAttention("Ocorreu um erro: " + situacao, "Erro");
                     }
                 }
             }

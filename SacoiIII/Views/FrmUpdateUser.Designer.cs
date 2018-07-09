@@ -149,6 +149,7 @@
             this.ChkSenha.AutoSize = true;
             this.ChkSenha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ChkSenha.FlatAppearance.BorderSize = 0;
+            this.ChkSenha.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(51)))));
             this.ChkSenha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.ChkSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChkSenha.Image = global::SacoiIII.Properties.Resources.pin_code_24b;
@@ -162,6 +163,8 @@
             this.ChkSenha.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ChkSenha.UseVisualStyleBackColor = true;
             this.ChkSenha.CheckedChanged += new System.EventHandler(this.ChkSenha_CheckedChanged);
+            this.ChkSenha.MouseEnter += new System.EventHandler(this.ChkSenha_MouseEnter);
+            this.ChkSenha.MouseLeave += new System.EventHandler(this.ChkSenha_MouseLeave);
             // 
             // TxtRSenha
             // 
@@ -252,7 +255,7 @@
             this.BtnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpar.Image = global::SacoiIII.Properties.Resources.backspace_32b;
             this.BtnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnLimpar.Location = new System.Drawing.Point(203, 9);
+            this.BtnLimpar.Location = new System.Drawing.Point(212, 9);
             this.BtnLimpar.Name = "BtnLimpar";
             this.BtnLimpar.Size = new System.Drawing.Size(181, 69);
             this.BtnLimpar.TabIndex = 1;
@@ -272,7 +275,7 @@
             this.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalvar.Image = global::SacoiIII.Properties.Resources.success_32b;
             this.BtnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnSalvar.Location = new System.Drawing.Point(16, 9);
+            this.BtnSalvar.Location = new System.Drawing.Point(25, 9);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(181, 69);
             this.BtnSalvar.TabIndex = 0;

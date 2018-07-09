@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SacoiIII.Controller;
+using SacoiIII.Views;
+using SacoiIII.Misc;
 
 namespace SacoiIII
 {
@@ -16,9 +18,11 @@ namespace SacoiIII
         #region Local Atributtes
         //Variáveis de uso local do Form
         AdminController Controller = new AdminController();
+        string UserName = "";
+        Error Error = new Error();
         #endregion
 
-        public FrmPedidosAdmin()
+        public FrmPedidosAdmin(string _username)
         {
             InitializeComponent();
             DGVUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -28,12 +32,15 @@ namespace SacoiIII
             DGVUser.AllowUserToResizeColumns = false;
             DGVUser.AllowUserToResizeRows = false;
             DGVUser.ReadOnly = true;
+            UserName = _username;
             ListarRegistros();
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            Close();
+            FrmHomeA Form = new FrmHomeA(UserName);
+            Form.Show();
+            this.Close();
         }
 
         private void ListarRegistros()
@@ -57,34 +64,34 @@ namespace SacoiIII
         {
             string pessoa = DGVUser.SelectedRows[0].Cells[0].Value.ToString();
             string situacao = "";
-            DialogResult result = MessageBox.Show("Deseja tornar este usuário um administrador do sistema?", "Alterar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3);
+            DialogResult result = Error.SendQuestion("Deseja tornar este usuário um administrador do sistema?", "Alterar");
             if(result == DialogResult.Yes)
             {
                 situacao = Controller.AprovarAdmin(pessoa);
                 if (situacao == "sucesso")
                 {
-                    MessageBox.Show("Usuário alterado com sucesso.\nQuando ele acessar novamente o sistema já será um administrador", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Error.SendOK("Usuário alterado com sucesso.\nQuando ele acessar novamente o sistema já será um administrador", "Sucesso");
                     ListarRegistros();
                 }
                 else
                 {
-                    MessageBox.Show("Ocorreu um erro: " + situacao, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Error.SendAttention("Ocorreu um erro: " + situacao, "Erro");
                 }
             }
             else if (result == DialogResult.No)
             {
-                result = MessageBox.Show("Deseja excluir o pedido deste usuário?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                result = Error.SendQuestion("Deseja excluir o pedido deste usuário?", "Excluir");
                 if (result == DialogResult.Yes)
                 {
                     situacao = Controller.RejeitarAdmin(pessoa);
                     if (situacao == "sucesso")
                     {
-                        MessageBox.Show("Pedido recusado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Error.SendOK("Pedido recusado com sucesso.", "Sucesso");
                         ListarRegistros();
                     }
                     else
                     {
-                        MessageBox.Show("Ocorreu um erro: " + situacao, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Error.SendAttention("Ocorreu um erro: " + situacao, "Erro");
                     }
                 }
             }

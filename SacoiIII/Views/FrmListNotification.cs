@@ -33,7 +33,20 @@ namespace SacoiIII.Views
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            Close();
+            string admin = "";
+            admin = UsuarioController.GetPessoa(user_logged).admin;
+            if(admin == "Sim")
+            {
+                FrmHomeA Form = new FrmHomeA(user_logged);
+                Form.Show();
+                this.Close();
+            }
+            else if (admin == "Não")
+            {
+                FrmHomeU Form = new FrmHomeU(user_logged);
+                Form.Show();
+                this.Close();
+            }
         }
 
         private void ListarNotificacoes()

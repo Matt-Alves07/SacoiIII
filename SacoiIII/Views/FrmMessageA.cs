@@ -37,7 +37,9 @@ namespace SacoiIII.Views
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            Close();
+            FrmHomeA Form = new FrmHomeA(user);
+            Form.Show();
+            this.Close();
         }
 
         private void ListarMensagens()

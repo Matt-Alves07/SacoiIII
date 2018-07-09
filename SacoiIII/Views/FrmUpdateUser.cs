@@ -42,7 +42,20 @@ namespace SacoiIII.Views
         #region Sair
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            Close();
+            string admin = "";
+            admin = Controller.GetPessoa(UserName).admin;
+            if (admin == "Sim")
+            {
+                FrmHomeA Form = new FrmHomeA(UserName);
+                Form.Show();
+                this.Close();
+            }
+            else if (admin == "Não")
+            {
+                FrmHomeU Form = new FrmHomeU(UserName);
+                Form.Show();
+                this.Close();
+            }
         }
         #endregion
 
@@ -208,7 +221,20 @@ namespace SacoiIII.Views
                 if (Result == "sucesso")
                 {
                     Error.SendOK("Alteração realizada com sucesso.\nClique em OK para voltar a tela Home", "Alterado com sucesso");
-                    Close();
+                    string admin = "";
+                    admin = Controller.GetPessoa(UserName).admin;
+                    if (admin == "Sim")
+                    {
+                        FrmHomeA Form = new FrmHomeA(UserName);
+                        Form.Show();
+                        this.Close();
+                    }
+                    else if (admin == "Não")
+                    {
+                        FrmHomeU Form = new FrmHomeU(UserName);
+                        Form.Show();
+                        this.Close();
+                    }
                 }
                 else if (Result == "")
                 {
@@ -216,5 +242,19 @@ namespace SacoiIII.Views
                 }
             }
         }
+
+        #region Pass button hover effect
+        private void ChkSenha_MouseEnter(object sender, EventArgs e)
+        {
+            ChkSenha.ForeColor = Color.White;
+            ChkSenha.Image = Properties.Resources.pin_code_24w;
+        }
+
+        private void ChkSenha_MouseLeave(object sender, EventArgs e)
+        {
+            ChkSenha.ForeColor = Color.Black;
+            ChkSenha.Image = Properties.Resources.pin_code_24b;
+        }
+        #endregion
     }
 }

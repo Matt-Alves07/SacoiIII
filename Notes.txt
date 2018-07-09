@@ -159,3 +159,10 @@
 -> Coreção do caption da tela de detalhes dos emails;
 -> Renomeada a tela de atualizar o cadastro de usuários(usuários e admins);
 -> Implementado a funacionalidade de atualizar o cadastro para usuários e admins;
+
+09/07/2018 -> O que foi feito:
+-> Mudança da maneira como todas as telas chamadas a partir das telas home(usuário e admin) são exibidas;
+-> Correção no alinhamento dos botões da tela de update do registro de usuário(usuário e admin);
+-> Adicionado efeito hover no checkbox de exibir senha da tela de atualizar cadastro;
+-> Alteração para usar as mensagens da classe Error ao invés de chamar o MessageBox.Show;
+-> Correção nos botões que recebem o foco como padrão na classe Error.

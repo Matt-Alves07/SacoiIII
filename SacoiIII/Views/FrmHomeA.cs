@@ -64,12 +64,14 @@ namespace SacoiIII.Views
         {
             FrmMessageA message = new FrmMessageA(UserName);
             message.Show();
+            this.Hide();
         }
 
         private void BtnListarUsers_Click(object sender, EventArgs e)
         {
             FrmUserList userList = new FrmUserList(UserName);
             userList.Show();
+            this.Hide();
         }
 
         #region Hover effect in buttons
@@ -210,14 +212,16 @@ namespace SacoiIII.Views
 
         private void BtnListPedidoAdmin_Click(object sender, EventArgs e)
         {
-            FrmPedidosAdmin pedidosAdmin = new FrmPedidosAdmin();
+            FrmPedidosAdmin pedidosAdmin = new FrmPedidosAdmin(UserName);
             pedidosAdmin.Show();
+            this.Hide();
         }
 
         private void BtnListPedidoExlusao_Click(object sender, EventArgs e)
         {
-            FrmPedidosExclusao pedidosExclusao = new FrmPedidosExclusao();
+            FrmPedidosExclusao pedidosExclusao = new FrmPedidosExclusao(UserName);
             pedidosExclusao.Show();
+            this.Hide();
         }
 
         private void BtnSolicitaExclusao_Click(object sender, EventArgs e)
@@ -246,12 +250,14 @@ namespace SacoiIII.Views
         {
             FrmListNotification listNotification = new FrmListNotification(UserName);
             listNotification.Show();
+            Hide();
         }
 
         private void BtnAtualizarCadastro_Click(object sender, EventArgs e)
         {
             FrmUpdateUser Update = new FrmUpdateUser(UserName);
             Update.Show();
+            Hide();
         }
     }
 }

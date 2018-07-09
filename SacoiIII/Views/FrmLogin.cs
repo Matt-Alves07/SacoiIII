@@ -25,7 +25,7 @@ namespace SacoiIII
         {
             if (MessageBox.Show("Deseja realmente sair?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                Application.Exit();
+                Application.ExitThread();
             }
         }
 
@@ -165,7 +165,7 @@ namespace SacoiIII
 
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            Application.ExitThread();
         }
     }
 }

@@ -60,7 +60,8 @@ namespace SacoiIII.Views
         private void BtnMensagens_Click(object sender, EventArgs e)
         {
             FrmMessageU message = new FrmMessageU(UserName);
-            message.ShowDialog();
+            message.Show();
+            Hide();
         }
 
         private void BtnRelistar_Click(object sender, EventArgs e)
@@ -242,12 +243,14 @@ namespace SacoiIII.Views
         {
             FrmListNotification listNotification = new FrmListNotification(UserName);
             listNotification.Show();
+            Hide();
         }
 
         private void BtnUserAtualizar_Click(object sender, EventArgs e)
         {
             FrmUpdateUser Update = new FrmUpdateUser(UserName);
             Update.Show();
+            Hide();
         }
     }
 }
