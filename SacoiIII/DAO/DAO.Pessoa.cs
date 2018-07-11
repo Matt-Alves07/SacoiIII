@@ -392,20 +392,23 @@ namespace SacoiIII.DAO
                 {
                     while (reader.Read())
                     {
-                        //Instância do DTO Pessoa para atribuição dos valores resultantes da query
-                        PessoaDTO pessoa = new PessoaDTO();
+                        if (!reader.IsDBNull(0))
+                        {
+                            //Instância do DTO Pessoa para atribuição dos valores resultantes da query
+                            PessoaDTO pessoa = new PessoaDTO();
 
-                        //Atribuição dos valores resultantes da query aos atributos do DTO Pessoa
-                        pessoa.pessoa = reader.GetString(0);
-                        pessoa.user_name = reader.GetString(1);
-                        pessoa.p_nome = reader.GetString(2);
-                        pessoa.s_nome = reader.GetString(3);
-                        pessoa.email = reader.GetString(4);
-                        pessoa.cargo = reader.GetString(5);
-                        pessoa.admin = reader.GetString(6);
+                            //Atribuição dos valores resultantes da query aos atributos do DTO Pessoa
+                            pessoa.pessoa = reader.GetString(0);
+                            pessoa.user_name = reader.GetString(1);
+                            pessoa.p_nome = reader.GetString(2);
+                            pessoa.s_nome = reader.GetString(3);
+                            pessoa.email = reader.GetString(4);
+                            pessoa.cargo = reader.GetString(5);
+                            pessoa.admin = reader.GetString(6);
 
-                        //Inclusão do DTO Pessoa preenchido a lista que será retornada posteriormente
-                        lista.Add(pessoa);
+                            //Inclusão do DTO Pessoa preenchido a lista que será retornada posteriormente
+                            lista.Add(pessoa);
+                        }
                     }
                 }
             }
@@ -457,17 +460,20 @@ namespace SacoiIII.DAO
                 {
                     while (reader.Read())
                     {
-                        //Instância do DTO Pessoa para atribuição dos valores resultantes da query
-                        PessoaDTO pessoa = new PessoaDTO();
+                        if (!reader.IsDBNull(0))
+                        {
+                            //Instância do DTO Pessoa para atribuição dos valores resultantes da query
+                            PessoaDTO pessoa = new PessoaDTO();
 
-                        //Atribuição dos valores resultantes da query aos atributos do DTO Pessoa
-                        pessoa.pessoa = reader.GetString(0);
-                        pessoa.user_name = reader.GetString(1);
-                        pessoa.pedido = reader.GetString(2);
-                        pessoa.data_pedido = reader.GetString(3);
-                        
-                        //Inclusão do DTO Pessoa preenchido a lista que será retornada posteriormente
-                        lista.Add(pessoa);
+                            //Atribuição dos valores resultantes da query aos atributos do DTO Pessoa
+                            pessoa.pessoa = reader.GetString(0);
+                            pessoa.user_name = reader.GetString(1);
+                            pessoa.pedido = reader.GetString(2);
+                            pessoa.data_pedido = reader.GetString(3);
+
+                            //Inclusão do DTO Pessoa preenchido a lista que será retornada posteriormente
+                            lista.Add(pessoa);
+                        }
                     }
                 }
             }
@@ -718,17 +724,20 @@ namespace SacoiIII.DAO
                 {
                     while (reader.Read())
                     {
-                        //Instância do DTO Pessoa para atribuição dos valores resultantes da query
-                        PessoaDTO pessoa = new PessoaDTO();
+                        if (reader.IsDBNull(0))
+                        {
+                            //Instância do DTO Pessoa para atribuição dos valores resultantes da query
+                            PessoaDTO pessoa = new PessoaDTO();
 
-                        //Atribuição dos valores resultantes da query aos atributos do DTO Pessoa
-                        pessoa.pessoa = reader.GetString(0);
-                        pessoa.pedido = reader.GetString(1);
-                        pessoa.user_name = reader.GetString(2);
-                        pessoa.data_pedido = reader.GetString(3);
+                            //Atribuição dos valores resultantes da query aos atributos do DTO Pessoa
+                            pessoa.pessoa = reader.GetString(0);
+                            pessoa.user_name = reader.GetString(1);
+                            pessoa.pedido = reader.GetString(2);
+                            pessoa.data_pedido = reader.GetString(3);
 
-                        //Inclusão do DTO Pessoa preenchido a lista que será retornada posteriormente
-                        lista.Add(pessoa);
+                            //Inclusão do DTO Pessoa preenchido a lista que será retornada posteriormente
+                            lista.Add(pessoa);
+                        }
                     }
                 }
             }

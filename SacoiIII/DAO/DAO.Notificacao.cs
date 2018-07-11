@@ -156,11 +156,14 @@ namespace SacoiIII.DAO
                 {
                     while (reader.Read())
                     {
-                        NotificacaoDTO notificacao = new NotificacaoDTO();
-                        notificacao.user_name = reader.GetString(0);
-                        notificacao.texto = reader.GetString(1);
-                        notificacoes.Add(notificacao);
-                    }
+                        if (!reader.IsDBNull(0))
+                        {
+                            NotificacaoDTO notificacao = new NotificacaoDTO();
+                            notificacao.user_name = reader.GetString(0);
+                            notificacao.texto = reader.GetString(1);
+                            notificacoes.Add(notificacao);
+                        }
+                    }                    
                 }
             }
             catch (MySqlException ex)
@@ -211,13 +214,16 @@ namespace SacoiIII.DAO
                 {
                     while (reader.Read())
                     {
-                        NotificacaoDTO notificacao = new NotificacaoDTO();
-                        notificacao.notificacao = reader.GetString(0);
-                        notificacao.texto = reader.GetString(1);
-                        notificacao.usuario = reader.GetString(2);
-                        notificacao.user_name = reader.GetString(3);
-                        notificacao.valido = reader.GetString(4);
-                        notificacoes.Add(notificacao);
+                        if (!reader.IsDBNull(0))
+                        {
+                            NotificacaoDTO notificacao = new NotificacaoDTO();
+                            notificacao.notificacao = reader.GetString(0);
+                            notificacao.texto = reader.GetString(1);
+                            notificacao.usuario = reader.GetString(2);
+                            notificacao.user_name = reader.GetString(3);
+                            notificacao.valido = reader.GetString(4);
+                            notificacoes.Add(notificacao);
+                        }
                     }
                 }
             }
@@ -269,13 +275,16 @@ namespace SacoiIII.DAO
                 {
                     while (reader.Read())
                     {
-                        NotificacaoDTO notificacao = new NotificacaoDTO();
-                        notificacao.notificacao = reader.GetString(0);
-                        notificacao.texto = reader.GetString(1);
-                        notificacao.usuario = reader.GetString(2);
-                        notificacao.user_name = reader.GetString(3);
-                        notificacao.valido = reader.GetString(4);
-                        notificacoes.Add(notificacao);
+                        if (!reader.IsDBNull(0))
+                        {
+                            NotificacaoDTO notificacao = new NotificacaoDTO();
+                            notificacao.notificacao = reader.GetString(0);
+                            notificacao.texto = reader.GetString(1);
+                            notificacao.usuario = reader.GetString(2);
+                            notificacao.user_name = reader.GetString(3);
+                            notificacao.valido = reader.GetString(4);
+                            notificacoes.Add(notificacao);
+                        }
                     }
                 }
             }

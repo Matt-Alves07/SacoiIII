@@ -166,3 +166,9 @@
 -> Adicionado efeito hover no checkbox de exibir senha da tela de atualizar cadastro;
 -> Alteração para usar as mensagens da classe Error ao invés de chamar o MessageBox.Show;
 -> Correção nos botões que recebem o foco como padrão na classe Error.
+
+11/07/2018 -> O que foi feito:
+-> Corrigido a inserção dos dados vindos da procedure que listava os pedidos de exclusão, mostrando o nome de usuário como deveria e não o UUID dele;
+-> Criado script para corrigir a procedure DeletarUsuario, que estava apontando para uma tabela errada, e não apagava os registros de usuários desejados;
+-> Criado validação para verificar se os dados que estão vindo do MySQL estão vindo nulos em todos os metodos na camada DAO que preenchem listas de DTOs(Pessoa e Notificação);
+-> Adicionado recurso de fechar a tela de atualizar o cadastro de usuário(usuários e admin) pressionando a tecla esc, como no restante do sistema;

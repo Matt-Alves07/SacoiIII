@@ -289,8 +289,10 @@
             // 
             // FrmUpdateUser
             // 
+            this.AcceptButton = this.BtnSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BtnSair;
             this.ClientSize = new System.Drawing.Size(424, 373);
             this.Controls.Add(this.PnlButtons);
             this.Controls.Add(this.PnlContent);

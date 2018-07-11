@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SacoiIII", "SacoiIII\SacoiIII.csproj", "{39568779-D1CE-488D-BFD4-DB99ACBAA465}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sacoi", "SacoiIII\Sacoi.csproj", "{39568779-D1CE-488D-BFD4-DB99ACBAA465}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
